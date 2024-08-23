@@ -1,4 +1,4 @@
-# interview-questions
+# Interview Questions
 
 # HTML Questions
 
