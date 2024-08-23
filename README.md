@@ -13,7 +13,6 @@
 ### Question 1: Sample Queston.
 Sample **Answer**.
 
-**Related Code:**
 ```html
 <!-- Block-level element example -->
 <div>
