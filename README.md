@@ -3,9 +3,9 @@
 ## HTML Questions
 
 ### Question 1: Sample Queston.
-**Answer**: Sample Answer.
+Sample **Answer**.
 
-### Related Code:
+**Related Code:**
 ```html
 <!-- Block-level element example -->
 <div>
