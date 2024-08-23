@@ -1,12 +1,14 @@
 # Interview Questions
 
+<br/>
+
 ## Table of Contents
 
-* [HTML Questions](#-1-html-questions)
+* [HTML Questions](#-html-questions)
 
 <br/>
 
-## # 1. HTML Questions
+## HTML Questions
 
 ### Question 1: Sample Queston.
 Sample **Answer**.
