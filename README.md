@@ -1,8 +1,8 @@
 # Interview Questions
 
-# HTML Questions
+## HTML Questions
 
-## Question 1: Sample Queston.
+### Question 1: Sample Queston.
 **Answer**: Sample Answer.
 
 ### Related Code:
