@@ -5,6 +5,7 @@
 ## Table of Contents
 
 * [HTML Questions](#-html-questions)
+* [CODING Questions](#-coding-questions)
 
 <br/>
 
@@ -21,3 +22,8 @@ Sample **Answer**.
 
 <!-- Inline element example -->
 <span>This is an inline element.</span>
+```
+
+<br>
+
+## CODING Questions
