@@ -30,16 +30,10 @@ Sample **Answer**.
 ## Asympotic Notations
 
 ### Question 1: what are asympotic notations
-***Answer:*** Asympotic notations are mathematcial way to describe efficiency of algorithms in terms of time and space complexity. /n
-Common Types:
-  1. Big O (Worst Case)
-  2. Big Omega (Best Case)
-  3. Theta (Average Case)
-
-
-
-## BIG O Notation
-
-### https://www.youtube.com/watch?v=7dz8Iaf_weM 
+***Answer:*** Asympotic notations are mathematcial way to describe efficiency of algorithms in terms of time and space complexity.
+**Common Types:**
+1. **Big O (O)** – Worst Case  
+2. **Big Omega (Ω)** – Best Case  
+3. **Theta (Θ)** – Average Case
 
 ## CODING Questions
