@@ -5,8 +5,8 @@
 ## Table of Contents
 
 * [HTML Questions](#-html-questions)
+* [ASYMPOTIC Notation](#-asympotic-notation)
 * [CODING Questions](#-coding-questions)
-* [BIG O Notation](#-big-o-notation)
 
 <br/>
 
