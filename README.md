@@ -5,7 +5,7 @@
 ## Table of Contents
 
 * [HTML Questions](#html-questions)
-* [ASYMPOTIC Notations](#asympotic-notation)
+* [ASYMPOTIC Notations](#asympotic-notations)
 * [CODING Questions](#coding-questions)
 
 <br/>
