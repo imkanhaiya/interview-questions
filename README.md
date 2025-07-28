@@ -4,9 +4,9 @@
 
 ## Table of Contents
 
-* [HTML Questions](#-html-questions)
-* [ASYMPOTIC Notation](#-asympotic-notation)
-* [CODING Questions](#-coding-questions)
+* [HTML Questions](#html-questions)
+* [ASYMPOTIC Notations](#asympotic-notation)
+* [CODING Questions](#coding-questions)
 
 <br/>
 
@@ -27,7 +27,7 @@ Sample **Answer**.
 
 <br>
 
-## Asympotic Notations
+## ASYMPOTIC Notations
 
 ### Question 1: what are asympotic notations
 ***Answer:*** Asympotic notations are mathematcial way to describe efficiency of algorithms in terms of time and space complexity.
