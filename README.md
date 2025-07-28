@@ -6,6 +6,7 @@
 
 * [HTML Questions](#-html-questions)
 * [CODING Questions](#-coding-questions)
+* [BIG O Notation](#-big-o-notation)
 
 <br/>
 
@@ -25,5 +26,15 @@ Sample **Answer**.
 ```
 
 <br>
+
+## Asympotic Notations
+
+### Question 1: what are asympotic notations
+***Answer:*** Asympotic notations are mathematcial way to describe efficiency of algorithms in terms of time and space complexity
+
+
+## BIG O Notation
+
+### https://www.youtube.com/watch?v=7dz8Iaf_weM 
 
 ## CODING Questions
