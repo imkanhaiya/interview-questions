@@ -30,7 +30,7 @@ Sample **Answer**.
 ## Asympotic Notations
 
 ### Question 1: what are asympotic notations
-***Answer:*** Asympotic notations are mathematcial way to describe efficiency of algorithms in terms of time and space complexity.
+***Answer:*** Asympotic notations are mathematcial way to describe efficiency of algorithms in terms of time and space complexity. /n
 Common Types:
   1. Big O (Worst Case)
   2. Big Omega (Best Case)
