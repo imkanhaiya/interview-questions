@@ -7,6 +7,7 @@
 * [HTML Questions](#html-questions)
 * [ASYMPOTIC Notations](#asympotic-notations)
 * [CODING Questions](#coding-questions)
+* [Others](#others)
 
 <br/>
 
@@ -38,3 +39,10 @@ Sample **Answer**.
 3. **Theta (Θ)** – Average Case
 
 ## CODING Questions
+
+<br>
+
+## Others
+
+### Question 1: What is difference between imperative vs declarative code
+***Answer:** Imperative - How (Tell the machine how to do it), Declarative (What)(Just tell the machine what to do)
