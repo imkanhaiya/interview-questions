@@ -46,5 +46,6 @@ Sample **Answer**.
 
 ### Question 1: What is difference between imperative vs declarative code [Explanation](https://www.youtube.com/watch?v=E7Fbf7R3x6I)
 ***Answer:***   
-&nbsp;**Imperative** - How (Tell the machine how to do it)  
-&nbsp;**Declarative** - What (Tell the machine what to do), example - sql query, html, scss  
+
+**Imperative** - How (Tell the machine how to do it)  
+**Declarative** - What (Tell the machine what to do), example - sql query, html, scss  
