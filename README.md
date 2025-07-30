@@ -48,4 +48,4 @@ Sample **Answer**.
 ***Answer:***   
 
 **Imperative** - How (Tell the machine how to do it)  
-**Declarative** - What (Tell the machine what to do), example - sql query, html, scss  
+**Declarative** - What (Tell the machine what to do), example - sql query, html, css  
