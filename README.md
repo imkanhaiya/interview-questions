@@ -75,7 +75,7 @@ export class SearchComponent implements AfterViewInit {
   constructor(private http: HttpClient) {}
 
   ngAfterViewInit() {
-    fromEvent(this.searchBox.nativeElement, 'input') // creates an Observable that emits each input event.
+    fromEvent(this.searchBox.nativeElement, 'input') // creates Observable to emit each input event.
       .pipe(
         debounceTime(300), // waits 300ms of inactivity before emitting the latest value.
         switchMap((event: Event) => { // cancel previous request on new input.
