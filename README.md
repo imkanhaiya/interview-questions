@@ -14,7 +14,9 @@
 
 ## Basics
 
-***One line/One Command/One Instruction/One Statement***: A Statement is one complete instruction the program can execute 
+***One line/One Command/One Instruction/One Statement***: A Statement is one complete instruction the program can execute
+***Synchronous***:  Code is executed line by line, next statement runs only after the current one has finished
+***Asynchronous***: Code can start the task, but instead of waiting for it to finish, it moves to the next statement. the task completes later, and the program handles the result when its ready.
 
 ## HTML Questions
 
@@ -57,3 +59,31 @@ Sample **Answer**.
 
 ### Question 2: What is Reactive Programming
 ***Answer:*** Reactive Programming is programming with asynchronous data streams. A stream is sequence of events ordered in time, stream can emit 3 different things. some value, error or completed signal, to listen to stream is called subscribing, and to capture emitted things(events) we define functoins such as next, error or completed. these functions are called observers and stream is called observable(being observerd). in common reactive libraries, each stream has many functions attached, such as map, filter etc.
+
+### Question 3: Why should i consider adopting/Benifits of Reactive programming
+***Answer***: Reactive programming raises the abstraction of code, so we can focus on data flow and events rather than implementation details. this improves readability and makes the code concise. it's especially powerful for handling asynchronous data (such as network requests or user input) and event-driven scenarios (such as UI interactions or real-time updates).
+
+```ts
+<input #searchBox type="text" placeholder="Search" (input)="onInput($event)" />
+
+export class SearchComponent implements AfterViewInit {
+  @ViewChild('searchBox', { static: true }) searchBox!: ElementRef;
+  items: any[] = [];
+
+  constructor(private http: HttpClient) {}
+
+  ngAfterViewInit() {
+    fromEvent(this.searchBox.nativeElement, 'input')
+      .pipe(
+        debounceTime(300),
+        switchMap((event: Event) => {
+          const input = (event.target as HTMLInputElement).value;
+          return this.http.get<any[]>(`api/data?q=${input}`);
+        })
+      )
+      .subscribe(results => {
+        this.items = results;
+      });
+  }
+}
+```
