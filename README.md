@@ -56,6 +56,7 @@ Sample **Answer**.
 
 **Imperative** - How (Tell the machine how to do it)  
 **Declarative** - What (Tell the machine what to do), example - sql query, html, css
+Note: Reactive Programming is part of Declarative programming
 
 ### Question 2: What is Reactive Programming
 ***Answer:*** Reactive Programming is programming with asynchronous data streams. A stream is sequence of events ordered in time, stream can emit 3 different things. some value, error or completed signal, to listen to stream is called subscribing, and to capture emitted things(events) we define functoins such as next, error or completed. these functions are called observers and stream is called observable(being observerd). in common reactive libraries, each stream has many functions attached, such as map, filter etc.
