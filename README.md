@@ -64,7 +64,7 @@ Sample **Answer**.
 ***Answer***: Reactive programming raises the abstraction of code, so we can focus on data flow and events rather than implementation details. this improves readability and makes the code concise. it's especially powerful for handling asynchronous data (such as network requests or user input) and event-driven scenarios (such as UI interactions or real-time updates).
 
 ```html
-<input #searchBox type="text" placeholder="Search" (input)="onInput($event)" />
+<input #searchBox type="text" placeholder="Search"/>
 ```
 
 ```ts
