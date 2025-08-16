@@ -4,12 +4,17 @@
 
 ## Table of Contents
 
+* [Basics](#basics)
 * [HTML Questions](#html-questions)
 * [ASYMPOTIC Notations](#asympotic-notations)
 * [CODING Questions](#coding-questions)
-* [Others](#others)
+* [RXJS](#rxjs)
 
 <br/>
+
+## Basics
+
+***One line/One Command/One Instruction/One Statement***: A Statement is one complete instruction the program can execute 
 
 ## HTML Questions
 
@@ -42,7 +47,7 @@ Sample **Answer**.
 
 <br>
 
-## Others
+## RXJS
 
 ### Question 1: What is difference between imperative vs declarative code [Explanation](https://www.youtube.com/watch?v=E7Fbf7R3x6I)
 ***Answer:***   
