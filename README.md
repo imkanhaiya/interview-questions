@@ -75,10 +75,10 @@ export class SearchComponent implements AfterViewInit {
   constructor(private http: HttpClient) {}
 
   ngAfterViewInit() {
-    fromEvent(this.searchBox.nativeElement, 'input')
+    fromEvent(this.searchBox.nativeElement, 'input') // creates an Observable that emits each input event.
       .pipe(
-        debounceTime(300),
-        switchMap((event: Event) => {
+        debounceTime(300), // waits 300ms of inactivity before emitting the latest value.
+        switchMap((event: Event) => { //sends the HTTP request and cancels previous requests if new input comes.
           const input = (event.target as HTMLInputElement).value;
           return this.http.get<any[]>(`api/data?q=${input}`);
         })
@@ -89,3 +89,4 @@ export class SearchComponent implements AfterViewInit {
   }
 }
 ```
+(Only answer if asked) without rxjs we can do this with addEventListener + setTimeout + fetch
