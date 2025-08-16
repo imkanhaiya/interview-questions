@@ -78,7 +78,7 @@ export class SearchComponent implements AfterViewInit {
     fromEvent(this.searchBox.nativeElement, 'input') // creates an Observable that emits each input event.
       .pipe(
         debounceTime(300), // waits 300ms of inactivity before emitting the latest value.
-        switchMap((event: Event) => { // cancel previous request if new input.
+        switchMap((event: Event) => { // cancel previous request on new input.
           const input = (event.target as HTMLInputElement).value;
           return this.http.get<any[]>(`api/data?q=${input}`);
         })
