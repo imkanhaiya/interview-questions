@@ -88,5 +88,6 @@ export class SearchComponent implements AfterViewInit {
       });
   }
 }
+
+//without rxjs we can do this with addEventListener + setTimeout + fetch (only answer if asked)
 ```
-(Only answer if asked) without rxjs we can do this with addEventListener + setTimeout + fetch
