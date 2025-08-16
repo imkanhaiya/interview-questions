@@ -9,6 +9,7 @@
 * [ASYMPOTIC Notations](#asympotic-notations)
 * [CODING Questions](#coding-questions)
 * [RXJS](#rxjs)
+* [HR](#hr)
 
 <br/>
 
@@ -93,3 +94,7 @@ export class SearchComponent implements AfterViewInit {
 
 //without rxjs we can do this with addEventListener + setTimeout + fetch (only answer if asked)
 ```
+
+## HR
+### Question 1: What is expected Salary
+***Answer***: I am much more interested
