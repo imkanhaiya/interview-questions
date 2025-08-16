@@ -63,9 +63,10 @@ Sample **Answer**.
 ### Question 3: Why should i consider adopting/Benifits of Reactive programming
 ***Answer***: Reactive programming raises the abstraction of code, so we can focus on data flow and events rather than implementation details. this improves readability and makes the code concise. it's especially powerful for handling asynchronous data (such as network requests or user input) and event-driven scenarios (such as UI interactions or real-time updates).
 
-```ts
-<input #searchBox type="text" placeholder="Search" (input)="onInput($event)" />
+```html
+<input #searchBox type="text" placeholder="Search" (input)="onInput($event)" />```
 
+```ts
 export class SearchComponent implements AfterViewInit {
   @ViewChild('searchBox', { static: true }) searchBox!: ElementRef;
   items: any[] = [];
