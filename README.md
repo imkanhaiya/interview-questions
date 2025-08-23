@@ -100,11 +100,14 @@ export class SearchComponent implements AfterViewInit {
 ## HR
 ### Question 1: What is expected Salary
 ***Answer***:
- 
+
   I am much more interested in the opportunity to contribute to team (here at org name) than I am in the size of initial offer. we can discuss the offer details at later stage.
 
   I will consider any reasanable offer
 
-  You are in much better position to know how much i am worth to (organization name) than i am. i would be happy to consider any offer you feel is fair for the role.
+  You are in much better position to know how much i am worth to (organization name) than i am. i would be happy to consider any fair offer for the role.
 
   Tell expected amount
+
+  ### Question 2: Tell me about yourself
+  ***Answer***: I am Kanhaiya Agnihotri. I completed my MCA from KIET Group of Institutions, Ghaziabad in 2019. I have over four years of experience in web development primarily using Angular. I started at Wikaad IT Systems, building dashboards for an oil field organization, after closure of wikaad i internally  moved to Webuters Technology to work on HireMe, a digital hiring platform. Later, at P2P Systems, I worked on Smart School, a school ERP product. Currently, I’ve built a Battery Storage Management System from scratch and i am contributing to Aeros Cloud, a saas plateform, developing various modules and implemented new theme for all authentication screens. I enjoy building user-friendly web applications, and i look forward to bring my skills and experience to contribute effectively to your team.
