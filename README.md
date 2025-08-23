@@ -7,8 +7,8 @@
 * [Basics](#basics)
 * [HTML Questions](#html-questions)
 * [ASYMPOTIC Notations](#asympotic-notations)
-* [CODING Questions](#coding-questions)
 * [RXJS](#rxjs)
+* [CODING Questions](#coding-questions)
 * [HR](#hr)
 
 <br/>
@@ -47,8 +47,6 @@ Sample **Answer**.
 1. **Big O (O)** – Worst Case  
 2. **Big Omega (Ω)** – Best Case  
 3. **Theta (Θ)** – Average Case
-
-## CODING Questions
 
 <br>
 
@@ -96,6 +94,10 @@ export class SearchComponent implements AfterViewInit {
 
 //without rxjs we can do this with addEventListener + setTimeout + fetch (only answer if asked)
 ```
+
+## CODING Questions
+
+<br>
 
 ## HR
 ### Question 1: What is expected Salary
