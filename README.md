@@ -99,7 +99,8 @@ export class SearchComponent implements AfterViewInit {
 
 ## HR
 ### Question 1: What is expected Salary
-***Answer***: 
+***Answer***:
+ 
   I am much more interested in the opportunity to contribute to team (here at org name) than I am in the size of initial offer. we can discuss the offer details at later stage.
 
   I will consider any reasanable offer
