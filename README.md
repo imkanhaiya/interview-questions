@@ -105,8 +105,6 @@ export class SearchComponent implements AfterViewInit {
 
   I will consider any reasanable offer
 
-  You are in much better position to know how much i am worth to (organization name) than i am. i would be happy to consider any fair offer for the role.
-
   Tell expected amount
 
   ### Question 2: Tell me about yourself
