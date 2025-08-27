@@ -95,6 +95,9 @@ export class SearchComponent implements AfterViewInit {
 //without rxjs we can do this with addEventListener + setTimeout + fetch (only answer if asked)
 ```
 
+### Question 3: What is Rxjs
+***Answer***: Rxjs stands for Reactive Extensions for Javascript, is a library for handling asynchonous code and event based data streams for javascript driven applications. 
+
 ## CODING Questions
 
 <br>
