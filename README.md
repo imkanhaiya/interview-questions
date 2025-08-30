@@ -59,10 +59,15 @@ Sample **Answer**.
 **Declarative** - What (Tell the machine what to do), example - sql query, html, css
 
 ### Question 2: What is Reactive Programming
-***Answer:*** Reactive Programming(part of declartive programming) is programming with asynchronous data streams. A stream is sequence of events ordered in time, stream can emit 3 different things. some value, error or completed signal, to listen to stream is called subscribing, and to capture emitted things(events) we define functoins such as next, error or completed. these functions are called observers and stream is called observable(being observerd). in common reactive libraries, each stream has many functions attached, such as map, filter etc.
+***Answer:*** Reactive Programming(part of declartive programming) is programming with asynchronous data streams. A stream is sequence of events ordered in time, stream can emit 3 different things. some value, error or completed signal, to listen to stream is called subscribing, and to capture emitted things(events) we define functoins such as next, error or completed. these functions are called observers and stream is called observable(being observerd). in common reactive libraries, each stream has many functions attached, such as map, filter etc. 
+(Water Tap Analogy)
+
+[Observable Example](https://stackblitz.com/edit/rxjs-vxjtgfs4?file=index.ts)
 
 ### Question 3: Why should i consider adopting/Benifits of Reactive programming
 ***Answer***: Reactive programming raises the abstraction of code, so we can focus on data flow and events rather than implementation details. this improves readability and makes the code concise. it's especially powerful for handling asynchronous data (such as network requests) and event-driven scenarios (such as UI interactions or real-time updates).
+
+### Question 4: What is Observable
 
 e.g. Type Ahead Search/Predictive Search
 
