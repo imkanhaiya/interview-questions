@@ -67,7 +67,7 @@ A Subsccription can end in three ways
 2. Complete Signal
 3. Error Signal
 
-Marble Diagram - is Visual Representation of behvaiour of an observable.
+Marble Diagram - is a Visual Representation of behvaiour of an observable.
 
 [Observable Example](https://stackblitz.com/edit/rxjs-vxjtgfs4?file=index.ts)
 
@@ -106,7 +106,7 @@ export class SearchComponent implements AfterViewInit {
 ```
 
 ### Question 3: What is Rxjs
-***Answer***: Rxjs stands for Reactive Extensions for Javascript, is a library for handling asynchonous code and event based data streams for javascript driven applications. 
+***Answer***: Rxjs stands for Reactive Extensions for Javascript, is a library for handling asynchonous code and event based data streams for javascript driven applications.
 
 ## CODING Questions
 
