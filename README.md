@@ -67,6 +67,8 @@ A Subsccription can end in three ways
 2. Complete Signal
 3. Error Signal
 
+Error or complete notification ends the subscription and no more notifications can be emitted after that.
+
 Marble Diagram - is a Visual Representation of behvaiour of an observable.
 
 [Observable Example](https://stackblitz.com/edit/rxjs-vxjtgfs4?file=index.ts)
