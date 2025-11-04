@@ -8,7 +8,6 @@
 * [HTML Questions](#html-questions)
 * [ASYMPOTIC Notations](#asympotic-notations)
 * [RXJS](#rxjs)
-* [CODING Questions](#coding-questions)
 * [HR](#hr)
 
 <br/>
@@ -109,8 +108,6 @@ export class SearchComponent implements AfterViewInit {
 
 ### Question 3: What is Rxjs
 ***Answer***: Rxjs stands for Reactive Extensions for Javascript, is a library for handling asynchonous code and event based data streams for javascript driven applications.
-
-## CODING Questions
 
 <br>
 
