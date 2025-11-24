@@ -66,7 +66,9 @@ A Subsccription can end in three ways
 2. Complete Signal
 3. Error Signal
 
-Error or complete notification ends the subscription and no more notifications can be emitted after that.
+TearDown logic will run only after subscription ends.
+
+Unsubcribe runs the teardown logic, if no teardown logic written in observable, then nothing will happen.
 
 Marble Diagram - is a Visual Representation of behvaiour of an observable.
 
@@ -123,3 +125,11 @@ export class SearchComponent implements AfterViewInit {
 
   ### Question 2: Tell me about yourself
   ***Answer***: I am Kanhaiya Agnihotri. I completed my MCA from KIET Group of Institutions, Ghaziabad in 2019. I have over four years of experience in web development primarily using Angular. I started at Wikaad IT Systems, building dashboards for an oil field organization, after closure of wikaad i internally  moved to Webuters Technology to work on HireMe, a digital hiring platform. Later, at P2P Systems, I worked on Smart School, a school ERP product. Currently, I’ve built a Battery Storage Management System from scratch and i am contributing to Aeros Cloud, a saas plateform, developing various modules and implemented new theme for all authentication screens. I enjoy building user-friendly web applications, and i look forward to bring my skills and experience to contribute effectively to your team.
+
+  ### Questino 3: What is your official Notice period?
+  ***Answer***: My Official notice period is 60 days. But my company allows buyout. So if needed i can try to join earlier. 
+
+  How early you can join - If the role is urgent, I can try for a buyout and potentially join in 30–40 days.
+
+  If HR pressures: “We need someone immediate” - I can request buyout and push for early release, and will join as soon as my current employer approves the release.”
+  
