@@ -111,6 +111,13 @@ export class SearchComponent implements AfterViewInit {
 ### Question 3: What is Rxjs
 ***Answer***: Rxjs stands for Reactive Extensions for Javascript, is a library for handling asynchonous code and event based data streams for javascript driven applications.
 
+### Question 4: What is Cold Observable
+***Answer***: 
+  Produces data on subscription, Each Subscriber gets their own independent execution. Data source is inside observalbe Logic. (On Demand) ex- http calls, of(), interval.
+
+### Question 5: What is Hot Observable
+***Answer***:
+  Produces data whether you subscribe or not, so subscriber shares the same execution. Data source is outside the observable logic. (Already Live) ex- DOM events, Subjects
 <br>
 
 ## HR
