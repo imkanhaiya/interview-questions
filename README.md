@@ -113,7 +113,7 @@ export class SearchComponent implements AfterViewInit {
 
 ### Question 4: What is Cold Observable
 ***Answer***: 
-  Produces data on subscription, Each Subscriber gets their own independent execution. Data source is inside observalbe Logic. (On Demand) ex- http calls, of(), interval.
+  Produces data on subscription, Each Subscriber gets their own independent execution. Data source is inside observalbe Logic. (On Demand) ex- http calls, of(), interval().
 
 ### Question 5: What is Hot Observable
 ***Answer***:
