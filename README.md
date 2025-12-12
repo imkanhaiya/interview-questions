@@ -123,8 +123,7 @@ export class SearchComponent implements AfterViewInit {
 
 ## Angular
 
-### Question 1: How angular application starts?
-#### Answer:
+### 1: How angular application starts?
 **Module-based**
 Main → Module → Metadata → Mount
 - main.ts runs → platformBrowserDynamic().bootstrapModule(AppModule)
