@@ -8,6 +8,7 @@
 * [HTML Questions](#html-questions)
 * [ASYMPOTIC Notations](#asympotic-notations)
 * [RXJS](#rxjs)
+* [Angular](#)
 * [HR](#hr)
 
 <br/>
@@ -119,6 +120,24 @@ export class SearchComponent implements AfterViewInit {
 ***Answer***:
   Produces data whether you subscribe or not, so subscriber shares the same execution. Data source is outside the observable logic. (Already Live) ex- DOM events, Subjects
 <br>
+
+## Angular
+
+### Question 1: How angular application starts?
+#### Answer:
+**Module-based**
+Main → Module → Metadata → Mount
+- main.ts runs → platformBrowserDynamic().bootstrapModule(AppModule)
+- Angular bootstraps AppModule
+- Reads bootstrap: [AppComponent]
+- Mounts AppComponent into <app-root>
+
+**Standalone-based**
+Main → App → Imports → Render
+- main.ts runs → bootstrapApplication(AppComponent)
+- AppComponent becomes root injector
+- Standalone components are imported directly
+- Angular renders AppComponent
 
 ## HR
 ### Question 1: What is expected Salary
