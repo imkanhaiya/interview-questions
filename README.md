@@ -23,8 +23,7 @@
 
 ## HTML Questions
 
-### Question 1: Sample Queston.
-Sample **Answer**.
+### 1: Sample Queston.
 
 ```html
 <!-- Block-level element example -->
@@ -40,32 +39,29 @@ Sample **Answer**.
 
 ## ASYMPOTIC Notations
 
-### Question 1: what are asympotic notations
-***Answer:*** Asympotic notations are mathematcial way to describe efficiency of algorithms in terms of time and space complexity.
-
-**Common Types:**
+### 1: what are asympotic notations
+Asympotic notations are mathematcial way to describe efficiency of algorithms in terms of time and space complexity.
+#### Common Types:
 1. **Big O (O)** – Worst Case  
-2. **Big Omega (Ω)** – Best Case  
-3. **Theta (Θ)** – Average Case
+1. **Big Omega (Ω)** – Best Case  
+1. **Theta (Θ)** – Average Case
 
 <br>
 
 ## RXJS
 
-### Question 1: What is difference between imperative vs declarative code [Explanation](https://www.youtube.com/watch?v=E7Fbf7R3x6I)
-***Answer:***   
-
+### 1: What is difference between imperative vs declarative code [Explanation](https://www.youtube.com/watch?v=E7Fbf7R3x6I)   
 **Imperative** - How (Tell the machine how to do it)  
 **Declarative** - What (Tell the machine what to do), example - sql query, html, css
 
-### Question 2: What is Reactive Programming
-***Answer:*** Reactive Programming(part of declartive programming) is programming with asynchronous data streams. A stream is sequence of events ordered in time, stream can emit 3 different notifications. some value(next), error or complete signal, to listen to stream is called subscribing, and to capture emitted things(events) we define functoins such as next, error or completed. these functions are called observers and stream is called observable(being observerd). in common reactive libraries, each stream has many functions attached, such as map, filter etc. 
+### 2: What is Reactive Programming
+Reactive Programming(part of declartive programming) is programming with asynchronous data streams. A stream is sequence of events ordered in time, stream can emit 3 different notifications. some value(next), error or complete signal, to listen to stream is called subscribing, and to capture emitted things(events) we define functoins such as next, error or completed. these functions are called observers and stream is called observable(being observerd). in common reactive libraries, each stream has many functions attached, such as map, filter etc. 
 (Water Tap Analogy)
 
 A Subsccription can end in three ways
 1. Unsubscribe
-2. Complete Signal
-3. Error Signal
+1. Complete Signal
+1. Error Signal
 
 TearDown logic will run only after subscription ends.
 
@@ -75,8 +71,8 @@ Marble Diagram - is a Visual Representation of behvaiour of an observable.
 
 [Observable Example](https://stackblitz.com/edit/rxjs-vxjtgfs4?file=index.ts)
 
-### Question 3: Why should i consider adopting/Benifits of Reactive programming
-***Answer***: Reactive programming raises the abstraction of code, so we can focus on data flow and events rather than implementation details. this improves readability and makes the code concise. it's especially powerful for handling asynchronous data (such as network requests) and event-driven scenarios (such as UI interactions or real-time updates).
+### 3: Why should i consider adopting/Benifits of Reactive programming
+Reactive programming raises the abstraction of code, so we can focus on data flow and events rather than implementation details. this improves readability and makes the code concise. it's especially powerful for handling asynchronous data (such as network requests) and event-driven scenarios (such as UI interactions or real-time updates).
 
 e.g. Type Ahead Search/Predictive Search
 
@@ -109,15 +105,13 @@ export class SearchComponent implements AfterViewInit {
 //without rxjs we can do this with addEventListener + setTimeout + fetch (only answer if asked)
 ```
 
-### Question 3: What is Rxjs
-***Answer***: Rxjs stands for Reactive Extensions for Javascript, is a library for handling asynchonous code and event based data streams for javascript driven applications.
+### 3: What is Rxjs
+Rxjs stands for Reactive Extensions for Javascript, is a library for handling asynchonous code and event based data streams for javascript driven applications.
 
-### Question 4: What is Cold Observable
-***Answer***: 
+### 4: What is Cold Observable
   Produces data on subscription, Each Subscriber gets their own independent execution. Data source is inside observalbe Logic. (On Demand) ex- http calls, of(), interval().
 
-### Question 5: What is Hot Observable
-***Answer***:
+### 5: What is Hot Observable
   Produces data whether you subscribe or not, so subscriber shares the same execution. Data source is outside the observable logic. (Already Live) ex- DOM events, Subjects
 <br>
 
