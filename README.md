@@ -124,14 +124,14 @@ export class SearchComponent implements AfterViewInit {
 ## Angular
 
 ### 1: How angular application starts?
-**Module-based**
+#### Module-based
 Main → Module → Metadata → Mount
 - main.ts runs → platformBrowserDynamic().bootstrapModule(AppModule)
 - Angular bootstraps AppModule
 - Reads bootstrap: [AppComponent]
 - Mounts AppComponent into <app-root>
 
-**Standalone-based**
+#### Standalone-based
 Main → App → Imports → Render
 - main.ts runs → bootstrapApplication(AppComponent)
 - AppComponent becomes root injector
