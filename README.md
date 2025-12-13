@@ -54,7 +54,7 @@ Asympotic notations are mathematcial way to describe efficiency of algorithms in
 **Imperative** - How (Tell the machine how to do it)  
 **Declarative** - What (Tell the machine what to do), example - sql query, html, css
 
-### 2: What is Reactive Programming
+### 1: What is Reactive Programming
 Reactive Programming(part of declartive programming) is programming with asynchronous data streams. A stream is sequence of events ordered in time, stream can emit 3 different notifications. some value(next), error or complete signal, to listen to stream is called subscribing, and to capture emitted things(events) we define functoins such as next, error or completed. these functions are called observers and stream is called observable(being observerd). in common reactive libraries, each stream has many functions attached, such as map, filter etc. 
 (Water Tap Analogy)
 
@@ -71,7 +71,7 @@ Marble Diagram - is a Visual Representation of behvaiour of an observable.
 
 [Observable Example](https://stackblitz.com/edit/rxjs-vxjtgfs4?file=index.ts)
 
-### 3: Why should i consider adopting/Benifits of Reactive programming
+### 1: Why should i consider adopting/Benifits of Reactive programming
 Reactive programming raises the abstraction of code, so we can focus on data flow and events rather than implementation details. this improves readability and makes the code concise. it's especially powerful for handling asynchronous data (such as network requests) and event-driven scenarios (such as UI interactions or real-time updates).
 
 e.g. Type Ahead Search/Predictive Search
@@ -105,16 +105,20 @@ export class SearchComponent implements AfterViewInit {
 //without rxjs we can do this with addEventListener + setTimeout + fetch (only answer if asked)
 ```
 
-### 3: What is Rxjs
+### 1: What is Rxjs
 Rxjs stands for Reactive Extensions for Javascript, is a library for handling asynchonous code and event based data streams for javascript driven applications.
 
-### 4: What is Cold Observable
+### 1: What is Cold Observable
 Produces data on subscription, Each Subscriber gets their own independent execution. Data source is inside observalbe Logic. (On Demand) ex- http calls, of(), interval().
 
-### 5: What is Hot Observable
+### 1: What is Hot Observable
 Produces data whether you subscribe or not, so subscriber shares the same execution. Data source is outside the observable logic. (Already Live) ex- DOM events, Subjects
 
-### 6: What are Creation Functions/Operators?
+### 1: When to Unsubscribe a observable?
+**Finite data** - auto complete, no need to unsubscribe
+**Infinite data/Event Based** - need unsubscribe
+
+### 1: What are Creation Functions/Operators?
 Helper functions provided by rxjs to create observables.
 #### Examples
   **of**: create observable from value
