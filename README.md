@@ -132,6 +132,30 @@ Helper functions provided by rxjs to create observables.
   from(fetch('/api/data')).subscribe(console.log);
   ```
 
+**fromEvent**: create observable from events
+```
+fromEvent(button, 'click').subscribe(() => {
+  console.log('clicked');
+});
+```
+**timer**: create observable and emit once or after delay
+```
+// emit once
+timer(2000).subscribe(() => {
+  console.log("after 2 seconds")
+})
+
+// emit after delay
+const timerSubscription = timer(3000, 1000).subscribe(() => {
+  console.log("after 3 second")
+  console.log("after 1 second")
+})
+// Unsubscribe timerSubscription after 4 seconds
+setTimeout(() => {
+  timerSubscription.unsubscribe()
+}, 4000)
+```
+
 <br>
 
 ## Angular
