@@ -23,6 +23,8 @@
 3. ### Asynchronous
    Code can start the task, but instead of waiting for it to finish, it moves to the next statement. the task completes later, and the program handles the result when its ready.
 
+<br>
+
 ## HTML Questions
 
 1. ### Sample Queston.
