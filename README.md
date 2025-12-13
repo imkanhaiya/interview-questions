@@ -162,6 +162,8 @@ ajax('https://api.example.com/users').subscribe(res => {
 })
 ```
 **forkJoin**: subscribes to all inner observalbes at once and **wait for all to complete**, then **emit exaclty once** one single value containing each observable's last emitted value.
+- If even one observable never completes → no emission
+- If any observable errors → forkJoin errors
 ```ts
 forkJoin([
   of(1, 2, 3),
