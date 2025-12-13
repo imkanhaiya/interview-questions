@@ -124,7 +124,7 @@ Helper functions provided by rxjs to create observables.
   ```
 
   **from()**: create observable from array/iterable/promise
-  ```
+  ```ts
   from([10, 20, 30]).subscribe(console.log);
   // output: 10, 20, 30
 
@@ -133,13 +133,13 @@ Helper functions provided by rxjs to create observables.
   ```
 
 **fromEvent**: create observable from events
-```
+```ts
 fromEvent(button, 'click').subscribe(() => {
   console.log('clicked');
 });
 ```
 **timer**: create observable and emit once or after delay
-```
+```ts
 // emit once
 timer(2000).subscribe(() => {
   console.log("after 2 seconds")
