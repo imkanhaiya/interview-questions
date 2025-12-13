@@ -14,12 +14,9 @@
 <br/>
 
 ## Basics
-1. ### One line/One Command/One Instruction/One Statement: 
-A Statement is one complete instruction that program can execute
-2. ### Synchronous: 
-Code is executed line by line, next statement runs only after the current one has finished
-3. ### Asynchronous: 
-Code can start the task, but instead of waiting for it to finish, it moves to the next statement. the task completes later, and the program handles the result when its ready.
+1. **One line/One Command/One Instruction/One Statement**: A Statement is one complete instruction that program can execute
+3. **Synchronous**: Code is executed line by line, next statement runs only after the current one has finished
+3. **Asynchronous**: Code can start the task, but instead of waiting for it to finish, it moves to the next statement. the task completes later, and the program handles the result when its ready.
 
 ## HTML Questions
 
