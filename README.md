@@ -149,12 +149,28 @@ timer(2000).subscribe(() => {
 const timerSubscription = timer(3000, 1000).subscribe(() => {
   console.log("first emit after 3 second, then after 1 second, until unsubscribed")
 })
-// Unsubscribe timerSubscription after 5 seconds
-setTimeout(() => {
-  timerSubscription.unsubscribe()
-}, 5000)
 ```
-
+**interval**: create observable and emit continuously at defined interval (counter that starts from 0)
+```ts
+interval(1000).subscribe(console.log)
+// output: 0,1,2,3... every second
+```
+**ajax**: create observable from http request
+```ts
+ajax('https://api.example.com/users').subscribe(res => {
+  console.log(res.response)
+})
+```
+**forkJoin**: subscribes to all inner observalbes at once and **wait for all to complete**, then **emit exaclty once** one single value containing each observable's last emitted value.
+```ts
+forkJoin([
+  of(1, 2, 3),
+  of('a', 'b'),
+  of(true)
+]).subscribe(res => {
+  console.log(res)
+})
+```
 <br>
 
 ## Angular
