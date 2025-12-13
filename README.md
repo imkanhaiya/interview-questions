@@ -115,8 +115,8 @@ Produces data on subscription, Each Subscriber gets their own independent execut
 Produces data whether you subscribe or not, so subscriber shares the same execution. Data source is outside the observable logic. (Already Live) ex- DOM events, Subjects
 
 ### 1: When to Unsubscribe a observable?
-**Finite data** - auto complete, no need to unsubscribe
-**Infinite data/Event Based** - need unsubscribe
+- **Finite data** - auto complete, no need to unsubscribe
+- **Infinite data/Event Based** - need unsubscribe
 
 ### 1: What are Creation Functions/Operators?
 Helper functions provided by rxjs to create observables.
