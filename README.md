@@ -147,8 +147,7 @@ timer(2000).subscribe(() => {
 
 // emit after delay
 const timerSubscription = timer(3000, 1000).subscribe(() => {
-  console.log("after 3 second")
-  console.log("after 1 second")
+  console.log("first emit after 3 second, then after 1 second, until unsubscribed")
 })
 // Unsubscribe timerSubscription after 4 seconds
 setTimeout(() => {
