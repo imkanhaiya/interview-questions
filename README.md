@@ -123,7 +123,15 @@ Helper functions provided by rxjs to create observables.
   // output: 1, 2, 3
   ```
 
-Creates an observale, which emits set of values and completes
+  **from()**: create observable from array/iterable/promise
+  ```
+  from([10, 20, 30]).subscribe(console.log);
+  // output: 10, 20, 30
+
+  // promise
+  from(fetch('/api/data')).subscribe(console.log);
+  ```
+
 <br>
 
 ## Angular
