@@ -157,13 +157,14 @@ interval(1000).subscribe(console.log)
 ```
 **ajax**: create observable from http request
 ```ts
-ajax('https://api.example.com/users').subscribe(res => {
+ajax('https://jsonplaceholder.typicode.com/users').subscribe(res => {
   console.log(res.response)
 })
 ```
-**forkJoin**: subscribes to all inner observalbes at once and **wait for all to complete**, then **emit exaclty once** one single value containing each observable's last emitted value.
+**forkJoin**: subscribes to **all inner observalbes at same time** and **wait for all to complete**, then **emit exaclty once** one **single value** containing **each observable's last emitted value**.
 - If even one observable never completes → no emission
 - If any observable errors → forkJoin errors
+- When to use - If multiple things must finish first, and you need the result once (parallel api calls)
 ```ts
 forkJoin([
   of(1, 2, 3),
@@ -172,6 +173,17 @@ forkJoin([
 ]).subscribe(res => {
   console.log(res)
 })
+```
+**combineLatest**: subscribes to all **innner observalbes at same time** and wait for **each observable to emit atleast once**, then **emits a value** and **continues emitting whenever any observable emits**, using the **latest value from each observable**.
+- emits once per emission, not once per timestamp. (if two observables emit at the same moment, it produces two emissions, not one)
+- if one completes early its last value is reused
+- if any observables erros - combineLatest erros
+- When to use - If multiple things decide something, and any change should update it (enable a button based on multiple condition)
+```
+combineLatest([
+  interval(1000),
+  interval(2000)
+]).subscribe(console.log)
 ```
 <br>
 
