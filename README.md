@@ -215,7 +215,9 @@ Main → App → Imports → Render
 
 **Main.ts** - first typescript file bundled by angular app.
 
-**plateformBrowserDynamic** - sets up angular **run time execution environment/plateform** for browser and enables JIT compilation
+**plateformBrowserDynamic()** - sets up angular **run time execution environment/plateform** for browser and enables JIT compilation
+
+**Standalone apps (Angular v14+)** - plateformBrowserDynamic() is abstracted and angular handles plateform setup internally.
 
 ## HR
 1. ### What is expected Salary
