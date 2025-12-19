@@ -213,7 +213,6 @@ Main → App → Imports → Render
 - Standalone components are imported directly
 - Angular renders AppComponent
 
-
 **Main.ts** is the first typescript file bundled by angular app.
 
 **plateformBrowserDynamic** sets up angular **run time execution environment/plateform** for browser and enables JIT compilation
