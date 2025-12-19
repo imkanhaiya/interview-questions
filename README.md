@@ -214,6 +214,7 @@ Main → App → Imports → Render
 - Angular renders AppComponent
 
 
+
 **Main.ts** is the first typescript file bundled by angular app.
 
 **plateformBrowserDynamic** sets up angular **run time execution environment/plateform** for browser and enables JIT compilation
