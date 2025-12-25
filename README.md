@@ -194,6 +194,9 @@ combineLatest([
   interval(2000)
 ]).subscribe(console.log)
 ```
+
+9. ### What are pipable operators
+Pipable operators are functions that takes an observable as input and returns another observable. It is a pure operation, original Observable stays unmodified.
 <br>
 
 ## Angular
