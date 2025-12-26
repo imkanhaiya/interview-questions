@@ -197,6 +197,9 @@ combineLatest([
 
 9. ### What are pipable operators
 Functions that takes an observable as input and returns another observable. It is a pure operation, original Observable stays unmodified.
+
+10. ### What are sync (synchronous) operators
+Pipable operators that process each emitted value immediately
 <br>
 
 ## Angular
