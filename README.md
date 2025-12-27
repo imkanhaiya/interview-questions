@@ -123,7 +123,12 @@ Produces data whether you subscribe or not, so subscriber shares the same execut
 - **Finite data** - auto complete, no need to unsubscribe
 - **Infinite data/Event Based** - need unsubscribe
 
-8. ### What are Creation Functions/Operators?
+8. ### What are Operators
+Operators are functions.There are two kinds of operators:
+- Creation Functions/Operators
+- Pipable Operators
+
+9. ### What are Creation Functions/Operators?
 Helper functions provided by rxjs to create observables.
 #### Examples
   **of**: create observable from value
@@ -195,11 +200,83 @@ combineLatest([
 ]).subscribe(console.log)
 ```
 
-9. ### What are pipable operators
+10. ### What are pipable operators
 Functions that takes an observable as input and returns another observable. It is a pure operation, original Observable stays unmodified.
+Pipable Operators are of two types:
+- Sync(Synchronous) Operators
+- Flattening Operators
 
-10. ### What are sync (synchronous) operators
+11. ### What are sync (synchronous) operators
 Pipable operators that process each emitted value immediately
+#### Examples
+**map**: transforms each emitted value into a new value.
+- map should be pure — no side effects, ex-should NOT be used to update a variable or trigger a log.
+```ts
+interval(1000).pipe(
+  map(x => x*2)
+).subscribe(console.log)
+```
+**filter**: let value pass or block based on condition.
+```ts
+interval(1000).pipe(
+  filter(x => x%2===0)
+).subscribe(console.log)
+```
+**tap**: used for side effects **without changing** the value.
+```ts
+interval(1000).pipe(
+  tap(x => console.log('Before', x)),
+  map(x => x*2)
+).subscribe(console.log)
+```
+**take**: take(n) lets only first n values pass, then completes the observable
+interval(1000).pipe(
+  take(3),
+  map(x => x*2)
+).subscribe(console.log)
+// Output: 0, 2, 4
+
+**takeUntil**: takeUntil(anotherObservable$) keeps emitting until another observable emits, then it completes.
+```ts
+source$.pipe(
+  takeUntil(destroy$)
+).subscribe();
+// When destroy$ emits, subscription ends immediately.
+```
+**debounceTime**: debounceTime(ms) waits for silence for given time, then emits the latest value.
+- Usage: Search boxes, Auto Complete
+```ts
+fromEvent(input, 'keyup').pipe(
+  debounceTime(300)
+).subscribe(console.log);
+//When User stops typing for 300ms → last value emitted
+```
+**catchError**: catchError handles errors and **returns a new observable** so the stream doesn’t crash.
+```ts
+api$.pipe(
+  catchError(err => of('fallback'))
+).subscribe(console.log);
+//If Original stream errors, catchError replaces it with another observable
+```
+
+12. ### What is higher order observable
+observable that emits another observable.
+```ts
+const source$ = of(
+  of(1, 2),
+  of(3, 4)
+);
+// here source$ emits observables, not numbers
+```
+
+13. ### What are Flattening operators
+Convert a higher-order observable into a normal observable by subscribing to the inner observables and emitting their values.
+#### Examples
+#### When a new request(observable$) comes while one is running, what should happen? (Ex- Restaurant Analogy)
+- **switchMap**: cancel old, keeps latest (Maps to new observable and cancel the previous one) ex - cancel previous http request
+- **mergeMap**: Run everything in parallel (Maps to new Observables and runs them all simultaneously) ex- simultanious file uploads
+- **concatMap** Run one by one, in order (Maps to new Observables but waits for each to finish before starting the next) ex - delete operation
+- **exhaustMap** Ignore new while busy (Maps to new Observable, but ignores new observables while current one is running) ex - submit button
 <br>
 
 ## Angular
