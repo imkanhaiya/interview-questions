@@ -126,7 +126,7 @@ Produces data whether you subscribe or not, so subscriber shares the same execut
 8. ### What are Operators
 Operators are functions.There are two kinds of operators:
 - Creation Functions/Operators
-- Pipable Operators
+- Pipeable Operators
 
 9. ### What are Creation Functions/Operators?
 Helper functions provided by rxjs to create observables.
@@ -200,14 +200,14 @@ combineLatest([
 ]).subscribe(console.log)
 ```
 
-10. ### What are pipable operators
+10. ### What are pipeable operators
 Functions that takes an observable as input and returns another observable. It is a pure operation, original Observable stays unmodified.
-Pipable Operators are of two types:
+Pipeable Operators are of two types:
 - Sync(Synchronous) Operators
 - Flattening Operators
 
 11. ### What are sync (synchronous) operators
-Pipable operators that process each emitted value immediately
+Pipeable operators that process each emitted value immediately
 #### Examples
 **map**: transforms each emitted value into a new value.
 - map should be pure — no side effects, ex-should NOT be used to update a variable or trigger a log.
