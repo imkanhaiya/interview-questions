@@ -271,7 +271,6 @@ const source$ = of(
 
 13. ### What are Flattening operators
 Convert a higher-order observable into a normal observable by subscribing to the inner observables and emitting their values.
-#### Examples
 #### When a new request(observable$) comes while one is running, what should happen? (Ex- Restaurant Analogy)
 - **switchMap**: cancel old, keeps latest (Maps to new observable and cancel the previous one) ex - cancel previous http request
 - **mergeMap**: Run everything in parallel (Maps to new Observables and runs them all simultaneously) ex- simultanious file uploads
