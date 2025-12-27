@@ -274,8 +274,8 @@ Convert a higher-order observable into a normal observable by subscribing to the
 #### When a new request(observable$) comes while one is running, what should happen? (Ex- Restaurant Analogy)
 - **switchMap**: cancel old, keeps latest (Maps to new observable and cancel the previous one) ex - cancel previous http request
 - **mergeMap**: Run everything in parallel (Maps to new Observables and runs them all simultaneously) ex- simultanious file uploads
-- **concatMap** Run one by one, in order (Maps to new Observables but waits for each to finish before starting the next) ex - delete operation
-- **exhaustMap** Ignore new while busy (Maps to new Observable, but ignores new observables while current one is running) ex - submit button
+- **concatMap**: Run one by one, in order (Maps to new Observables but waits for each to finish before starting the next) ex - delete operation
+- **exhaustMap**: Ignore new while busy (Maps to new Observable, but ignores new observables while current one is running) ex - submit button
 <br>
 
 ## Angular
