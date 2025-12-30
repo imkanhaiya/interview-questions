@@ -294,8 +294,8 @@ subject$.next(2)
 // output - A: 1, B: 1, A: 2, B: 2
 ```
 
-15. ### What is BehaviorSubject (TV)
-A BehaviorSubject is a Subject that always holds and emits the latest value to new subscribers.
+15. ### What is BehaviorSubject
+A BehaviorSubject is a Subject that always holds and emits the latest value to new subscribers.  (TV Analogy)
 Key differences from Subject:
 - Requires an initial value
 - Remembers the last emitted value
