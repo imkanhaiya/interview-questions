@@ -282,6 +282,7 @@ Subject is both an observable and observar, and it multicasts value to multiple 
 - Observable → you can subscribe() to it
 - Observer → you can call next() on it
 - Multicast → same value goes to all subscribers
+  
 Use when: Events, clicks, notifications, latest(last emitted) value does't matter
 ```ts
 const subject$ = new Subject<number>();
@@ -300,6 +301,7 @@ Key differences from Subject:
 - Requires an initial value
 - Remembers the last emitted value
 - New subscribers immediately receive the latest (last emitted value) while in subject new subsribers only recieves future value.
+  
 Use when - user state, shared app state, last(latest) value matters
 ```ts
 const bs$ = new BehaviorSubject<number>(0);
