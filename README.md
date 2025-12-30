@@ -60,7 +60,7 @@ Asympotic notations are mathematcial way to describe efficiency of algorithms in
 **Declarative** - What (Tell the machine what to do), example - sql query, html, css
 
 2. ### What is Reactive Programming
-Reactive Programming(part of declartive programming) is programming with asynchronous data streams. A stream is sequence of events ordered in time, stream can emit 3 different notifications. some value(next), error or complete signal, to listen to stream is called subscribing, and to capture emitted things(events) we define functoins such as next, error or completed. these functions are called observers and stream is called observable(being observerd). in common reactive libraries, each stream has many functions attached, such as map, filter etc. 
+Reactive Programming(part of declartive programming) is programming with asynchronous data streams. A stream(observable) is sequence of events ordered in time, stream can emit 3 different notifications. some value(next), error or complete signal, to listen to stream is called subscribing, and to capture emitted things(events) we define functoins such as next, error or completed. these functions are called observers and stream is called observable(being observerd). in common reactive libraries, each stream has many functions attached, such as map, filter etc. 
 (Water Tap Analogy)
 
 A Subsccription can end in three ways
@@ -276,6 +276,41 @@ Convert a higher-order observable into a normal observable by subscribing to the
 - **mergeMap**: Run everything in parallel (Maps to new Observables and runs them all simultaneously) ex- simultanious file uploads
 - **concatMap**: Run one by one, in order (Maps to new Observables but waits for each to finish before starting the next) ex - delete operation
 - **exhaustMap**: Ignore new while busy (Maps to new Observable, but ignores new observables while current one is running) ex - submit button
+
+14. ### What is a subject
+Subject is both an observable and observar, and it multicasts value to multiple subscribers. (Live Microphone analogy)
+- Observable → you can subscribe() to it
+- Observer → you can call next() on it
+- Multicast → same value goes to all subscribers
+Use when: Events, clicks, notifications, latest(last emitted) value does't matter
+```ts
+const subject$ = new Subject<number>();
+
+subject$.subscribe(v => console.log('A:', v));
+subject$.subscribe(v => console.log('B:', v));
+
+subject$.next(1)
+subject$.next(2)
+// output - A: 1, B: 1, A: 2, B: 2
+```
+
+15. ### What is BehaviorSubject (TV)
+A BehaviorSubject is a Subject that always holds and emits the latest value to new subscribers.
+Key differences from Subject:
+- Requires an initial value
+- Remembers the last emitted value
+- New subscribers immediately receive the latest (last emitted value) while in subject new subsribers only recieves future value.
+Use when - user state, shared app state, last(latest) value matters
+```ts
+const bs$ = new BehaviorSubject<number>(0);
+
+bs$.subscribe(res => console.log('A:', res))
+
+bs$.next(1)
+
+bs$.subscribe(res => console.log('B:', res))
+// output - A: 0, A: 1, B: 1
+```
 <br>
 
 ## Angular
