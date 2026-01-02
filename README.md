@@ -45,20 +45,18 @@
 
 ## SCSS Questions
 
-1. ### What is sass/scss
-saas/scss is css preprocessor. It extends CSS with features that CSS originally didn’t have.
-You don’t ship Sass to the browser.
-You write Sass/Scss → compile → plain CSS → browser.
+1. ### What is Sass/Scss
+sass/scss is css preprocessor. It extends CSS with features that CSS originally didn’t have.
+
+Browser don't understand sass/scss. You write **Sass/Scss → compile → plain CSS → browser**.
 
 - SASS(syntactically awesome style sheets)
-   - No braces {}
-   - No semicolons ;
+   - No braces {} and semicolons ;
    - Indentation-based (like Python)
 
 - SCSS (Sassy CSS)
    - Newer(after css3), most-used
-   - Valid CSS + extra features
-   - Uses {} and ; like normal CSS
+   - Uses braces {} and semicolons ;
      
 2. ### Why SCSS exists
 Plain CSS becomes painful when:
@@ -67,14 +65,17 @@ Plain CSS becomes painful when:
 - Components grow
   
 SCSS fixes this with:
-- Variables
-- Operators
-- Nesting
-- Mixins
-- Parameters
-- Partials
+- Variables: ex- $bg-color: red;
+- Operators: 5rem + 5rem
+- Nesting: can write nested code
+- Mixins: use @mixin for repeated code to avoid repetition
+- Parameters: can use parameters
+- Partials: divide code. ex. mixins code in different file and variable code in different file then we can import that code in one file using @use()
 
-this way SCSS makes CSS maintainable at scale.
+this powers SCSS to make CSS maintainable at scale.
+
+3. ### What is preprocessor
+build time tool that transform code written in extended syntax to standard syntax understood by run time.
 
 
 ## ASYMPOTIC Notations
