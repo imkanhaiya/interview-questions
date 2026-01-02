@@ -6,6 +6,7 @@
 
 * [Basics](#basics)
 * [HTML Questions](#html-questions)
+* [SCSS Questions](#scss-questions)
 * [ASYMPOTIC Notations](#asympotic-notations)
 * [RXJS](#rxjs)
 * [Angular](#Angular)
@@ -41,6 +42,40 @@
 ```
 
 <br>
+
+## SCSS Questions
+
+1. ### What is sass/scss
+saas/scss is css preprocessor. It extends CSS with features that CSS originally didn’t have.
+You don’t ship Sass to the browser.
+You write Sass/Scss → compile → plain CSS → browser.
+
+- SASS(syntactically awesome style sheets)
+   - No braces {}
+   - No semicolons ;
+   - Indentation-based (like Python)
+
+- SCSS (Sassy CSS)
+   - Newer(after css3), most-used
+   - Valid CSS + extra features
+   - Uses {} and ; like normal CSS
+     
+2. ### Why SCSS exists
+Plain CSS becomes painful when:
+- Files get large
+- Styles repeat
+- Components grow
+  
+SCSS fixes this with:
+- Variables
+- Operators
+- Nesting
+- Mixins
+- Parameters
+- Partials
+
+this way SCSS makes CSS maintainable at scale.
+
 
 ## ASYMPOTIC Notations
 
