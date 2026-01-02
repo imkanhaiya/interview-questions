@@ -46,7 +46,7 @@
 ## SCSS Questions
 
 1. ### What is Sass/Scss
-sass/scss is css preprocessor. It extends CSS with features that CSS originally didn’t have.
+Sass/Scss is css preprocessor. It extends CSS with features that CSS originally didn’t have.
 
 Browser don't understand sass/scss. You write **Sass/Scss → compile → plain CSS → browser**.
 
