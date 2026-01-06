@@ -55,6 +55,8 @@ HTML is **case-insensitive**.
 
 
 
+<br>
+
 ```html
 <!-- Block-level element example -->
 <div>
