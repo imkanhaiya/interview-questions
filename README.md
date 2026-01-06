@@ -29,7 +29,23 @@
 
 ## HTML Questions
 
-1. ### Sample Queston.
+1. ### What do H, T, M and L stand for in HTML?. Explain each term in detail.
+**HTML** stands for **HyperText Markup Language**.
+- **HyperText**: Ability to create Links that connect web pages.  
+- **Markup**: Tags(Markup) that describe what content is (text, image, paragraph)  
+- **Language**: Language (standard way to create web pages).
+
+2. ### What is the purpose of the `<!DOCTYPE html>` declaration? What happens if you don’t include it?
+
+`<!DOCTYPE html>` tells the browser to render the web page in **standard mode**.
+
+- **Standard mode** follows modern rendering rules based on **W3C web standards**
+
+If it is not included:
+- The browser may enter **quirks mode** (if older browser version)
+- Quirks mode rendering rules are defined by **browser vendors**
+- The page may not look correct or consistent across browsers
+
 
 ```html
 <!-- Block-level element example -->
