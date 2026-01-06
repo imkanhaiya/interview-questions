@@ -50,7 +50,7 @@ If it is not included:
 
 HTML is **case-insensitive**.
 
-- Uppercase and lowercase are treated the same  
+- Uppercase and lowercase are treated same  
 - In practice, lowercase is preferred
 
 
