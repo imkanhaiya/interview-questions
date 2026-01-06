@@ -46,6 +46,14 @@ If it is not included:
 - Quirks mode rendering rules are defined by **browser vendors**
 - The page may not look correct or consistent across browsers
 
+3. ### Is HTML case-sensitive?
+
+HTML is **case-insensitive**.
+
+- Uppercase and lowercase are treated the same  
+- In practice, lowercase is preferred
+
+
 
 ```html
 <!-- Block-level element example -->
