@@ -80,20 +80,6 @@ Using the **meta refresh tag** inside the `<head>`.
 - **Inline elements** take only required width and stay in same line  
   Example: `span`, `a`
 
-
-
-<br>
-
-```html
-<!-- Block-level element example -->
-<div>
-  This is a block-level element.
-</div>
-
-<!-- Inline element example -->
-<span>This is an inline element.</span>
-```
-
 <br>
 
 ## SCSS Questions
