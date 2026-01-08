@@ -109,6 +109,16 @@ using an input element with `type="file"`.
 
 `<input type="file">`
 
+11. ### How can you restrict users to select only `.jpg` files?
+
+using the **`accept` attribute**.
+
+```html
+<!-- Only .jpg files will be selected -->
+<input type="file" accept=".jpg">
+```
+
+
 <br>
 
 ## SCSS Questions
