@@ -104,6 +104,11 @@ important because:
 - Select (dropdown)
 - Button
 
+10. ### How do you create a file upload button?
+Create a file upload button using an input element with `type="file"`.
+
+`<input type="file">`
+
 <br>
 
 ## SCSS Questions
