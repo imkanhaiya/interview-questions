@@ -74,10 +74,10 @@ Using the **meta refresh tag** inside the `<head>`.
 
 6. ### What are block-level and inline elements?
 
-- **Block-level elements** take the full available width and start on a new line  
+- **Block-level elements** take full available width and start on a new line  
   Example: `div`, `p`
 
-- **Inline elements** take only the required width and stay in the same line  
+- **Inline elements** take only required width and stay in same line  
   Example: `span`, `a`
 
 
