@@ -55,7 +55,7 @@ HTML is **case-insensitive**.
 
 4. ### Explain the `<head>` tag
 
-The `<head>` tag contains **metadata about the web page**.
+`<head>` tag contains **metadata about the web page**.
 
 It includes:
 - Title
