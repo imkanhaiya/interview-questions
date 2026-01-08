@@ -130,6 +130,19 @@ was used to create moving text (simple animation) on a web page.
 - **Non-semantic elements** do not describe their meaning  
   Examples: `div`, `span`
 
+14. ### What is the significance of the `<noscript>` tag?
+
+used to show **fallback content** when JavaScript is disabled or not supported in the browser.
+
+- It runs **only if JavaScript is not available**
+
+Example:
+```html
+<noscript>
+  Please enable JavaScript to use this website.
+</noscript>
+```
+
 
 <br>
 
