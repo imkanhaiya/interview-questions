@@ -95,6 +95,15 @@ important because:
 - **`colspan`** span a table cell across multiple columns.  
   Example: `colspan="2"` spans the cell across 2 columns
 
+9. ### What are different ways to take input from users in HTML?
+
+- Input box
+- Radio button
+- Checkbox
+- Textarea
+- Select (dropdown)
+- Button
+
 <br>
 
 ## SCSS Questions
