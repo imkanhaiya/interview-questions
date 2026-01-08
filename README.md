@@ -122,6 +122,14 @@ using the **`accept` attribute**.
 was used to create moving text (simple animation) on a web page.
 - It is deprecated in HTML5
 
+13. ### What are semantic and non-semantic elements?
+    
+- **Semantic elements** clearly describe their meaning and purpose  
+  Examples: `header`, `footer`, `section`, `nav`, `aside`
+
+- **Non-semantic elements** do not describe their meaning  
+  Examples: `div`, `span`
+
 
 <br>
 
