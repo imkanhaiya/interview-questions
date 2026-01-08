@@ -136,7 +136,6 @@ used to show **fallback content** when JavaScript is disabled or not supported i
 
 - It runs **only if JavaScript is disabled**
 
-Example:
 ```html
 <noscript>
   Please enable JavaScript to use this website.
