@@ -118,6 +118,10 @@ using the **`accept` attribute**.
 <input type="file" accept=".jpg">
 ```
 
+12. ### Explain the `<marquee>` tag and its usage
+was used to create moving text (simple animation) on a web page.
+- It is deprecated in HTML5
+
 
 <br>
 
