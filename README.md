@@ -63,6 +63,16 @@ It includes:
 - JavaScript files
 - Meta information (charset, viewport)
 
+5. ### How can you refresh a page every 60 seconds using HTML?
+
+Using the **meta refresh tag** inside the `<head>`.
+
+```html
+<!-- This refreshes page every 60 seconds -->
+<meta http-equiv="refresh" content="60">
+```
+
+
 
 
 <br>
