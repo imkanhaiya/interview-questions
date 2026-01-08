@@ -53,6 +53,16 @@ HTML is **case-insensitive**.
 - Uppercase and lowercase are treated same  
 - In practice, lowercase is preferred
 
+4. ### Explain the `<head>` tag
+
+The `<head>` tag contains **metadata about the web page**.
+
+It includes:
+- Title
+- CSS links
+- JavaScript files
+- Meta information (charset, viewport)
+
 
 
 <br>
