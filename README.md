@@ -87,6 +87,14 @@ Using the **meta refresh tag** inside the `<head>`.
 important because:
 - It organizes data in tabular form
 
+8. ### What do `rowspan` and `colspan` do?
+
+- **`rowspan`** span a table cell across multiple rows.  
+  Example: `rowspan="2"` spans the cell across 2 rows
+
+- **`colspan`** span a table cell across multiple columns.  
+  Example: `colspan="2"` spans the cell across 2 columns
+
 <br>
 
 ## SCSS Questions
