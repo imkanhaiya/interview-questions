@@ -80,6 +80,13 @@ Using the **meta refresh tag** inside the `<head>`.
 - **Inline elements** take only required width and stay in same line  
   Example: `span`, `a`
 
+7. ### What is the `<table>` tag? Why is it important?
+
+`<table>` tag defines an HTML table.
+
+important because:
+- It organizes data in tabular form
+
 <br>
 
 ## SCSS Questions
