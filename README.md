@@ -134,7 +134,7 @@ was used to create moving text (simple animation) on a web page.
 
 used to show **fallback content** when JavaScript is disabled or not supported in the browser.
 
-- It runs **only if JavaScript is not available**
+- It runs **only if JavaScript is disabled**
 
 Example:
 ```html
