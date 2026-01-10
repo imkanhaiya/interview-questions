@@ -199,6 +199,18 @@ In HTML, lazy and eager loading are supported only for:
 
 using a **favicon image** defined inside the `<head>` tag as `<link rel="icon" href="favicon.ico">`
 
+19. ### How do you serve a page with content in multiple languages?
+
+- browser sends language preferences in HTTP request header **`Accept-Language`**
+- server can use this header to return content in requested language.
+  
+- The returned HTML document should declare its language using the **`lang` attribute**  
+  Example: `<html lang="en">`
+
+- To inform search engines about different language versions of the same content, use:
+  - `<link rel="alternate" hreflang="de" href="http://de.example.com/page.html">`
+
+
 
 <br>
 
