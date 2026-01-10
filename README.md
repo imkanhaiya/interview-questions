@@ -162,6 +162,25 @@ used to load different images based on screen size.
 </picture>
 ```
 
+16. ### What is the `srcset` attribute and why is it used?
+
+provides **multiple image options** for browser to choose **best image based on screen size**.
+
+#### Why it is used:
+- Browser chooses the most suitable image
+- Avoids downloading large images unnecessarily
+- Improves performance
+
+```html
+<!-- `600w` and `1200w` are image size hints for the browser -->
+<!-- Browser compares image size with screen size and selects the best image -->
+<img 
+  src="image-small.jpg"
+  srcset="image-small.jpg 600w, image-large.jpg 1200w"
+  alt="Sample image">
+```
+
+
 
 
 <br>
