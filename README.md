@@ -195,6 +195,9 @@ In HTML, lazy and eager loading are supported only for:
 <!-- Eager loading iframe -->
 <iframe src="page.html" loading="eager"></iframe>
 ```
+18. ### How can you change image in the browser tab (favicon)?
+
+using a **favicon image** defined inside the `<head>` tag as `<link rel="icon" href="favicon.ico">`
 
 
 <br>
