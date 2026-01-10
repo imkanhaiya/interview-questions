@@ -144,13 +144,13 @@ used to show **fallback content** when JavaScript is disabled or not supported i
 
 15. ### What is the `<picture>` tag and what are its advantages?
 
-The `<picture>` tag is used to **load different images based on screen size**.
+used to load different images based on screen size.
 
 #### Benefits:
 - Improves performance  
 - Loads the most suitable image for the device  
 
-**Difference:** Media queries resize the same image  while `<picture>`** loads different image based on screen size  
+**Difference:** `Media queries` resize the same image  while `<picture>` loads different image based on screen size.  
 
 #### Example:
 ```html
