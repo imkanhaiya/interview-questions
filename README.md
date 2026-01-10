@@ -179,8 +179,22 @@ provides **multiple image options** for browser to choose **best image based on 
   srcset="image-small.jpg 600w, image-large.jpg 1200w"
   alt="Sample image">
 ```
+17. ### Explain `loading="lazy"` and `loading="eager"`
 
+- **Lazy loading**: Content loads only when needed  
+- **Eager loading**: Content loads immediately
 
+In HTML, lazy and eager loading are supported only for:
+- Images (`<img>`)
+- Iframes (`<iframe>`)
+
+```html
+<!-- Lazy loading image -->
+<img src="image.jpg" loading="lazy" alt="Lazy loaded image">
+
+<!-- Eager loading iframe -->
+<iframe src="page.html" loading="eager"></iframe>
+```
 
 
 <br>
