@@ -142,6 +142,27 @@ used to show **fallback content** when JavaScript is disabled or not supported i
 </noscript>
 ```
 
+15. ### What is the `<picture>` tag and what are its advantages?
+
+The `<picture>` tag is used to **load different images based on screen size**.
+
+#### Benefits:
+- Improves performance  
+- Loads the most suitable image for the device  
+
+**Difference:** Media queries resize the same image  while `<picture>`** loads different image based on screen size  
+
+#### Example:
+```html
+<!-- Image will be loaded based on screen size, img is the fallback -->
+<picture>
+  <source media="(max-width: 600px)" srcset="small.jpg">
+  <source media="(min-width: 601px)" srcset="large.jpg">
+  <img src="large.jpg" alt="Responsive image">
+</picture>
+```
+
+
 
 <br>
 
