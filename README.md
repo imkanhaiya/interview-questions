@@ -233,6 +233,12 @@ Example:
 - **CSS `<link>` tags** are placed inside `<head>` so styles load before the page is rendered
 - **JavaScript `<script>` tags** are placed before `</body>` so HTML loads first and the page doesn’t get blocked
 
+23. ### What are HTML elements and attributes?
+    
+- **HTML elements** are the building blocks of a web page  
+- **Attributes** provide additional information about an element
+
+
 <br>
 
 ## SCSS Questions
