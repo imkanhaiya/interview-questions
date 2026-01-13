@@ -227,6 +227,11 @@ Example:
 **Follow-up: Why not use id?**
 - id is used to uniquely identify an element
 - not meant to store arbitrary data
+  
+22. ### Why place CSS in `<head>` and JavaScript before `</body>`?
+
+- **CSS `<link>` tags** are placed inside `<head>` so styles load before the page is rendered
+- **JavaScript `<script>` tags** are placed before `</body>` so HTML loads first and the page doesn’t get blocked
 
 <br>
 
