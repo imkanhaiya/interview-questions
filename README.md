@@ -207,6 +207,11 @@ using a **favicon image** defined inside the `<head>` tag as `<link rel="icon" h
 - To inform search engines about different language versions of the same content, use:
   - `<link rel="alternate" hreflang="de" href="http://de.example.com/page.html">`
 
+20. ### What things must you be careful about when designing or developing multilingual websites?
+- Content must be consistent across languages  
+- The meaning should remain the same, not just word-by-word translation  
+- Dates, numbers, and formats should follow local conventions  
+- Language should be declared properly (for SEO and accessibility)
 
 
 <br>
