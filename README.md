@@ -242,7 +242,10 @@ Example:
 - `<div>` is block-level element  
 - `<span>` is inline element
 
-
+25. ### How do you center a <div>?
+- Using flexbox
+- Using grid
+- Using position absolute with transform
 
 <br>
 
