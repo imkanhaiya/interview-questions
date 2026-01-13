@@ -213,6 +213,20 @@ using a **favicon image** defined inside the `<head>` tag as `<link rel="icon" h
 - Dates, numbers, and formats should follow local conventions  
 - Language should be declared properly (for SEO and accessibility)
 
+21. ### What are `data-*` attributes used for?
+    
+used to store **extra / custom data** on an HTML element.
+- do not affect layout or styling
+- mainly used by JavaScript
+
+Example:
+```html
+<button data-user-id="123">Click</button>
+```
+
+**Follow-up: Why not use id?**
+- id is used to uniquely identify an element
+- not meant to store arbitrary data
 
 <br>
 
