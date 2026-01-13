@@ -238,6 +238,11 @@ Example:
 - **HTML elements** are the building blocks of a web page  
 - **Attributes** provide additional information about an element
 
+24. ### What is the difference between `<div>` and `<span>`?
+- `<div>` is block-level element  
+- `<span>` is inline element
+
+
 
 <br>
 
