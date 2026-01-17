@@ -6,6 +6,7 @@
 
 * [Basics](#basics)
 * [HTML Questions](#html-questions)
+* [CSS Questions](#css-questions)
 * [SCSS Questions](#scss-questions)
 * [ASYMPOTIC Notations](#asympotic-notations)
 * [RXJS](#rxjs)
@@ -249,6 +250,16 @@ Example:
 - Using position absolute with transform
 
 <br>
+
+## CSS Questions
+
+1. ### What is CSS
+- stands for **Cascading Style Sheets**.
+- used to **style HTML elements**.
+
+2. ### What is inheritance in CSS?
+- child elements can inherit some styles from their parent
+- only text related properties usually inherit
 
 ## SCSS Questions
 
