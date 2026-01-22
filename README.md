@@ -261,6 +261,15 @@ Example:
 - child elements can inherit some styles from their parent
 - only text related properties usually inherit
 
+3. ### What is the CSS box model?
+defines the **structure of an element**.
+It consists of:
+- Content (the actual content)
+- Padding
+- Border
+- Margin
+
+
 ## SCSS Questions
 
 1. ### What is Sass/Scss
