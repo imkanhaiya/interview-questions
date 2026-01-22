@@ -286,11 +286,10 @@ defines how width and height of an element are calculated.
 
 7. ### What are common CSS units?
 - **px** → fixed pixel unit (`1px = 1/96 inch`)
-- **em** → relative to the font-size of the parent element
-- **rem** → relative to the root (`html`)
+- **em** → relative to font-size of the parent element
+- **rem** → relative to root (`html`)
 - **vh** → percentage of viewport height
 - **vw** → percentage of viewport width
-
 
 
 ## SCSS Questions
