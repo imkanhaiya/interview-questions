@@ -274,6 +274,23 @@ It consists of:
 - **Border** defines the boundary around the element  
 - **Margin** space outside the border, separating elements
 
+5. ### What is box-sizing in CSS?
+defines how width and height of an element are calculated.
+- By default, width applies only to content
+- With `box-sizing: border-box`, padding and border are included in the element’s width and height
+
+6. ### Difference between `display: none`, `visibility: hidden`, and `opacity: 0`  
+- **`display: none`** → hides the element from the UI and takes no space in the UI  
+- **`visibility: hidden`** → hides the element from the UI but still takes space in the UI  
+- **`opacity: 0`** → makes the element transparent
+
+7. ### What are common CSS units?
+- **px** → fixed pixel unit (`1px = 1/96 inch`)
+- **em** → relative to the font-size of the parent element
+- **rem** → relative to the root (`html`)
+- **vh** → percentage of viewport height
+- **vw** → percentage of viewport width
+
 
 
 ## SCSS Questions
