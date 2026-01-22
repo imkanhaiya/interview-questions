@@ -269,6 +269,12 @@ It consists of:
 - Border
 - Margin
 
+4. ### What is the difference between margin, padding, and border?
+- **Padding** space inside the border, around the content  
+- **Border** defines the boundary around the element  
+- **Margin** space outside the border, separating elements
+
+
 
 ## SCSS Questions
 
