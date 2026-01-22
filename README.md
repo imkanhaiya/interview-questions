@@ -291,6 +291,11 @@ defines how width and height of an element are calculated.
 - **vh** → percentage of viewport height
 - **vw** → percentage of viewport width
 
+8. ### What are CSS selectors?
+used to select HTML elements to apply styles.
+- **Class selector** → can target multiple elements  
+- **ID selector** → targets one unique element
+
 
 ## SCSS Questions
 
