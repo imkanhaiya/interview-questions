@@ -310,6 +310,28 @@ why it is considered dangerous:
 - it breaks the normal specificity rules
 - leads to messy, unmaintainable styles
 
+11. ### Explain CSS positioning [Video: Learn CSS Positions in 4 minutes]((https://www.youtube.com/watch?v=YEmdHbQBCSQ) 
+
+**static**
+- Default value , No effect on the element 
+- `top`, `left`, etc. do not work
+
+**relative**
+- Element stays in the normal flow
+- Can be moved relative to its original position
+
+**absolute**
+- Element is removed from normal document flow
+- Positioned relative to the nearest positioned parent element
+- If none exists, positioned relative to the viewport
+
+**fixed**
+- Element is positioned relative to the viewport
+- Does not move on scroll
+
+**sticky**
+- Sticks to the specified position when a scroll threshold is reached
+
 ## SCSS Questions
 
 1. ### What is Sass/Scss
