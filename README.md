@@ -296,6 +296,13 @@ used to select HTML elements to apply styles.
 - **Class selector** → can target multiple elements  
 - **ID selector** → targets one unique element
 
+9. ### What is CSS selector specificity?
+Selector specificity is the priority system, to decide which style is applied.
+- Inline styles (highest)
+- ID selectors
+- Class selectors
+- Element selectors (lowest)
+
 
 ## SCSS Questions
 
