@@ -310,7 +310,7 @@ why it is considered dangerous:
 - it breaks the normal specificity rules
 - leads to messy, unmaintainable styles
 
-11. ### Explain CSS positioning [Video: Learn CSS Positions in 4 minutes]((https://www.youtube.com/watch?v=YEmdHbQBCSQ) 
+11. ### Explain CSS positioning [Video: Learn CSS Positions in 4 minutes](https://www.youtube.com/watch?v=YEmdHbQBCSQ) 
 
 **static**
 - Default value , No effect on the element 
