@@ -306,8 +306,8 @@ Selector specificity is the priority system, to decide which style is applied.
 10. ### What is `!important` and why is it considered dangerous?
 used to give a CSS property the highest priority, overriding all other styles.
 Why it is considered dangerous:
-- It breaks the normal specificity rules
-- Leads to messy, unmaintainable styles
+- it breaks the normal specificity rules
+- leads to messy, unmaintainable styles
 
 ## SCSS Questions
 
