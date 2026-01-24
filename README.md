@@ -337,6 +337,12 @@ controls the stacking order of elements
 - accepts any integer value (positive, negative, or zero)
 - no defined maximum or minimum value
 
+13. ### How does stacking context work?
+stacking context is **separate stacking environment** for elements.
+- `z-index` works only within the same stacking context
+- Elements in different stacking contexts (parents) cannot overlap based on `z-index` alone
+
+
 ## SCSS Questions
 
 1. ### What is Sass/Scss
