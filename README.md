@@ -342,6 +342,18 @@ stacking context is **separate stacking environment** for elements.
 - `z-index` works only within the same stacking context
 - Elements in different stacking contexts (parents) cannot overlap based on `z-index` alone
 
+14. ### What is Flexbox?
+CSS layout model used to arrange items in one direction (row or column).
+- Enabled using `display: flex`
+- Default flex direction is `row`, Can be changed to `column` using `flex-direction: column`
+- used in one directional layouts ex. - nav bar, various sections
+
+15. ### What is CSS Grid?
+CSS layout model used to arrange items in two directions (rows and columns).
+- Enabled using `display: grid`
+- `grid-template-columns` and `grid-template-rows` define rows and columns
+- Used for two-dimensional layouts like photo grids and card layouts
+  
 
 ## SCSS Questions
 
