@@ -335,8 +335,7 @@ why it is considered dangerous:
 12. ### What is `z-index` in CSS?
 controls the stacking order of elements
 - accepts any integer value (positive, negative, or zero)
-- no defined min or max value
-
+- no defined maximum or minimum value
 
 ## SCSS Questions
 
