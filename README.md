@@ -703,4 +703,7 @@ Main → App → Imports → Render
   How early you can join - If the role is urgent, I can try for a buyout and potentially join in 30–40 days.
 
   If HR pressures: “We need someone immediate” - I can request buyout and push for early release, and will join as soon as my current employer approves the release.”
+
+  4. ### Why there is 3 years gap after MCA?
+  Early in my career, I explored Python and backend fundamentals, but I realized frontend engineering suited me better. During the COVID period, I used that time to reskill and realign my career direction. I then focused on JavaScript and Angular, built hands-on projects, and once I had clarity, I entered the job market and secured my first full-time frontend role in 2022. Since then, my career has been consistent.
   
