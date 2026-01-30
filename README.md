@@ -8,6 +8,7 @@
 * [HTML Questions](#html-questions)
 * [CSS Questions](#css-questions)
 * [SCSS Questions](#scss-questions)
+* [Angular Material](#angular-material)
 * [ASYMPOTIC Notations](#asympotic-notations)
 * [RXJS](#rxjs)
 * [Angular](#Angular)
@@ -389,6 +390,22 @@ this powers SCSS to make CSS maintainable at scale.
 3. ### What is preprocessor
 build time tool that transform code written in extended syntax to standard syntax understood by run time.
 
+## Angular Material
+
+1. ### What is Angular Material?
+UI component library for Angular.
+- Provides ready-made, reusable components Based on Material Design
+
+2. ### What is Material Design/MDC (Material Design Components)?
+plateform agnostic, open-source design system(library), developed by Google in 2014 to create intuitive, and responsive user interfaces for mobile and web platforms.
+
+3. ### What was Angular Material using before migrating to MDC?
+Earlier, Angular Material had its own internal implementations of Material components instead of using MDC.
+
+4. ### Why did Angular Material move to MDC-based components?
+- Align with Google’s official Material Design implementation
+- Reduce maintenance effort
+- Improve design consistency and accessibility
 
 ## ASYMPOTIC Notations
 
