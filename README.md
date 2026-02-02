@@ -410,7 +410,7 @@ Earlier, Angular Material had its own internal implementations of Material compo
 ## ASYMPOTIC Notations
 
 1. ### what are asympotic notations
-Asympotic notations are mathematcial way to describe efficiency of algorithms in terms of time and space complexity.
+mathematcial way to describe efficiency of algorithms in terms of time and space complexity.
 #### Common Types:
 1. **Big O (O)** – Worst Case  
 1. **Big Omega (Ω)** – Best Case  
