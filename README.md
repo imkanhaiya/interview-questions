@@ -416,6 +416,9 @@ mathematcial way to describe efficiency of algorithms in terms of time and space
 1. **Big Omega (Ω)** – Best Case  
 1. **Theta (Θ)** – Average Case
 
+2. ### What is time complextiy
+Rate at which time taken increases with respect to input size.
+
 <br>
 
 ## RXJS
