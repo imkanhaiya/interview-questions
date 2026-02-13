@@ -427,7 +427,7 @@ Rate at which time taken increases with respect to input size.
 - Write how much work happens for each outer iteration (ex: i =1 inner runs 1 time, i=2, inner runs 2 time).
 - Add the work. (ex: 1 time + 2 time + 3time+ n-1 times + n times) = (1+2+3+...+(n-1)+n)
 - Simplify. (1+2+3+...+n) => n(n+1)/2
-- Drop Constants (As per rule)
+- Avoid Constants (As per rule)
 - Avoid Lower Values (As per rule)
 
 <br>
