@@ -412,12 +412,23 @@ Earlier, Angular Material had its own internal implementations of Material compo
 1. ### what are asympotic notations
 mathematcial way to describe efficiency of algorithms in terms of time and space complexity.
 #### Common Types:
-1. **Big O (O)** – Worst Case  
-1. **Big Omega (Ω)** – Best Case  
-1. **Theta (Θ)** – Average Case
+1. **Big O (O)** – Worst Case  (upper bound)
+1. **Big Omega (Ω)** – Best Case  (lower bound)
+1. **Theta (Θ)** – Average Case (avg bound)
+
+**Rules To Calculate Complexity**
+- Calculate worst case senario
+- Avoid Constants
+- Avoid Lower Values
 
 2. ### What is time complextiy
 Rate at which time taken increases with respect to input size.
+**How to Calculate:**
+- Write how much work happens for each outer iteration (ex: i =1 inner runs 1 time, i=2, inner runs 2 time).
+- Add the work. (ex: 1 time + 2 time + 3time+ n-1 times + n times) = (1+2+3+...+(n-1)+n)
+- Simplify. (1+2+3+...+n) => n(n+1)/2
+- Drop Constants (As per rule)
+- Avoid Lower Values (As per rule)
 
 <br>
 
