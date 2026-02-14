@@ -439,13 +439,12 @@ Rate at which time taken increases with respect to input size.
 while (n > 1) {
     n = n / c;
 }
-
-// After k iterations: n / c^k
-// Stop when: n / c^k = 1
-// Rearrange: c^k = n
-//Solve for k: //k = log_c(n)
-//Final Time Complexity: O(log n)
 ```
+- After k iterations: n / c^k
+- Stop when: n / c^k = 1
+- Rearrange: c^k = n
+- Solve for k: //k = log_c(n)
+- Final Time Complexity: O(log n)
 
 
 <br>
