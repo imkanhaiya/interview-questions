@@ -433,7 +433,7 @@ Rate at which time taken increases with respect to input size.
 
 **If we repeatedly halve the problem size, we remove a fraction each time so steps grow slowly. that's the logarithmic growth. O(logn)**
 
-## Logarithmic Time Complexity (Divide by Constant Pattern)
+**Logarithmic Time Complexity (Divide by Constant Pattern)**
 
 ```js
 while (n > 1) {
