@@ -431,6 +431,23 @@ Rate at which time taken increases with respect to input size.
 - Avoid Constants (As per rule)
 - Avoid Lower Values (As per rule)
 
+**If we repeatedly halve the problem size, we remove a fraction each time so steps grow slowly. that's the logarithmic growth. O(logn)**
+
+## Logarithmic Time Complexity (Divide by Constant Pattern)
+
+```js
+while (n > 1) {
+    n = n / c;
+}
+
+// After k iterations: n / c^k
+// Stop when: n / c^k = 1
+// Rearrange: c^k = n
+//Solve for k: //k = log_c(n)
+//Final Time Complexity: O(log n)
+```
+
+
 <br>
 
 ## RXJS
