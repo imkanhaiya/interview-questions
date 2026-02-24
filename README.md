@@ -10,6 +10,7 @@
 * [SCSS Questions](#scss-questions)
 * [Angular Material](#angular-material)
 * [ASYMPOTIC Notations](#asympotic-notations)
+* [Javascript](#javascript)
 * [RXJS](#rxjs)
 * [Angular](#Angular)
 * [HR](#hr)
@@ -448,6 +449,13 @@ while (n > 1) {
 
 
 <br>
+
+## Javascript
+1. ### What is Javascript? How Javascript works?
+Javascript is synchronous single-threaded(one command at a time) language.
+Everything in javascript happens inside execution context. Execution context has two components.
+- Memory Component (aka varialble environment): Contains variables and functions as key value paris. ex. fun:{}, a:10
+- Code Component (aka thread of execution): place where javascript code is executed synchronously and one command at a time.
 
 ## RXJS
 
