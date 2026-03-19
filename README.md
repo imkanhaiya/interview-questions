@@ -452,10 +452,10 @@ while (n > 1) {
 
 ## Javascript
 1. ### What is Javascript? How Javascript works?
-Javascript is synchronous single-threaded(one command at a time) language.
-Everything in javascript happens inside execution context. Execution context has two components.
-- Memory Component (aka varialble environment): Contains variables and functions as key value paris. ex. fun:{}, a:10
-- Code Component (aka thread of execution): place where javascript code is executed synchronously and one command at a time.
+JavaScript is a single-threaded language, executes code synchronously by default.
+When a javascript program runs a Global execution context is created, which has two parts.
+- Memory Component (varialble environment): contains variables and functions as key value paris. ex. fun:{}, a:10
+- Code Component (thread of execution): executes code line by line in single thread.
 
 ## RXJS
 
