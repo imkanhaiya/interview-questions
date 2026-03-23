@@ -26,7 +26,12 @@
    
 3. ### Asynchronous
    Code can start the task, but instead of waiting for it to finish, it moves to the next statement. the task completes later, and the program handles the result when its ready.
-   
+
+4. ### Static typing
+Types checked at compile time, can not change during execution
+ 
+7. ### Dynamic typing
+Types checked at runtime , can change during execution
 
 <br>
 
@@ -456,6 +461,15 @@ JavaScript is a single-threaded language, executes code synchronously by default
 When a javascript program runs a Global execution context is created, which has two parts.
 - Memory Component (varialble environment): contains variables and functions as key value paris. ex. fun:{}, a:10
 - Code Component (thread of execution): executes code line by line in single thread.
+  
+2. ### Is Javascript synchronous or asynchronous?
+Synchronous by default, supports asynchronous operations using runtime environment.
+
+3. ### Is JavaScript dynamically typed or statically typed?
+- Javascript is Dynamically typed.
+- Typescript is Statically typed.
+
+4. ### 
 
 ## RXJS
 
