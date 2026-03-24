@@ -468,8 +468,25 @@ Synchronous by default, supports asynchronous operations using runtime environme
 3. ### Is JavaScript dynamically typed or statically typed?
 - Javascript is Dynamically typed.
 - Typescript is Statically typed.
+  
+4. ### What are different data types in javascript?
+two types: **primitive** and **non-primitive**.
 
-4. ### 
+#### Primitive Data Types
+- string
+- number
+- boolean
+- null
+- undefined
+- bigint
+- symbol
+
+#### Non-Primitive Data Types
+- object
+
+> Note:
+- Arrays, functions, and dates are all objects internally.
+- `typeof null` returns `"object"` due to a historical bug, but `null` itself is a primitive.
 
 ## RXJS
 
