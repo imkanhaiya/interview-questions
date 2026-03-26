@@ -489,11 +489,12 @@ two types: **primitive** and **non-primitive**.
 - `typeof null` returns `"object"` due to a historical bug, but `null` itself is a primitive.
 
 4. ### Difference between null and undefined?
-**null** - explicitely assigned to represent a value(null).
-
+**null** - explicitely assigned to represent a value(null). (convey intent)
 **undefined**- variable declared but not assigned a value(default state).
 
-Developers use null when they want to explicitly indicate absence of value.
+5. ### What are the difference between undeclared and undefined variables.
+**undeclared** - variable does not exist in program at all. if we try to read value of an undeclared variable it will give error.
+**undefined** - variable declared but not assigned a value(default state)
 
 ## RXJS
 
