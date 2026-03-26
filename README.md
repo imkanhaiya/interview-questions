@@ -490,6 +490,7 @@ two types: **primitive** and **non-primitive**.
 
 4. ### Difference between null and undefined?
 **null** - explicitely assigned to represent a value(null).
+
 **undefined**- variable declared but not assigned a value(default state).
 
 Developers use null when they want to explicitly indicate absence of value.
