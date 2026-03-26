@@ -488,6 +488,12 @@ two types: **primitive** and **non-primitive**.
 - Arrays, functions, and dates are all objects internally.
 - `typeof null` returns `"object"` due to a historical bug, but `null` itself is a primitive.
 
+4. ### Difference between null and undefined?
+**null** - explicitely assigned to represent a value(null).
+**undefined**- variable declared but not assigned a value(default state).
+
+Developers use null when they want to explicitly indicate absence of value.
+
 ## RXJS
 
 1. ### What is difference between imperative vs declarative code [Explanation](https://www.youtube.com/watch?v=E7Fbf7R3x6I)   
