@@ -494,6 +494,7 @@ two types: **primitive** and **non-primitive**.
 
 5. ### What are the difference between undeclared and undefined variables.
 **undeclared** - variable does not exist in program at all. if we try to read value of an undeclared variable it will give error.
+
 **undefined** - variable declared but not assigned a value(default state)
 
 ## RXJS
