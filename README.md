@@ -495,7 +495,30 @@ two types: **primitive** and **non-primitive**.
 5. ### What are the difference between undeclared and undefined variables.
 **undeclared** - variable does not exist in program at all. if we try to read value of an undeclared variable it will give error.
 
-**undefined** - variable declared but not assigned a value(default state)
+**undefined** - variable declared but not assigned a value(default state
+
+6. ### What is Hoisting in javascript?
+variables and functions can be used before declaring it. the javascript comiler moves all the declarations of variables and functions on top. so there will not be any error. this is called hoisting
+
+7. ### what are varius things hoisted in javascript?
+- Function declaration: fully hoisted
+- Arrow funcation: not hoisted
+- Annonymous funcation expression: not hoisted
+- var: hoisted as undefined
+- let: hoisted but in temporal dead zone
+- const: hoisted but in  temporal dead zone
+- class declarations - hoisted but not initialized
+
+8. ### What is temporal dead zone?
+specific time period during javascript code execution, where variables declared with let and const exist but can not be accessed until value is assigned.
+Any attempt to access them result in reference errors.
+
+9. ### What is order(priority) of hoisting?
+- Function declartions
+- var
+- let/const/class
+
+10. ### What are the difference between let, var and const?
 
 ## RXJS
 
