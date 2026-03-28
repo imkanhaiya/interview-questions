@@ -519,7 +519,22 @@ Any attempt to access them result in reference errors.
 - let/const/class
 
 10. ### What are the difference between let, var and const?
+**Scope**: 
+   - var are function scoped, if declared outside then global scope,
+   - let, const are braces scoped
+**Reassignment**:
+   - var, let can be reassigned
+   - const can not be reassigned
+**Hoisting**:
+   - var hoisted with undefined
+   - let and const hoisted but in temporal dead zone
+     
+11. ### Can we modify array declared with const?
+yes, because const prevents reassignment and not immutability.
 
+12. ### What is difference between == and === in javascript?
+
+     
 ## RXJS
 
 1. ### What is difference between imperative vs declarative code [Explanation](https://www.youtube.com/watch?v=E7Fbf7R3x6I)   
