@@ -501,13 +501,13 @@ two types: **primitive** and **non-primitive**.
 variables and functions can be used before declaring it. the javascript comiler moves all the declarations of variables and functions on top. so there will not be any error. this is called hoisting
 
 7. ### what are varius things hoisted in javascript?
-- Function declaration: fully hoisted
-- Arrow funcation: not hoisted
-- Annonymous funcation expression: not hoisted
-- var: hoisted as undefined
-- let: hoisted but in temporal dead zone
-- const: hoisted but in  temporal dead zone
-- class declarations - hoisted but not initialized
+- **Function declaration**: fully hoisted
+- **Arrow funcation**: not hoisted
+- **Annonymous function expression**: not hoisted
+- **var**: hoisted as undefined
+- **let**: hoisted but in temporal dead zone
+- **const**: hoisted but in  temporal dead zone
+- **class declarations** - hoisted but not initialized
 
 8. ### What is temporal dead zone?
 specific time period during javascript code execution, where variables declared with let and const exist but can not be accessed until value is assigned.
