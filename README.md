@@ -563,7 +563,7 @@ function Outer() {
 }
 
 var close = Outer()
-close();
+close(); //10
 ```
 
      
