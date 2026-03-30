@@ -553,6 +553,10 @@ whenever a function is called, arguments can be passed in two ways, either by pa
 
 16. ### What is a closure?
 A closure is a function that remembers and can access variables from its outer lexical scope even after the outer function has finished execution.
+
+used for - private variables (variables inside function), callbacks
+
+
 ```js
 function Outer() {
     var x = 10;
@@ -565,6 +569,8 @@ function Outer() {
 var close = Outer()
 close(); //10
 ```
+
+17. ### 
 
      
 ## RXJS
