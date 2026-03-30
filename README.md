@@ -533,6 +533,27 @@ Any attempt to access them result in reference errors.
 yes, because const prevents reassignment and not immutability.
 
 12. ### What is difference between == and === in javascript?
+**===**: Compares both value and data type (without type coercion)
+**==**: Compares value only (with type coercion)
+
+13. ### What is the difference between && and ||
+**&&**: returns first falsy or last truthy
+**||**: returns first truthy or last
+
+14. ### What is difference between || and ??
+**||**: checks falsy values (0, "", false, null, undefined) (returns first truthy or last)
+**??**: checks only null and undefined (returns first value that is not null or undefined or last)
+
+15. ### What is the difference between 'Pass by value' and 'Pass by Reference'?
+whenever a function is called, arguments can be passed in two ways, either by pass by value or pass by reference.
+- Primitive data types such as string, number, boolean, null, undefined are passed by value
+- In Pass by value, parameters passed as an arguments creates their own copy. so any changes made inside the function are made to the copied value. does't affect the original value.
+- Non-Primitive data types such as object, arrays, are passed by reference.
+- In pass by reference, parameters passed as an arguments does not create theri own copy, any change made inside the function affect original value.
+
+16. ### What is a closure?
+
+
 
      
 ## RXJS
