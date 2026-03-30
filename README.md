@@ -603,6 +603,16 @@ greet("Kanhaiya", sayBye);
 //Bye
 ```
 
+19. ### What is Callback hell?
+Callback hell is a situation where multiple nested callbacks make the code hard to read and maintain. so to solve that we use promise.
+
+20. ### What are higher order functions in javascript?
+Function which takes another function as an argument or returns a function as a result.
+**Example:** setTimeout, map, forEach
+Adavntages- callback functions, asynchronous programming, abstraction, code reusability, concise and readable code.
+
+21. 
+
      
 ## RXJS
 
