@@ -570,7 +570,20 @@ var close = Outer()
 close(); //10
 ```
 
-17. ### 
+17. ### What is currying
+Converting a function with multiple arguments into a sequence of nested functions, each taking one argument.
+```js
+function add(a) {
+    const c = 5;
+    return function add(b) {
+        console.log(a+b+c)
+    } 
+}
+
+add(2)(3) //10
+```
+
+18. ### What are callbacks in javascript? 
 
      
 ## RXJS
