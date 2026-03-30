@@ -552,8 +552,19 @@ whenever a function is called, arguments can be passed in two ways, either by pa
 - In pass by reference, parameters passed as an arguments does not create theri own copy, any change made inside the function affect original value.
 
 16. ### What is a closure?
+A closure is a function that remembers and can access variables from its outer lexical scope even after the outer function has finished execution.
+```js
+function Outer() {
+    var x = 10;
+    function Inner() {
+        console.log(x)
+    }
+    return Inner
+}
 
-
+var close = Outer()
+close();
+```
 
      
 ## RXJS
