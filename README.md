@@ -585,6 +585,7 @@ add(2)(3) //10
 
 18. ### What are callbacks in javascript?
 Callback is a function which is passed as an argument to another function, which can be executed later in the code.
+
 **Usage**: setTimeOut, Higher Order functions(map, filter, forEach), Handling events (click/key press events), Handling aynchronous operations (reading files, making http requests)
 ```js
 function greet(name, callback) {
