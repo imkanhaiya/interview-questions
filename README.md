@@ -611,7 +611,21 @@ Function which takes another function as an argument or returns a function as a 
 **Example:** setTimeout, map, forEach
 Adavntages- callback functions, asynchronous programming, abstraction, code reusability, concise and readable code.
 
-21. 
+21. ### What is IIFE?
+Immediately invoked function expression(IIFE) is function in javascript that:
+- is defined as an expression
+- runs immediately after it is created
+```js
+(function sayHi() {
+    console.log('Hi')
+})()
+
+//arrow function version
+(() => {
+    console.log("hello")
+})()
+
+//Wrapping in () forces javascript to treat it as expression and not declaration.
 
      
 ## RXJS
