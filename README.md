@@ -638,7 +638,7 @@ eval("console.log(2 + 2)"); // 4
 - Introduced in ES6, simple and shorter way to write function using =>
 - Multiline logic needs return and {}
   
-**Limitatinos**:
+**Limitations**:
   - Can not be accessed before initialization
   - Does not have access to arguments object
   - Does not have their own this, instead they inherit this from the surrounding code at the time function is defined.
