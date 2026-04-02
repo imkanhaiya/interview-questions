@@ -634,7 +634,16 @@ executes string as code at runtime. string can be variable, statements, or javas
 eval("console.log(2 + 2)"); // 4
 ```
 
-23. 
+23. ### What is arrow function in javascript?
+- Introduced in ES6, simple and shorter way to write function using =>
+- Multiline logic needs return and {}
+  
+**Limitatinos**:
+  - Can not be accessed before initialization
+  - Does not have access to arguments object
+  - Does not have their own this, instead they inherit this from the surrounding code at the time function is defined.
+  - Can not be used as constructors, Using them with the new keyword to create instances throws a typeError
+  - Can not be used as generator functions
 
      
 ## RXJS
