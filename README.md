@@ -628,6 +628,14 @@ Immediately invoked function expression(IIFE) is function in javascript that:
 //Wrapping in () forces javascript to treat it as expression and not declaration.
 ```
 
+22. ### What is eval()?
+executes string as code at runtime. string can be variable, statements, or javascript expression.
+```js
+eval("console.log(2 + 2)"); // 4
+```
+
+23. 
+
      
 ## RXJS
 
