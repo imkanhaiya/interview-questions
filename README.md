@@ -641,7 +641,7 @@ eval("console.log(2 + 2)"); // 4
 **Limitations**:
   - Can not be accessed before initialization
   - Does not have access to arguments object
-  - Does not have their own this, instead they inherit this from the surrounding code at the time function is defined.
+  - Does not have their own this, instead inherit this from the surrounding code at the time function is defined.
   - Can not be used as constructors, Using them with the new keyword to create instances throws a typeError
   - Can not be used as generator functions
 
