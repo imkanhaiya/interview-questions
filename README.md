@@ -644,6 +644,42 @@ eval("console.log(2 + 2)"); // 4
   - Does not have their own this, instead inherit this from the surrounding code at the time function is defined.
   - Can not be used as constructors, Using them with the new keyword to create instances throws a typeError
   - Can not be used as generator functions
+    
+**How to Find this Value**
+👉 Rule 1 (Arrow)
+- Arrow = copy this from the first normal function above, ignores call, bind apply
+
+👉 Rule 2 (Normal function)
+- Normal = this decided by how it is called, call(x), bind(x), apply(x) set to x.
+
+24. ###  Why arrow functions introduced/Advantages of arrow functions
+shorter syntax, inreases readability, makes **this** behaviour predicatable.
+
+25. ### What is strict mode and non strict mode in javasript?
+- Non-strict: default in browser(script) -> **this** gives window
+- Strict Mode: Default in module systems/Modern Framework -> **this** gives undefined
+
+26. ### What is generator function in javascript?
+- function which can be paused and resumed at any point during execution.
+- defined using function, and contains one or more yield expressions
+- main method is next(), when called, it runs the execution until the nearest yield.
+- return an object which contains 2 properties
+     - value: the yielded value
+     - done: true if function code has finished, else false.
+```js
+function* generatorFunction() {
+    yield 1;
+    yield 2;
+    yield 3;
+    return 4
+}
+
+const generator = generatorFunction();
+console.log(generator.next()) //{ value: 1, done: false }
+console.log(generator.next()) //{ value: 2, done: false }
+console.log(generator.next()) //{ value: 3, done: false }
+console.log(generator.next()) //{ value: 4, done: true }
+```
 
      
 ## RXJS
