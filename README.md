@@ -681,7 +681,7 @@ console.log(generator.next()) //{ value: 3, done: false }
 console.log(generator.next()) //{ value: 4, done: true }
 ```
 
-27. ### What is object in javascript?
+27. ### What is object in javascript? [Link](https://www.scaler.com/topics/objects-in-javascript/)
 Collections of key-value pairs (properties), where keys are strings (or symbols), and values can be of any type, including other objects.
 
 28. ### What are the different ways to create object in javascript?
