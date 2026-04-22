@@ -729,7 +729,7 @@ obj.name = "Kanhaiya";
 console.log(obj)
 ```
 
-29. ### How to Add, delete, access object properties.
+29. ### How to add, delete, access object properties.
 ```js
 const obj = new Object()
 
