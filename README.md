@@ -740,7 +740,7 @@ obj.city = "Auraiya"
 obj["profession"] = "Software Engineer"
 
 // Access Properties
-console.log(Object.entries(obj)) // give properties in key value paris
+console.log(Object.entries(obj)) // give properties in key value pairs
 console.log(Object.keys(obj)) // give object keys
 console.log(Object.values(obj)) // give ojbect values
 
