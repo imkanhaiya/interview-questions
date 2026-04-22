@@ -681,6 +681,76 @@ console.log(generator.next()) //{ value: 3, done: false }
 console.log(generator.next()) //{ value: 4, done: true }
 ```
 
+27. ### What is object in javascript?
+Collections of key-value pairs (properties), where keys are strings (or symbols), and values can be of any type, including other objects.
+
+28. ### What are the different ways to create object in javascript?
+Javascript offers multiple ways to create objects such as: 
+
+👉 Syntax:
+```js
+// Object literal syntax
+const obj = {
+    key1: value1,
+    key2: value2,
+}
+
+// new keyword syntax
+function Person(name, age, city) {
+    this.name = name
+    this.age = age
+    this.city = city
+}
+let person1 = new Person("Ramsey", 32, "Dreatfort")
+console.log(person1.name)
+
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+}
+const p1 = new Person("Kanhaiya")
+console.log(p1.name)
+
+// Built in object constructor
+const obj = new Object()
+obj.name = "Kanhaiya"
+console.log(obj)
+
+// Object.create Syntax
+const proto = {
+  greet() {
+    console.log("Hello");
+  }
+};
+
+const obj = Object.create(proto);
+obj.name = "Kanhaiya";
+console.log(obj)
+```
+
+29. ### How to Add, delete, access object properties.
+```js
+const obj = new Object()
+
+//Add Properties
+obj.name = "Kanhaiya"
+obj.age = "28"
+obj.city = "Auraiya"
+obj["profession"] = "Software Engineer"
+
+// Access Properties
+console.log(Object.entries(obj)) // give properties in key value paris
+console.log(Object.keys(obj)) // give object keys
+console.log(Object.values(obj)) // give ojbect values
+
+// Delete a key
+delete obj.city
+delete obj["profession"]
+
+console.log(Object.values(obj))
+```
+
      
 ## RXJS
 
