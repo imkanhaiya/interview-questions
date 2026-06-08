@@ -751,7 +751,7 @@ delete obj["profession"]
 console.log(Object.values(obj))
 ```
 30. ### What is prototype in javascript?
-an object from which other objects inherit properties and methods. when a property is not found in object, js searches it into objects prototype and continues to search until found or prototype chain ends.
+An object from which other objects inherit properties and methods. when a property is not found in object, js searches it into objects prototype and continues to search until found or prototype chain ends.
 
 ```js
 const animal = {
@@ -764,6 +764,7 @@ const arr = [1, 2, 3];
 arr.push(4);
 console.log(arr); // [1, 2, 3, 4] // arr.push(4) works because push() is not stored in arr; JavaScript finds it in Array.prototype through the prototype chain.
 ```
+31. ### What is prototype inheritance?
      
 ## RXJS
 
