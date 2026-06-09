@@ -765,6 +765,22 @@ arr.push(4);
 console.log(arr); // [1, 2, 3, 4] // arr.push(4) works because push() is not stored in arr; JavaScript finds it in Array.prototype through the prototype chain.
 ```
 31. ### What is prototype inheritance?
+A mechanism in javascript, where an object can inherit properties and methods from another object through prototype chain.
+```js
+const person = {
+  greet() {
+    console.log("Hello");
+  }
+};
+
+const user = {
+  name: "John"
+};
+
+Object.setPrototypeOf(user, person); //here we set person object as prototype of user object
+
+user.greet(); // Hello
+```
      
 ## RXJS
 
