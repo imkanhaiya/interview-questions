@@ -819,6 +819,16 @@ console.log("success",response)
 console.log("failed",err)
 })
 ```
+
+37. ### Differences between Promise.all, allSettled, any, race ?
+- Promise.all:
+  - Will wait for all of the promises to resolve or any one of the promise reject.
+- Promise.allSettled:
+  - Will wait for all the promises to settle (either fulfilled or rejected).
+- Promise.any:
+  - Will return if any one of the promise fulfills or rejects when all the promises are rejected.
+- Promise.race:
+  - Will return as soon as when any one of the promise is settled.
      
 ## RXJS
 
