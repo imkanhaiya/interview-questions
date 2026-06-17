@@ -781,6 +781,44 @@ Object.setPrototypeOf(user, person); //here we set person object as prototype of
 
 user.greet(); // Hello
 ```
+
+33. ### What are Promises in JavaScript?
+
+- Promise is an object which represents the eventual completion or failure of an asynchronous operation in javascript.
+
+- At any point of time, promise will be in any of these below states.
+  - **Fulfilled:** Action related to promise is succeded.
+  - **Rejected:** Action related to the promise is failed.
+  - **Pending:** Promise is neither fulfilled nor rejected.
+  - **Settled:** Promise has been fulfilled or rejected.
+
+- Promise can be consumed by registering the functions using `.then()` and `.catch()` methods.
+
+- Promise constructor: will take one argument which is a callback function.
+
+- This callback function takes 2 arguments:
+  - `resolve`
+  - `reject`
+
+- If performed operations inside callback function wents well then we will call `resolve()` and if does not go well then we will call `reject()`.
+
+```js
+let promise = new Promise(function(resolve,reject){
+const x = "Saikrishna";
+const y = "Saikrishna";
+if(x === y){
+resolve("Valid")
+} else{
+let err = new Error("Invalid")
+reject(err)
+}
+})
+promise.then((response)⇒{
+console.log("success",response)
+}).catch((err)⇒{
+console.log("failed",err)
+})
+```
      
 ## RXJS
 
