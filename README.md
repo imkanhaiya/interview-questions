@@ -833,6 +833,19 @@ console.log("failed",err)
 38. ### What is the difference between async and await?
 - async → marks a function as asynchronous and returns a Promise.
 - await → waits for a Promise to resolve before continuing execution.
+
+39. ### What is difference between promise and observable?
+### Promise
+- Has 3 states: fullfilled, rejected, pending, settled.
+- Returns a single value.
+- Executes immediately when created.
+- Cannot be cancelled.
+
+### Observable
+- Can emit multiple values over time.
+- Has 3 notifications: `next`, `error`, and `complete`.
+- Executes only when subscribed.
+- Can be cancelled using `unsubscribe()`.
      
 ## RXJS
 
