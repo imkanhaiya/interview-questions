@@ -829,10 +829,10 @@ console.log("failed",err)
   - Will return if any one of the promise fulfills or rejects when all the promises are rejected.
 - Promise.race:
   - Will return as soon as when any one of the promise is settled.
- 
-  38. ### What is the difference between async and await?
-  - async → marks a function as asynchronous and returns a Promise.
-  - await → waits for a Promise to resolve before continuing execution.
+
+38. ### What is the difference between async and await?
+- async → marks a function as asynchronous and returns a Promise.
+- await → waits for a Promise to resolve before continuing execution.
      
 ## RXJS
 
