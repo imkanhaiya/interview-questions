@@ -822,11 +822,11 @@ console.log("failed",err)
 
 37. ### Differences between Promise.all, allSettled, any, race ?
 - Promise.all:
-  - Will wait for all of the promises to resolve or any one of the promise reject.
+  - Will wait for all promises to resolve or any one promise to reject.
 - Promise.allSettled:
-  - Will wait for all the promises to settle (either fulfilled or rejected).
+  - Will wait for all promises to settle (either fulfilled or rejected).
 - Promise.any:
-  - Will return if any one of the promise fulfills or rejects when all the promises are rejected.
+  - Will return if any one promise fulfills or rejects when all the promises are rejected.
 - Promise.race:
   - Will return as soon as when any one of the promise is settled.
 
@@ -836,7 +836,7 @@ console.log("failed",err)
 
 39. ### What is difference between promise and observable?
 ### Promise
-- Has 3 states: fullfilled, rejected, pending, settled.
+- Has 4 states: fullfilled, rejected, pending, settled.
 - Returns a single value.
 - Executes immediately when created.
 - Cannot be cancelled.
