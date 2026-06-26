@@ -456,7 +456,7 @@ while (n > 1) {
 <br>
 
 ## Javascript
-1. ### What is Javascript? How Javascript works?
+1. ### What is Javascript? How Javascript works? [![Watch the video](https://youtu.be/ZvbzSrg0afE))
 JavaScript is a single-threaded language, executes code synchronously by default.
 When a javascript program runs a Global execution context is created, which has two parts.
 - Memory Component (varialble environment): contains variables and functions as key value paris. ex. fun:{}, a:10
