@@ -858,6 +858,40 @@ Occurs when the Call Stack exceeds its maximum size, usually due to infinite rec
 
 ### Does JavaScript have multiple Call Stacks?
 No. JavaScript is single-threaded and uses a single Call Stack to execute synchronous code. Asynchronous operations are handled outside the Call Stack.
+
+## What is Event Loop?
+Event Loop is a mechanism that continuously monitors the Call Stack and executes pending asynchronous callbacks when the Call Stack becomes empty.
+
+### Why Event Loop needed?
+Since JavaScript is single-threaded, Event Loop enables asynchronous operations without blocking synchronous code execution.
+
+### How event loop work?
+   - JavaScript engine executes all synchronous code using the Call Stack.
+   - Asynchronous operations are handled by the browser api or Node.js runtime.
+   - Once an asynchronous operation completes, its callback is placed in a queue
+   - Event Loop continuously checks whether the Call Stack is empty.
+   - If the Call Stack is empty, it executes the next callback.
+
+### Event loop has two types of task Queues.
+
+#### 1. Microtask Queue (Higher Priority)
+- Promise.then()
+- queueMicrotask()
+- MutationObserver()
+
+#### 2. Callback Queue (Macrotask Queue)
+- setTimeout()
+- setInterval()
+- setImmediate()
+- DOM Events
+
+### Execution Order
+```text
+1. Execute synchronous code.
+2. Execute all Microtasks.
+3. Execute one Macrotask.
+4. Repeat.
+```
      
 ## RXJS
 
