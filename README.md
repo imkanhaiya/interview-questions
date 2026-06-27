@@ -846,6 +846,18 @@ console.log("failed",err)
 - Has 3 notifications: `next`, `error`, and `complete`.
 - Executes only when subscribed.
 - Can be cancelled using `unsubscribe()`.
+
+## What is [Call Stack](https://youtu.be/iLWTnMzWtj4) in JavaScript?
+The **Call Stack** is a **LIFO (Last In, First Out)** data structure that manages function execution by pushing function calls onto the stack and popping them off when they complete.
+
+### Why is it called a stack?
+Because it follows the Last In, First Out (LIFO) principle, just like a stack of plates.
+
+### What causes a Stack Overflow?
+Occurs when the Call Stack exceeds its maximum size, usually due to infinite recursion or excessive nested function calls.
+
+### Does JavaScript have multiple Call Stacks?
+No. JavaScript is single-threaded and uses a single Call Stack to execute synchronous code. Asynchronous operations are handled outside the Call Stack.
      
 ## RXJS
 
