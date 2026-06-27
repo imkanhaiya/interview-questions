@@ -860,7 +860,7 @@ Occurs when the Call Stack exceeds its maximum size, usually due to infinite rec
 No. JavaScript is single-threaded and uses a single Call Stack to execute synchronous code. Asynchronous operations are handled outside the Call Stack.
 
 ## What is Event Loop?
-Event Loop is a mechanism that continuously monitors the Call Stack and executes pending asynchronous callbacks when the Call Stack becomes empty.
+Event Loop is a mechanism that continuously monitors call stack and executes pending asynchronous callbacks when call stack becomes empty.
 
 ### Why Event Loop needed?
 Since JavaScript is single-threaded, Event Loop enables asynchronous operations without blocking synchronous code execution.
