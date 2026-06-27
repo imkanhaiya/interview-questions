@@ -847,7 +847,7 @@ console.log("failed",err)
 - Executes only when subscribed.
 - Can be cancelled using `unsubscribe()`.
 
-## What is [Call Stack](https://youtu.be/iLWTnMzWtj4) in JavaScript?
+40. ### What is [Call Stack](https://youtu.be/iLWTnMzWtj4) in JavaScript?
 The **Call Stack** is a **LIFO (Last In, First Out)** data structure that manages function execution by pushing function calls onto the stack and popping them off when they complete.
 
 ### Why is it called a stack?
@@ -859,7 +859,7 @@ Occurs when the Call Stack exceeds its maximum size, usually due to infinite rec
 ### Does JavaScript have multiple Call Stacks?
 No. JavaScript is single-threaded and uses a single Call Stack to execute synchronous code. Asynchronous operations are handled outside the Call Stack.
 
-## What is Event Loop?
+41. ### What is Event Loop?
 Event Loop is a mechanism that continuously monitors call stack and executes pending asynchronous callbacks when call stack becomes empty.
 
 ### Why Event Loop needed?
