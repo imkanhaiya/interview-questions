@@ -917,6 +917,13 @@ const intervalId = setInterval(() => {
 
 clearInterval(intervalId);
 ```
+
+44. ### What is `setImmediate()` in JavaScript?
+`setImmediate()` schedules a function to execute immediately after the current synchronous code finishes execution.
+```js
+// Syntax
+setImmediate(callback, arg1, arg2, ...);
+```
      
 ## RXJS
 
