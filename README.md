@@ -892,6 +892,31 @@ Since JavaScript is single-threaded, Event Loop enables asynchronous operations 
 3. Execute one Macrotask.
 4. Repeat.
 ```
+
+42. ### What is setTimeout() in JavaScript?
+`setTimeout()` allows us to execute a function once after at least the specified delay.
+```js
+//Syntax
+setTimeout(callback, delay, arg1, arg2, ...);
+```
+#### Does setTimeout(fn, 1000) guarantee execution after exactly 1000 ms?
+No. It guarantees that the callback will not execute before 1000 ms. The actual execution may be delayed if the Call Stack is busy.
+
+43. ### What is `setInterval()` in JavaScript?
+`setInterval()` allows repeated execution of function at a specified time interval.
+```js
+// Syntax
+setInterval(callback, delay, arg1, arg2, ...);
+```
+#### How do you stop a `setInterval()`?
+Use `clearInterval()` and pass the interval ID returned by `setInterval()`.
+```js
+const intervalId = setInterval(() => {
+  console.log("Running...");
+}, 1000);
+
+clearInterval(intervalId);
+```
      
 ## RXJS
 
