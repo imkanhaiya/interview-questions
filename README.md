@@ -924,6 +924,45 @@ clearInterval(intervalId);
 // Syntax
 setImmediate(callback, arg1, arg2, ...);
 ```
+
+45. ### What is difference between Local Storage and Session Storage?
+Local Storage and Session Storage are browser storage features that store data as key-value pairs.
+
+- **Local Storage** shared across all tabs of same origin, persists data until explicitly removed.
+- **Session Storage** persists data only for duration of current browser tab session, cleared when the tab or window is closed. available only within the current tab.
+
+46. ### What are Cookies?
+Cookies are small pieces of data stored in browser as key-value pairs.
+
+- Cookies can store up to **4 KB** of data.
+- After a user logs in, the server uses the **`Set-Cookie`** response header to store a cookie in the browser.
+- On future requests, the browser automatically sends the cookie to the server, allowing the server to identify the user.
+- Mainly used to store user information such as session IDs, authentication details, and user preferences.
+
+```js
+document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+```
+
+### Common Methods
+
+```js
+localStorage.setItem(key, value);
+localStorage.getItem(key);
+localStorage.removeItem(key);
+localStorage.clear();
+localStorage.key(index);
+localStorage.length;
+```
+
+47. ### What is Cache?
+Cache is a temporary storage to store frequently accessed data so that it can be retrieved faster instead of fetching it again from the original source.
+
+- The browser uses cached data if it is still valid (**cache policy sent by server: `Cache-Control: max-age=3600`**); otherwise, it fetches a new copy from the server.
+
+48. ### What is difference between Authentication vs Authorization.
+
+- **Authentication (Who are you?)** process of verifying the identity of user.
+- **Authorization (What are you allowed to do?)** process of checking what an authenticated user is allowed to access or perform.
      
 ## RXJS
 
