@@ -963,6 +963,35 @@ Cache is a temporary storage to store frequently accessed data so that it can be
 
 - **Authentication (Who are you?)** process of verifying the identity of user.
 - **Authorization (What are you allowed to do?)** process of checking what an authenticated user is allowed to access or perform.
+
+49. ### What is CORS?
+CORS (Cross-Origin Resource Sharing) is a browser security feature that allows a web application to access resources from one origin to another.
+
+- CORS uses HTTP headers to allow or block javascript to access the resources.
+- CORS is enforced by the browser, not the server.
+
+50. ### What is the difference between Fetch and Axios?
+
+#### Fetch
+- Built-in JavaScript API for making HTTP requests.
+- Requires manual JSON parsing (`response.json()`).
+- Does't support interceptors
+
+#### Axios
+- Third-party library for making HTTP requests.
+- Automatically parses JSON.
+- Supports interceptors.
+
+51. ### What is the difference between IndexedDB and Session Storage?
+#### IndexedDB
+- Browser database for storing large amounts of structured data.
+- Stores objects, files, and other complex data types.
+- Data persists until it is explicitly removed.
+
+#### Session Storage
+- Browser storage for storing small amounts of data as key-value pairs.
+- Stores only strings.
+- Data is cleared when the browser tab or window is closed.
      
 ## RXJS
 
