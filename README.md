@@ -1073,14 +1073,89 @@ console.log(add(2, 3));
 
 > **Note:** `export` is used to make variables, functions, or classes available outside a module, and `import` is used to use them in another module.
 
-
 56. ### Mutability vs Immutability
 
-- **Mutable:** Original value can be modified.
-- **Immutable:** Original value cannot be modified. Instead, a new value is created.
+### Mutable
+- Original value can be modified.
+- Applies to all non-primitive data types (Object, Array, Map, Set, Date).
+- Stored by reference.
 
-**Mutable:** Object, Array, Map, Set, Date  
-**Immutable:** String, Number, Boolean, `null`, `undefined`, Symbol, BigInt (All Primitive Types)
+### Immutable
+- Original value can not be modified. A new value is created instead.
+- Applies to all primitive data types (String, Number, Boolean, `null`, `undefined`, Symbol, BigInt).
+- Stored by value
+
+57. ### Shallow Copy vs Deep Copy
+
+### Shallow Copy
+A shallow copy creates a new object or array but copies references of nested objects and arrays.
+
+**Common ways to create:**
+- `const copy = { ...obj }`
+- `const copy = Object.assign({}, obj)`
+
+```js
+const originalArray = [1, 2, [3, 4]];
+
+const shallowCopy = [...originalArray];
+
+shallowCopy[2][0] = 100;
+
+console.log(originalArray); // [1, 2, [100, 4]]
+```
+
+### Deep Copy
+A deep copy creates a completely independent copy of an object or array, including all nested objects and arrays.
+
+**Common ways:**
+- `const copy = structuredClone(obj)`
+- `const copy = JSON.parse(JSON.stringify(obj))`
+
+```js
+const originalArray = [1, 2, [3, 4]];
+
+const deepCopy = JSON.parse(JSON.stringify(originalArray));
+
+deepCopy[2][0] = 100;
+
+console.log(originalArray); // [1, 2, [3, 4]]
+```
+
+58. ### Immutability and Side Effects
+
+A side effect is when a function unintentionally modifies the original object or array.
+
+```js
+// Side Effect
+const user = { name: "Kanhaiya" };
+
+function updateUser(user) {
+  user.name = "Rahul";
+}
+
+updateUser(user);
+
+console.log(user.name); // Rahul
+```
+
+> **How to avoid side effects?**
+> - Do not modify the original object or array.
+> - Create a new object or array instead.
+
+```js
+// No Side Effect
+const user = { name: "Kanhaiya" };
+
+const updatedUser = {
+  ...user,
+  name: "Rahul",
+};
+
+console.log(user.name);        // Kanhaiya
+console.log(updatedUser.name); // Rahul
+```
+
+59. ###
 
 ## RXJS
 
