@@ -1007,7 +1007,8 @@ class Employee {
 }
 
 const emp1 = new Employee(1, "John", 50000);
-const emp2 = new Employee(2, "Alice", 60000);```
+const emp2 = new Employee(2, "Alice", 60000);
+```
 
 > **Note:** The `new` keyword creates the object, while the class provides the blueprint for creating that object.
 
