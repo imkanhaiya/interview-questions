@@ -1155,7 +1155,94 @@ console.log(user.name);        // Kanhaiya
 console.log(updatedUser.name); // Rahul
 ```
 
-59. ###
+59. ### Map vs Object
+
+### Object
+- Keys can only be String or Symbol.
+- Size is obtained using `Object.keys(obj).length`.
+- Primarily used to represent entities with properties.
+
+### Map
+- Keys can be any data type.
+- Size is obtained using `map.size`.
+- Primarily used to store and manage key-value pairs.
+
+```js
+// Object
+const person = {
+  name: "Kanhaiya",
+};
+
+// Map
+const map = new Map();
+
+map.set("name", "Kanhaiya");
+map.set(1, "One");
+map.set({ id: 1 }, "Employee");
+```
+
+60. ### What are the differences between Map and Set?
+
+### Map
+- Stores key-value pairs.
+- Keys can be any data type.
+- Uses `set(key, value)` to add entries.
+
+### Set
+- Stores only unique values.
+- Does not store key-value pairs.
+- Uses `add(value)` to add values.
+
+```js
+// Map
+const map = new Map();
+
+map.set("name", "Kanhaiya");
+map.set(1, "One");
+
+// Set
+const set = new Set();
+
+set.add("A");
+set.add("B");
+set.add("A");
+
+console.log(set); // Set { 'A', 'B' }
+```
+
+61. ### What are the different types of errors in JavaScript?
+
+### ReferenceError
+Occurs when trying to access a variable that is not defined.
+
+```js
+console.log(a);
+```
+
+### SyntaxError
+Occurs when the JavaScript code has invalid syntax.
+
+```js
+if (true {
+  console.log("Hello");
+}
+```
+
+### TypeError
+Occurs when a value is used in an invalid way.
+
+```js
+const num = 10;
+
+num();
+```
+
+### RangeError
+Occurs when a value is outside the allowed range.
+
+```js
+const arr = new Array(-1);
+```
 
 ## RXJS
 
