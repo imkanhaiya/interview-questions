@@ -1031,7 +1031,63 @@ dog.speak();
 > - `__proto__` is a reference(link) to an object's prototype.
 > - `Object.create()` creates a new object with the specified prototype. //const dog = Object.create(animal)
 
-54. ###
+54. ### What are the differences between `call()`, `apply()`, and `bind()`?
+All three methods are used to invoke a function with a specific `this` value.
+
+```js
+const person = {
+  name: "Kanhaiya",
+};
+
+function greet(city) {
+  console.log(`Hi I am ${this.name} from ${city}`);
+}
+
+greet.call(person, "Delhi");
+
+greet.apply(person, ["Delhi"]);
+
+const greetPerson = greet.bind(person, "Auraiya");
+greetPerson();
+```
+
+> **Difference:**
+> - `call()` invokes the function immediately and passes arguments individually.
+> - `apply()` invokes the function immediately and passes arguments as an array.
+> - `bind()` does not invoke the function immediately. It returns a new function that can be invoked later.
+
+55. ### What are Modules in JavaScript?
+Modules are used to divide code into smaller, reusable files, making it easier to maintain and avoid code duplication.
+
+```js
+// math.js
+export function add(a, b) {
+  return a + b;
+}
+
+// app.js
+import { add } from "./math.js";
+
+console.log(add(2, 3));
+```
+
+> **Note:** `export` is used to make variables, functions, or classes available outside a module, and `import` is used to use them in another module.
+
+
+56. ### Mutability vs Immutability
+
+- **Mutable:** Original value can be modified.
+- **Immutable:** Original value can not be modified. Instead, a new value is created.
+
+| Mutable | Immutable |
+|---------|-----------|
+| Object | String |
+| Array | Number |
+| Map | Boolean |
+| Set | `null` |
+| Date | `undefined` |
+| | Symbol |
+| | BigInt |
 
 ## RXJS
 
