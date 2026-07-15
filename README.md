@@ -1077,10 +1077,10 @@ console.log(add(2, 3));
 56. ### Mutability vs Immutability
 
 - **Mutable:** Original value can be modified.
-- **Immutable:** Original value can not be modified. Instead, a new value is created.
+- **Immutable:** Original value cannot be modified. Instead, a new value is created.
 
-**Mutable**: Object, Array, Map, Set, Date
-**Immutable**: All primitive types (String, Number, Boolean, null, undefined, Symbol, BigInt)
+**Mutable:** Object, Array, Map, Set, Date  
+**Immutable:** String, Number, Boolean, `null`, `undefined`, Symbol, BigInt (All Primitive Types)
 
 ## RXJS
 
