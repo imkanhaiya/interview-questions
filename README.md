@@ -992,7 +992,46 @@ CORS (Cross-Origin Resource Sharing) is a browser security feature that allows a
 - Browser storage for storing small amounts of data as key-value pairs.
 - Stores only strings.
 - Data is cleared when the browser tab or window is closed.
-     
+
+52. ### What are classes and what is the purpose of classes?
+A class is a blueprint for creating objects. we can create multiple objects with the same properties and methods, helps avoid code repetition.
+
+```js
+// example
+class Employee {
+  constructor(id, name, salary) {
+    this.id = id;
+    this.name = name;
+    this.salary = salary;
+  }
+}
+
+const emp1 = new Employee(1, "John", 50000);
+const emp2 = new Employee(2, "Alice", 60000);```
+
+> **Note:** The `new` keyword creates the object, while the class provides the blueprint for creating that object.
+
+53. ### What is Prototype Inheritance?
+Allows an object to inherit properties and methods from another object through the prototype chain.
+
+```js
+// Syntax
+class Animal {
+  speak() {
+    console.log("Animal speaks");
+  }
+}
+
+const dog = new Animal();
+dog.speak();
+```
+
+> **Note:**
+> - `__proto__` is a reference(link) to an object's prototype.
+> - `Object.create()` creates a new object with the specified prototype. //const dog = Object.create(animal)
+
+54. ###
+
 ## RXJS
 
 1. ### What is difference between imperative vs declarative code [Explanation](https://www.youtube.com/watch?v=E7Fbf7R3x6I)   
