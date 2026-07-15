@@ -1079,15 +1079,8 @@ console.log(add(2, 3));
 - **Mutable:** Original value can be modified.
 - **Immutable:** Original value can not be modified. Instead, a new value is created.
 
-| Mutable | Immutable |
-|---------|-----------|
-| Object | String |
-| Array | Number |
-| Map | Boolean |
-| Set | `null` |
-| Date | `undefined` |
-| | Symbol |
-| | BigInt |
+**Mutable**: Object, Array, Map, Set, Date
+**Immutable**: All primitive types (String, Number, Boolean, null, undefined, Symbol, BigInt)
 
 ## RXJS
 
