@@ -1244,6 +1244,25 @@ Occurs when a value is outside the allowed range.
 const arr = new Array(-1);
 ```
 
+62. ### List out some key features of ES6
+    
+1. Arrow Functions
+2. `let` and `const` declarations
+3. Destructuring
+4. Default Parameters
+5. Template Literals
+6. Spread and Rest Operators
+7. Promises
+8. Classes
+9. Modules (`import` / `export`)
+10. Map and Set
+11. Optional Chaining (`?.`)
+
+63. ### What is the Spread Operator (`...`)?
+expands(spreads) elements of an array or properties of an object into another array or object.
+
+64. ### 
+
 ## RXJS
 
 1. ### What is difference between imperative vs declarative code [Explanation](https://www.youtube.com/watch?v=E7Fbf7R3x6I)   
