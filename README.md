@@ -1261,7 +1261,82 @@ const arr = new Array(-1);
 63. ### What is the Spread Operator (`...`)?
 expands(spreads) elements of an array or properties of an object into another array or object.
 
-64. ### 
+64. ### What is the Rest Operator (`...`)?
+Collects multiple values into a single array.
+
+65. ### What is Destructuring?
+Extracts values from an array or object into separate variables.
+
+66. ### What are the differences between `some()` and `every()`?
+- `some():`Returns `true` if at least one (any) element satisfies the condition.
+- `every():` Returns `true` only if all elements satisfy the condition.
+
+67. ### What is Event Bubbling?
+A process where an event starts from the target element and moves up to its parent elements (upto document if they have listeners). 
+
+```html
+<div id="parent">
+  <button id="child">Click Me</button>
+</div>
+```
+
+```javascript
+parent.addEventListener("click", () => console.log("Parent"));
+child.addEventListener("click", () => console.log("Child"));
+
+// Click on button
+// Output:
+// Child
+// Parent
+```
+
+68. ### What is Event Capturing?
+A process where an event starts from the parent elements (document if they have listners) and moves down to the target element.
+
+```html
+<div id="parent">
+  <button id="child">Click Me</button>
+</div>
+```
+
+```javascript
+parent.addEventListener("click", () => console.log("Parent"), true);
+child.addEventListener("click", () => console.log("Child"), true);
+
+// Click on button
+// Output:
+// Parent
+// Child
+```
+
+69. ### What are Debounce and Throttle?
+
+- **Debounce:** Executes a function only after user stops performing an action for a specified time.
+  - Example: Search box.
+
+- **Throttle:** Executes a function at specified time intervals even if the user keeps performing the action.
+  - Example: Scroll event.
+ 
+70. ### What are Web Workers?
+Creates background threads to perform heavy tasks without blocking the main JavaScript thread.
+
+**Can Web Workers access the DOM?**
+No. Web Workers cannot directly access the DOM. They communicate with the main thread using `postMessage()`.
+
+**Do Angular/React apps use Web Workers?**
+Yes can use, but only for CPU-intensive tasks like image/video processing, complex calculations.
+
+**Can Web Workers be used for API calls?**
+No. API calls are **I/O-bound** (waiting for the network), not **CPU-bound** (heavy computation).
+
+71. ### What is a Polyfill?
+JavaScript code that **adds support for modern JavaScript features in older browsers**.
+
+**Do we write polyfills manually in modern Angular/React applications?**
+No. Modern build tools automatically add the required polyfills when needed.
+
+72. ### What is Babel?
+Babel is a JavaScript compiler that **converts modern JavaScript syntax into older JavaScript syntax** so older browsers can understand it.
 
 ## RXJS
 
