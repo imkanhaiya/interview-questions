@@ -1743,7 +1743,7 @@ Product of all positive integers from **1** to **n**.
 function factorial(number) {
     let fact = 1;
 
-    for (let i = number; i >= 1; i--) {
+    for (let i = number; i>1; i--) {
         fact *= i;
     }
 
