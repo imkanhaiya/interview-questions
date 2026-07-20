@@ -1669,11 +1669,10 @@ function factorial(number) {
 }
 
 console.log(factorial(5)); // 120
-```
 
-**Time Complexity:** `O(n)`  
-**Space Complexity:** `O(1)`
-````
+// Time Complexity:** `O(n)`  
+// Space Complexity:** `O(1)`
+```
 
 
 
