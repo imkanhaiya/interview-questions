@@ -1339,6 +1339,88 @@ No. Modern build tools automatically add the required polyfills when needed.
 72. ### What is Babel?
 Babel is a JavaScript compiler that **converts modern JavaScript syntax into older JavaScript syntax** so older browsers can understand it.
 
+73. ### What is Tree Shaking?
+Process of removing unused JavaScript code during production build to reduce the bundle size and improve application performance.
+
+**Note:** Tree Shaking works with ES Modules (`import`/`export`).
+
+74. ### Types of Loops in JavaScript
+
+- `for`: Used when the number of iterations is known.
+- `while`: Used when the number of iterations is unknown.
+- `do...while`: Executes the loop at least once before checking the condition.
+- `for...of`: Iterates over the values of iterable objects (Arrays, Strings, Maps, Sets).
+- `for...in`: Iterates over the keys of an object.
+
+75. ### Arrays & Array Methods
+
+#### What is an Array?
+Array is haterogenious collection of values.
+
+#### What is `map()`?
+Creates a new array by applying a function to every element of the original array.
+
+```js
+const numbers = [1, 2, 3];
+const doubled = numbers.map(num => num * 2);
+console.log(doubled);
+```
+
+#### What is `filter()`?
+
+Creates a new array containing only the elements that satisfy a given condition.
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+const evenNumbers = numbers.filter(num => num % 2 === 0);
+console.log(evenNumbers);
+```
+
+#### What is `reduce()`?
+Reduces all elements of an array to a single value.
+```js
+const numbers = [1, 2, 3, 4];
+const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+console.log(sum);
+```
+
+#### What is `forEach()`?
+Executes a function once for each element of an array. It does not modify the original array.
+```js
+const numbers = [1, 2, 3];
+
+numbers.forEach(num => console.log(num));
+```
+
+#### What is `find()`?
+Returns the first element that satisfies a given condition. if no match, then returns undefined.
+
+```js
+const numbers = [10, 20, 30, 40];
+const result = numbers.find(num => num > 20);
+console.log(result);
+```
+
+#### What is `slice()`?
+creates a new array, copies elements from index start till end (end not included).
+
+```js
+//Syntax: slice(start, end)
+const fruits = ["Apple", "Banana", "Mango", "Orange"];
+const result = fruits.slice(1, 3);
+console.log(result);
+```
+#### What is `splice()`?
+Modifies the original array by adding, removing, or replacing elements.
+
+```js
+//Syntax- splice(pos, deleteCount, ...items) – at index pos deletes deleteCount elements and inserts items.
+const fruits = ["Apple", "Banana", "Mango"];
+fruits.splice(1, 1, "Orange");
+console.log(fruits);
+```
+
+
 ## RXJS
 
 1. ### What is difference between imperative vs declarative code [Explanation](https://www.youtube.com/watch?v=E7Fbf7R3x6I)   
