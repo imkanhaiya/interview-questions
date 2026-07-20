@@ -1647,6 +1647,36 @@ Main → App → Imports → Render
 
   ## Coding Notes
   
-#### 1. Program to find the factorial of a number.
+#### 1. Program to find the factorial of a number
+Product of all positive integers from **1** to **n**.
+
+**Logic**
+- Initialize `fact = 1`.
+- Iterate from `n` to `1`.
+- Multiply `fact` by the current number.
+
+**JavaScript**
+
+```javascript
+function factorial(number) {
+    let fact = 1;
+
+    for (let i = number; i >= 1; i--) {
+        fact *= i;
+    }
+
+    return fact;
+}
+
+console.log(factorial(5)); // 120
+```
+
+**Time Complexity:** `O(n)`  
+**Space Complexity:** `O(1)`
+````
+
+
+
+
 
   
