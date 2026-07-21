@@ -1685,7 +1685,76 @@ bs$.subscribe(res => console.log('B:', res))
 
 ## Angular
 
-1. ### How angular application starts?
+1. ### What is a Library?
+A library is a collection of reusable code. You decide when and how to use it, and you choose other libraries for routing, state management, forms, etc.
+
+2. ### What is a Framework?
+A framework provides a complete structure for building an application. It decides how the application is organized, and you build your application by following its conventions.
+
+3. ### What is Angular?
+Angular is a TypeScript-based, open-source front-end framework maintained by Google. It is used to build modern, scalable, single-page client-side web applications.
+
+Major features include:
+- Components
+- Directives
+- Dependency Injection
+- Routing
+- Forms
+- Two-way Data Binding
+
+4. ### Angular vs AngularJS
+AngularJS is the first version of Angular, released in 2010. It is based on JavaScript and follows the MVC (Model-View-Controller) architecture.
+  
+Angular is a complete rewrite of AngularJS and was released in 2016. It is based on TypeScript and follows a component-based architecture.
+
+5. ### Why Angular instead of React or Vue?
+Angular is preferred for large-scale enterprise applications because it provides a complete framework with built-in features like routing, dependency injection, forms, and HTTP client etc.
+
+React and Vue are more flexible and require additional libraries for features like routing and state management (e.g., React Router, Redux. The choice depends on the project requirements.
+
+6. ### Why Angular instead of Vanilla JavaScript?
+Vanilla JavaScript is suitable for building small and simple applications. However, as an application grows, managing code becomes difficult.
+
+Angular provides a structured way to build applications with features like components, routing, dependency injection, forms, and HTTP client, making large applications easier to develop, maintain, and scale.
+
+7. ### Angular Latest Version
+- Current latest stable Angular version is **v22**.
+- Angular has shifted to a yearly major release cycle starting with Angular v22.
+- New features are released through regular minor versions.
+
+**How to check Angular version?**
+```bash
+ng version
+```
+or
+```bash
+ng v
+```
+
+8. ### Major Features (Angular 14 → Angular 20)
+
+**Angular 14**
+- Standalone Components
+
+**Angular 16**
+- Signals
+
+**Angular 17**
+- @if
+- @for
+- @switch
+- @defer
+
+**Angular 18**
+- Zoneless Change Detection
+
+**Angular 19**
+- Standalone by Default
+
+**Angular 20**
+- Performance Improvements
+
+9. ### How angular application starts?
 #### Module-based
 Main → Module → Metadata → Mount
 - main.ts runs → platformBrowserDynamic().bootstrapModule(AppModule)
@@ -1705,6 +1774,98 @@ Main → App → Imports → Render
 **plateformBrowserDynamic()** - sets up angular **run time execution environment/plateform** for browser and enables JIT compilation
 
 **Standalone apps (Angular v14+)** - plateformBrowserDynamic() is abstracted and angular handles plateform setup internally.
+
+10. ### What is NgModule?
+An **NgModule** is a class decorated with `@NgModule` that groups related Angular building blocks such as **declarations, imports, providers etc** into a single module.
+
+**Main Properties**
+
+- `declarations` → Components, Directives, Pipes
+- `imports` → Other Modules
+- `providers` → Services
+- `exports` → Shares Components, Directives and Pipes with other Modules
+- `bootstrap` → Root component that starts the application
+
+#### Do we still need NgModule?
+No. Since **Angular 14**, Standalone Components does not need ngModule. However, NgModules are still supported and used in existing applications.
+
+11. ### What are Standalone Components?
+Angular component that **does not require an NgModule**. It can directly import the dependencies it needs.
+**Advantages**
+- No need for `NgModule`
+- Simpler application structure
+- Easier to maintain
+- Reduces boilerplate code
+
+12. ### Can NgModules be used with Standalone Components?
+Yes, Standalone Components and NgModules can be used together in same application
+
+**Common Scenarios**
+- Import Standalone Components into NgModules.
+- Import NgModules into Standalone Components.
+- Gradually migrate existing applications to Standalone Components.
+
+13. ### What architectural problem did Standalone Components solve?
+Standalone Components were introduced to **remove the dependency on NgModules** and simplify Angular application architecture.
+
+**Problems with NgModules**
+- Extra boilerplate code
+- More files to manage
+- Increased complexity
+
+**Benefits**
+- No need for NgModules
+- Simpler project structure
+- Better developer experience
+
+14. ### What are Decorators?
+Special function prefixed with `@` that adds metadata to a class, property, method. Angular uses decorators to define how different parts of the application should behave.
+
+**Common Decorators**
+- `@Component` → Component
+- `@Directive` → Directive
+- `@Pipe` → Pipe
+- `@NgModule` → NgModule
+- `@Injectable` → Service
+
+15. ### Types of Decorators in Angular
+Angular decorators are classified into four types:
+
+#### Class Decorators
+- `@Component`
+- `@Directive`
+- `@Pipe`
+- `@Injectable`
+- `@NgModule`
+
+#### Property Decorators
+- `@Input()`
+- `@Output()`
+- `@ViewChild()`
+- `@ViewChildren()`
+- `@ContentChild()`
+- `@ContentChildren()`
+- `@HostBinding()`
+
+#### Method Decorators
+- `@HostListener()`
+
+#### Parameter Decorators
+- `@Inject()`
+- `@Optional()`
+- `@Self()`
+- `@SkipSelf()`
+- `@Host()`
+
+16. ### What is Environment Configuration?
+Environment Configuration allows Angular to use different settings for different environments such as development, testing, and production.
+
+**Examples**
+- API URL
+- Feature flags
+- Logging settings
+
+
 
 ## HR
 1. ### What is expected Salary
