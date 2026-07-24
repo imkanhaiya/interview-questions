@@ -1420,6 +1420,35 @@ fruits.splice(1, 1, "Orange");
 console.log(fruits);
 ```
 
+76. ### Difference between ^ vs ~ in package.json
+`^` and `~` are version range specifiers used in `package.json`.
+
+- `^` → Allows **minor** and **patch** updates.
+- `~` → Allows **patch** updates only.
+
+**Example**
+
+- `^5.8.2` → `5.9.0` ✅, `6.0.0` ❌
+- `~5.8.2` → `5.8.3` ✅, `5.9.0` ❌
+
+77. ### Define DRY, KISS, YAGNI & SOLID Principles
+
+#### DRY (Don't Repeat Yourself)
+Avoid duplicate code by reusing existing logic.
+
+#### KISS (Keep It Simple, Stupid)
+Write simple and easy-to-understand code. Avoid unnecessary complexity.
+
+#### YAGNI (You Aren't Gonna Need It)
+Do not implement features until they are actually required.
+
+#### SOLID Principles
+- **S – Single Responsibility Principle (SRP):** A class should have only one responsibility (one reason to change).
+- **O – Open/Closed Principle (OCP):** Software should be open for extension but closed for modification.
+- **L – Liskov Substitution Principle (LSP):** A subclass should be replaceable with its parent class without changing the program's behavior.
+- **I – Interface Segregation Principle (ISP):** Clients (Class) should not be forced to implement methods they do not use.
+- **D – Dependency Inversion Principle (DIP):** Depend on abstractions (interfaces), not concrete implementations.
+
 
 ## RXJS
 
