@@ -1894,6 +1894,106 @@ Environment Configuration allows Angular to use different settings for different
 - Feature flags
 - Logging settings
 
+17. ### Environment Files
+- `environment.ts` → Contains default/base configuration.
+- `environment.development.ts` → Contains configuration values for development environment.
+- `environment.staging.ts` → Contains configuration values for staging environment.
+- `environment.production.ts` → Contains configuration values for production environment.
+- 
+**Example**
+```ts
+export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:3000/api'
+};
+```
+
+19. ### What is File Replacement?
+Angular build feature to replace one environment file with another based on build configuration.
+
+**Example**
+
+```text
+Default/Base → environment.ts
+Development  → environment.development.ts
+Staging      → environment.staging.ts
+Production   → environment.production.ts
+```
+
+**angular.json**
+
+```json
+"configurations": {
+  "development": {
+    "fileReplacements": [
+      {
+        "replace": "src/environments/environment.ts",
+        "with": "src/environments/environment.development.ts"
+      }
+    ]
+  },
+  "staging": {
+    "fileReplacements": [
+      {
+        "replace": "src/environments/environment.ts",
+        "with": "src/environments/environment.staging.ts"
+      }
+    ]
+  },
+  "production": {
+    "fileReplacements": [
+      {
+        "replace": "src/environments/environment.ts",
+        "with": "src/environments/environment.production.ts"
+      }
+    ]
+  }
+}
+```
+
+**Note**
+- Angular always starts with `environment.ts`.
+- Based on selected build configuration, it replaces `environment.ts` with the appropriate environment file
+
+20. ### What is a Production Build?
+Creates an optimized version of Angular application for deployment.
+
+**Optimizations**
+- AOT Compilation
+- Tree Shaking
+- Minification
+- Dead Code Elimination
+
+**Command**
+```bash
+ng build --configuration production
+```
+
+21. ### What are Components?
+A **Component** is basic building block of an Angular application. Main parts are template, spec.ts, styling, and ts file.
+
+22. ### Services vs Components
+#### Component
+- Controls the UI.
+- Uses `@Component` decorator.
+- Contains HTML, CSS, and TypeScript.
+- Created for a specific view.
+  
+#### Service
+- Contains business logic.
+- Uses `@Injectable` decorator.
+- Usually contains only TypeScript.
+- Reusable across multiple components.
+
+23. ### What is a Constructor?
+Part of angular component, called when a new component is created. mainly used for **Dependency Injection (DI)**.
+
+> **Note:** In newer Angular versions, `inject()` is preferred over constructor-based DI.
+
+```ts
+constructor(private userService: UserService) {}
+```
+
 
 
 ## HR
