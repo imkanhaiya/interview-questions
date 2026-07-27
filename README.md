@@ -1994,7 +1994,53 @@ Part of angular component, called when a new component is created. mainly used f
 constructor(private userService: UserService) {}
 ```
 
+23. ### What is the Component Lifecycle?
+A **Component Lifecycle** is sequence of stages a component goes through from **creation to destruction**. Angular provides **Lifecycle Hooks** to perform actions at different stages.
 
+#### Lifecycle Execution Order
+
+1. **Constructor** – Called **once** when a new component instance is created. Used for Dependency Injection.
+2. **ngOnChanges()** – Called whenever an `@Input()` property changes. Runs before `ngOnInit()`.
+3. **ngOnInit()** – Called **once** after Angular initializes the component. Used for initialization.
+4. **ngDoCheck()** – Called during every change detection cycle. Used for custom change detection.
+5. **ngAfterContentInit()** – Called **once** after projected content (`ng-content`) is initialized.
+6. **ngAfterContentChecked()** – Called after every check of projected content.
+7. **ngAfterViewInit()** – Called **once** after the component's view and child views are initialized.
+8. **ngAfterViewChecked()** – Called after every check of the component's view and child views.
+9. **ngOnDestroy()** – Called **once** before the component is destroyed. Used for cleanup (unsubscribe, clear timers, etc.).
+
+25. ### Normal TypeScript Class vs Angular Service
+
+#### Normal TypeScript Class
+- A regular TypeScript class.
+- Not managed by Angular.
+
+#### Angular Service
+- A TypeScript class decorated with `@Injectable()`.
+- Managed by Angular's Dependency Injection (DI) system.
+- Used to share business logic and data across components.
+
+26. ### What is `@ViewChild`?
+`@ViewChild` is a decorator used to access a **child component, directive, or DOM element** from the parent component after the view is initialized.
+
+**Example**
+
+```ts
+@ViewChild('input', { static: false }) input!: ElementRef;
+```
+
+#### `static: true` vs `static: false`
+
+- **`static: true`** – The element is available in `ngOnInit()`. Use when the element always exists.
+- **`static: false`** *(default)* – The element is available in `ngAfterViewInit()`. Use when the element is conditionally rendered.
+
+27. ### What is View Encapsulation?
+**View Encapsulation** controls how a component's styles are applied and whether they affect other components.
+
+#### Types
+- **Emulated (Default)** – Styles are scoped to the component.
+- **Shadow DOM** – Uses the browser's native Shadow DOM to completely isolate styles.
+- **None** – Styles are global and can affect other components.
 
 ## HR
 1. ### What is expected Salary
