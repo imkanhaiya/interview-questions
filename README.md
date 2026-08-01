@@ -2042,6 +2042,209 @@ A **Component Lifecycle** is sequence of stages a component goes through from **
 - **Shadow DOM** – Uses the browser's native Shadow DOM to completely isolate styles.
 - **None** – Styles are global and can affect other components.
 
+28. ### What is Change Detection?
+Angular process to detect changes in the application state and update the DOM automatically.
+
+29. ### What triggers Change Detection?
+- Changes to an `@Input()` property.
+- DOM events (click, input, etc.).
+- Async operations (HTTP calls, `setTimeout`, Promises, etc.).
+- Observable/Subject/BehaviorSubject emissions.
+- Manual triggering using `ChangeDetectorRef`.
+
+30. ### Default vs OnPush
+#### Default
+- Checks all components during every change detection cycle.
+- Simple to use.
+- Can affect performance in large applications.
+
+#### OnPush
+- Checks component only when necessary.
+- Improves performance.
+- 
+**OnPush triggers when:**
+- `@Input()` reference changes.
+- An event occurs inside the component.
+- An Observable emits a new value (`async` pipe).
+- `markForCheck()` or `detectChanges()` is called.
+
+```ts
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+```
+
+31. ### What is Manual Change Detection?
+Used to manually trigger Angular's Change Detection cycle when Angular doesn't detect changes automatically.
+
+**Note:** It is performed using `ChangeDetectorRef`.
+
+32. ### What is `ChangeDetectorRef`?
+`ChangeDetectorRef` is an Angular service used to manually control the Change Detection cycle.
+
+**Common Methods**
+- `markForCheck():` marks the component for checking in the next Change Detection cycle. It does not trigger Change Detection immediately.
+- `detectChanges(): ` Immediately runs Change Detection for the component and its child components.
+
+33. ### What is `trackBy`?
+trackBy keeps track of list so Angular knows which item in list changed. and updates only that part in dom. without it angular re-renders entire list in dom, creating performance issues.
+
+```html
+<li *ngFor="let user of users; trackBy: trackById">
+  {{ user.name }}
+</li>
+```
+
+```ts
+trackById(index: number, user: User) {
+  return user.id;
+}
+```
+
+34. ### What is `Zone.js`?
+`Zone.js` is a library used by Angular to detect asynchronous operations and automatically trigger Change Detection.
+
+**Examples**
+- HTTP calls
+- DOM events
+- `setTimeout()`
+- `setInterval()`
+- Promises
+
+36. ### What is Interpolation?
+Used to display **typescript component data** in the **HTML template** using `{{ }}`.
+
+37. ### What is Property Binding?
+Used to bind **TypeScript property** to an **HTML element** using `[ ]`.
+
+**Example**
+```ts
+isDisabled = true;
+```
+
+```html
+<button [disabled]="isDisabled">Save</button>
+```
+
+38. ### What is Event Binding?
+Used to bind an **HTML event** to a **TypeScript method** using `( )`.
+
+**Example**
+```html
+<button (click)="save()">Save</button>
+```
+
+```ts
+save() {
+  console.log('Saved');
+}
+```
+
+39. ### What is Two-way Data Binding?
+Used to synchronize data between **TypeScript component** and the **HTML template**. It uses `[(ngModel)]`.
+
+**Example**
+```ts
+name = '';
+```
+
+```html
+<input [(ngModel)]="name">
+<p>{{ name }}</p>
+```
+
+40. ### What are Directives?
+Directives are classes that add or modify the behavior and appearance of DOM elements.
+
+**Types**
+- **Component Directive** (`@Component`) → Creates and controls a UI component.
+- **Structural Directive** (`*`) → Adds or removes elements from the DOM (e.g., `*ngIf`, `*ngFor`).
+- **Attribute Directive** (Attribute) → Changes the appearance or behavior of an existing element (e.g., `ngClass`, `ngStyle`).
+
+41. ### What is `@HostBinding`?
+`@HostBinding` is a decorator used to bind **property, class, style, or attribute** to the **host element** without directly manipulating the DOM.
+
+**Example**
+```ts
+@HostBinding('style.color')
+color = 'red';
+```
+
+42. ### What is `@HostListener`?
+`@HostListener` is a decorator used to listen to **events on the host element**.
+
+> **Note:** Commonly used in **directives** and for listening to **global events** (`window`, `document`, etc.).
+
+**Example**
+```ts
+@HostListener('click')
+onClick() {
+  console.log('Clicked');
+}
+```
+
+43. ### What are Angular Control Statements?
+Angular Control Statements are used for control flow
+- **`ngFor` / `@for`** → Used to iterate over a collection.
+- **`ngIf` / `@if`** → Used for conditional rendering.
+- **`ngSwitch` / `@switch`** → Used to render one of multiple cases.
+
+44. ### What is `ng-template`?
+Used to define template content that is not displayed by default. (e.g., rendered using *ngIf with else or ngTemplateOutlet).
+
+**Example**
+```html
+<div *ngIf="isLoggedIn; else loginTemplate">
+  Welcome, User!
+</div>
+
+<ng-template #loginTemplate>
+  <p>Please login first.</p>
+</ng-template>
+```
+
+45. ### What is `ng-container`?
+`ng-container` is a logical container used to group elements **without creating an extra DOM element**.
+
+**Example**
+```html
+<ng-container *ngIf="isLoggedIn">
+  <h2>Welcome</h2>
+  <button>Logout</button>
+</ng-container>
+```
+
+46. ### What is `ng-content`?
+`ng-content` is used for **Content Projection**, allowing a parent component to pass content into a child component.
+
+**Example**
+
+**Parent Component**
+
+```html
+<app-card>
+  <h2>Welcome</h2>
+</app-card>
+```
+
+**Child Component**
+
+```html
+<div class="card">
+  <ng-content></ng-content>
+</div>
+```
+
+47. ### What is `@defer`?
+`@defer` is used to lazy load a part of the template based on a specified trigger(viewport, hover, idle, timer), improving the application's initial load performance.
+
+**Example**
+```html
+@defer (on viewport) {
+  <app-heavy-chart />
+}
+```
+
 ## HR
 1. ### What is expected Salary
   I am much more interested in the opportunity to contribute to team (here at org name) than I am in the size of initial offer. we can discuss the offer details at later stage.
