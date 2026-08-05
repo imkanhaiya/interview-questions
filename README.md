@@ -2245,6 +2245,299 @@ Used to define template content that is not displayed by default. (e.g., rendere
 }
 ```
 
+48. ### What are Pipes?
+Pipes are used to **transform data** in the template without changing the original data.
+
+```html
+<p>{{ name | uppercase }}</p>
+```
+
+49. ### Built-in Pipes
+predefined pipes provided by Angular to transform data in the template.
+
+**Common Built-in Pipes**
+- `uppercase`
+- `lowercase`
+- `titlecase`
+- `date`
+- `currency`
+- `percent`
+- `json`
+- `slice`
+- `async`
+
+**Examples**
+```ts
+today = new Date();
+price = 499;
+percentage = 0.75;
+```
+
+```html
+<p>{{ today | date }}</p>          <!-- Aug 5, 2026 -->
+<p>{{ price | currency:'INR' }}</p> <!-- ₹499.00 -->
+<p>{{ percentage | percent }}</p>   <!-- 75% -->
+```
+
+50. ### What are Custom Pipes?
+Custom Pipes are user-defined pipes used to perform custom data transformations that are not provided by Angular's built-in pipes.
+
+**Example**
+```ts
+@Pipe({
+  name: 'capitalize'
+})
+export class CapitalizePipe implements PipeTransform {
+  transform(value: string): string {
+    return value.charAt(0).toUpperCase() + value.slice(1);
+  }
+}
+```
+
+```html
+<p>{{ 'angular' | capitalize }}</p> <!-- Angular -->
+```
+
+51. ### What is a Pure Pipe?
+Pure Pipe executes **only when the input value or object reference changes**, improving application performance.
+
+**Example**
+```ts
+name = 'Angular';
+```
+
+```html
+// this pipe will execute once, and will execute again if name value changes
+<p>{{ name | uppercase }}</p>
+```
+
+52. ### What is an Impure Pipe?
+An Impure Pipe executes **on every change detection cycle**, even if the input value or object reference has not changed.
+
+> **Note:**
+> - Built-in pipes are **Pure** by default (except `async`).
+> - Custom pipes are also **Pure** by default.
+> - Set `pure: false` to create an **Impure Pipe**.
+
+**Example**
+
+```ts
+@Pipe({
+  name: 'myImpurePipe',
+  pure: false
+})
+export class MyImpurePipe implements PipeTransform {
+  transform(value: string): string {
+    return value.toUpperCase();
+  }
+}
+```
+
+53. ### What are Services?
+Services are classes used to store **business logic, reusable functionality, and shared data** that can be used by multiple components.
+
+**Example**
+
+```ts
+@Injectable({
+  providedIn: 'root'
+})
+export class UserService {}
+```
+
+**Providing a Service using `providers`**
+```ts
+@Component({
+  providers: [UserService]
+})
+
+**Injecting a Service**
+
+**Constructor Injection**
+
+```ts
+constructor(private userService: UserService) {}
+```
+
+**Modern Angular (`inject()`)**
+
+```ts
+userService = inject(UserService);
+```
+
+> **Note:**
+> - `providedIn: 'root'` creates a **singleton service** for the entire application.
+> - `providers: [UserService]` creates a **new service instance** for that component and its child components.
+
+54. ### What is the Purpose of Services?
+The main purpose of Services is to:
+- Store business logic.
+- Share data between components.
+- Reuse common functionality.
+- Separate business logic from UI logic.
+
+55. ### What is Dependency Injection (DI)?
+Dependency Injection (DI) is a design pattern in which Angular automatically provides the required dependencies (services) to a component or another service instead of creating them manually.
+
+**Example**
+
+Instead of:
+
+```ts
+const userService = new UserService();
+```
+
+Angular injects it automatically:
+
+**Constructor Injection**
+```ts
+constructor(private userService: UserService) {}
+```
+
+**Modern Angular (`inject()`)**
+```ts
+userService = inject(UserService);
+```
+
+56. ### What is an Injection Token?
+Used to inject **values or objects that do not have a class type**, such as API URLs, configuration values, or interfaces.
+
+**1. Create an Injection Token**
+```ts
+// api.config.ts
+export const API_URL = new InjectionToken<string>('API_URL');
+```
+
+**2. Provide a Value**
+```ts
+// app.config.ts
+// will be used globally
+export const appConfig: ApplicationConfig = {
+  providers: [
+    {
+      provide: API_URL,
+      useValue: 'https://api.example.com'
+    }
+  ]
+};
+```
+
+**3. Inject the Value**
+```ts
+// home.component.ts, only home component can use it
+apiUrl = inject(API_URL);
+```
+
+57. ### What are Providers?
+Providers are used to register a dependency (service or value) with Angular's Dependency Injection (DI) system so it can be injected where needed.
+
+**Providing a Service**
+```ts
+@Component({
+  providers: [AssetsService]
+})
+export class HomeComponent {}
+```
+
+**Providing a Value**
+```ts
+providers: [
+  {
+    provide: API_URL,
+    useValue: 'https://api.example.com'
+  }
+]
+```
+
+58. ### How do you manually create a Service?
+A service can be created manually using the Angular CLI.
+
+**Command**
+```bash
+ng generate service services/user
+```
+
+or
+```bash
+ng g s services/user
+```
+
+This generates:
+```text
+user.service.ts
+```
+
+```ts
+@Injectable({
+  providedIn: 'root'
+})
+export class UserService {}
+```
+
+59. ### What are the different ways of Cross Component Communication in Angular?
+Angular provides **4 common ways** for communication between components:
+
+1. Parent → Child (`@Input`)
+2. Child → Parent (`@Output`)
+3. Sibling Components (Shared Service)
+4. Unrelated Components (Shared Service / State Management - ngrx / Signals)
+---
+
+### 1. Parent → Child (`@Input`)
+Used to **pass data from a parent component to a child component.**
+
+**Parent**
+```ts
+name = 'Kanhaiya';
+```
+
+```html
+<app-child [username]="name"></app-child>
+```
+
+**Child**
+
+```ts
+@Input() username!: string;
+```
+
+---
+
+### 2. Child → Parent (`@Output`)
+
+Used to **send data or events from a child component to a parent component.**
+
+**Child**
+
+```ts
+@Output() save = new EventEmitter<void>();
+
+this.save.emit();
+```
+
+**Parent**
+
+```html
+<app-child (save)="onSave()"></app-child>
+```
+
+---
+
+### 3. Sibling Components
+Sibling components communicate using a **shared service**.
+
+```ts
+@Injectable({
+  providedIn: 'root'
+})
+export class DataService {}
+```
+
+---
+
+### 4. Unrelated Components
+Unrelated components communicate using a **shared service** or a **state management** such as **Signals** or **NgRx**.
+
 ## HR
 1. ### What is expected Salary
   I am much more interested in the opportunity to contribute to team (here at org name) than I am in the size of initial offer. we can discuss the offer details at later stage.
