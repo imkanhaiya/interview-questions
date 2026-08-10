@@ -2538,6 +2538,1533 @@ export class DataService {}
 ### 4. Unrelated Components
 Unrelated components communicate using a **shared service** or a **state management** such as **Signals** or **NgRx**.
 
+60. ### What is Routing?
+Routing in Angular is used to **navigate between different views/components based on the URL without reloading the entire page**.
+
+**Example**
+
+```ts
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent }
+];
+```
+
+```html
+<a routerLink="/about">About</a>
+```
+
+```text
+/home  → HomeComponent
+/about → AboutComponent
+```
+
+61. ### What is Lazy Loading?
+Lazy Loading means loading a component, or route **only when the user needs it**, instead of loading it when the application starts.
+
+It helps **reduce the initial bundle size and improve initial load performance**.
+
+**Example**
+
+```ts
+const routes: Routes = [
+  {
+    path: 'admin',
+    loadComponent: () =>
+      import('./admin/admin.component')
+        .then(m => m.AdminComponent)
+  }
+];
+```
+
+Here, `AdminComponent` is loaded **only when the user navigates to `/admin`**.
+
+62. ### What is Eager Loading?
+Eager Loading means loading a component or feature **when the application starts**, rather than waiting until the user navigates to it.
+
+It can make the initial bundle larger because the required code is loaded upfront.
+
+**Example**
+```ts
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent }
+];
+```
+
+Here, the required code is loaded as part of the application's initial loading process.
+
+### Easy Difference
+
+```text
+Eager Loading → Load at application startup
+Lazy Loading  → Load when needed
+```
+
+63. ### What is an Auth Guard?
+An Auth Guard is used to **protect routes from unauthorized users**.
+
+It checks whether the user is authenticated before allowing access to a route.
+
+**Example**
+```ts
+export const authGuard: CanActivateFn = () => {
+  return isLoggedIn();
+};
+```
+
+```ts
+const routes: Routes = [
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [authGuard]
+  }
+];
+```
+
+If the user is not logged in, the guard can prevent access and redirect them to the login page.
+
+64. ### What is a Role Guard?
+A Role Guard is used to restrict access to a route based on the **user's role or permissions**.
+
+For example, only an `admin` can access the admin dashboard.
+
+**Example**
+```ts
+export const roleGuard: CanActivateFn = () => {
+  return userRole === 'admin';
+};
+```
+
+```ts
+{
+  path: 'admin',
+  component: AdminComponent,
+  canActivate: [roleGuard]
+}
+```
+
+**Auth Guard** → Checks whether the user is **authenticated**.
+**Role Guard** → Checks whether the user has the **required role/permission**.
+
+65. ### What is a Route Resolver?
+A Route Resolver is used to **fetch or prepare data before a route is activated**, so the component receives the required data when it loads.
+
+**Example**
+
+```ts
+export const userResolver: ResolveFn<User> = () => {
+  return inject(UserService).getUser();
+};
+```
+
+```ts
+{
+  path: 'profile',
+  component: ProfileComponent,
+  resolve: {
+    user: userResolver
+  }
+}
+```
+
+The user data is fetched **before `ProfileComponent` is loaded**.
+
+66. ### What are Route Parameters?
+Route Parameters are used to pass **dynamic values through the URL path**, such as a user ID or product ID.
+
+**Example**
+```ts
+const routes: Routes = [
+  {
+    path: 'user/:id',
+    component: UserComponent
+  }
+];
+```
+
+Navigate to:
+```text
+/user/123
+```
+
+Here, `123` is the route parameter.
+
+**Reading the Parameter**
+
+```ts
+id = inject(ActivatedRoute).snapshot.paramMap.get('id');
+```
+
+```text
+/user/123 → id = 123
+/user/456 → id = 456
+```
+
+67. ### What are Query Parameters?
+Query Parameters are used to pass **optional information through the URL**, commonly for filtering, searching, sorting, or pagination.
+
+**Example**
+
+```text
+/users?page=2&role=admin
+```
+
+Here:
+
+```text
+page = 2
+role = admin
+```
+
+**Reading Query Parameters**
+
+```ts
+route = inject(ActivatedRoute);
+
+page = this.route.snapshot.queryParamMap.get('page');
+role = this.route.snapshot.queryParamMap.get('role');
+```
+
+### Route Parameters vs Query Parameters
+
+```text
+Route Parameter  → /user/123
+Query Parameter  → /users?page=2
+```
+
+**Route Parameters** → Generally used to identify a specific resource.
+
+**Query Parameters** → Generally used for optional filtering, searching, sorting, pagination, etc.
+
+68. ### What is `ActivatedRoute`?
+
+`ActivatedRoute` is an Angular service used to **access information about the currently active route**, such as:
+
+- Route parameters
+- Query parameters
+- Route data
+- Resolved data
+
+**Example**
+
+```ts
+route = inject(ActivatedRoute);
+
+id = this.route.snapshot.paramMap.get('id');
+```
+
+For:
+
+```text
+/user/123
+```
+
+`id` will be:
+
+```text
+123
+```
+
+69. ### Router vs `ActivatedRoute`
+
+### `Router`
+
+Used to **navigate programmatically** between routes.
+
+```ts
+router = inject(Router);
+
+this.router.navigate(['/dashboard']);
+```
+
+### `ActivatedRoute`
+
+Used to **read information from the current route**.
+
+```ts
+route = inject(ActivatedRoute);
+
+id = this.route.snapshot.paramMap.get('id');
+```
+
+### Easy Difference
+
+```text
+Router         → Navigate to a route
+ActivatedRoute → Read information from the current route
+```
+
+70. ### What are Router Events?
+
+Router Events are events emitted by Angular's Router during the **navigation lifecycle**.
+
+They can be used to track:
+
+- Navigation started
+- Navigation completed
+- Navigation cancelled
+- Navigation failed
+
+**Example**
+
+```ts
+router = inject(Router);
+
+this.router.events.subscribe(event => {
+  console.log(event);
+});
+```
+
+**Common Router Events**
+
+```text
+NavigationStart   → Navigation begins
+NavigationEnd     → Navigation completed
+NavigationCancel  → Navigation cancelled
+NavigationError   → Navigation failed
+```
+
+71. ### Multiple Modules & Routing Best Practices
+
+In a larger Angular application, routing can be organized into **separate route files based on features** instead of keeping all routes in one place.
+
+**Best Practices**
+
+- Keep routes organized by feature.
+- Use **lazy loading** for large or less frequently used features.
+- Keep authentication/authorization guards close to protected routes.
+- Use route parameters for resource IDs and query parameters for optional filters.
+- Avoid unnecessarily duplicating routes.
+- Keep routing configuration simple and maintainable.
+
+**Example**
+
+```ts
+const routes: Routes = [
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.routes').then(m => m.ADMIN_ROUTES)
+  }
+];
+```
+
+Here, the admin routes are kept separately and loaded only when `/admin` is accessed.
+
+72. ### What is `HttpClient`?
+
+`HttpClient` is Angular's service used to **send HTTP requests to a backend API** and receive responses.
+
+**Common HTTP Methods**
+
+- `GET` → Fetch data
+- `POST` → Create/send data
+- `PUT` → Update data
+- `PATCH` → Partially update data
+- `DELETE` → Delete data
+
+**GET Example**
+
+```ts
+http = inject(HttpClient);
+
+users$ = this.http.get<User[]>('/api/users');
+```
+
+**POST Example**
+
+```ts
+this.http.post('/api/users', { name: 'John' });
+```
+
+73. ### What is `HttpHeaders`?
+`HttpHeaders` is used to **set or modify HTTP headers** when sending an HTTP request.
+
+Common headers include:
+
+- `Authorization`
+- `Content-Type`
+- `Accept`
+
+**Example**
+
+```ts
+headers = new HttpHeaders({
+  Authorization: 'Bearer token'
+});
+
+this.http.get('/api/users', { headers });
+```
+
+Here, the `Authorization` header is sent with the request.
+
+74. ### What is `observe: 'response'`?
+
+`observe: 'response'` is used when you want to receive the **complete HTTP response**, including:
+
+- Response body
+- HTTP status code
+- Response headers
+
+**Example**
+
+```ts
+this.http.get('/api/users', {
+  observe: 'response'
+}).subscribe(response => {
+  console.log(response.status);
+  console.log(response.headers);
+  console.log(response.body);
+});
+```
+
+By default, `HttpClient` returns only the **response body**.
+
+With `observe: 'response'`, you get the **full `HttpResponse`**.
+
+75. ### What is an HTTP Interceptor?
+
+An HTTP Interceptor is used to **intercept HTTP requests and responses globally** before they are sent or returned.
+
+**Common Uses**
+
+- Add authentication tokens.
+- Add common headers.
+- Log requests/responses.
+- Handle common errors.
+- Modify requests or responses.
+
+**Example**
+
+```ts
+export const authInterceptor: HttpInterceptorFn = (req, next) => {
+  const clonedReq = req.clone({
+    setHeaders: {
+      Authorization: 'Bearer token'
+    }
+  });
+
+  return next(clonedReq);
+};
+```
+
+Here, the interceptor automatically adds the `Authorization` header to outgoing requests.
+
+76. ### Why Modify HTTP Requests & Responses?
+HTTP requests and responses are modified when we need to apply **common logic globally** instead of repeating it in every API call.
+
+**Common Reasons**
+- Add authentication tokens to requests.
+- Add common headers.
+- Modify request data.
+- Handle common errors.
+- Log requests or responses.
+- Transform response data.
+
+**Example**
+
+Instead of adding the token to every request:
+
+```ts
+this.http.get('/api/users', {
+  headers: { Authorization: 'Bearer token' }
+});
+```
+
+An interceptor can add it automatically to **all outgoing requests**.
+
+77. ### What is `HttpErrorResponse`?
+
+`HttpErrorResponse` is an Angular class that represents an **HTTP request that failed**.
+
+It provides information about the error, such as:
+
+- HTTP status code
+- Error message
+- Error body
+- Request URL
+
+**Example**
+
+```ts
+this.http.get('/api/users').subscribe({
+  next: data => console.log(data),
+  error: (error: HttpErrorResponse) => {
+    console.log(error.status);
+    console.log(error.message);
+  }
+});
+```
+
+For example:
+
+```text
+error.status → 404
+```
+
+78. ### HTTP Error Handling
+
+HTTP Error Handling is the process of handling failed API requests and providing an appropriate response to the user.
+
+**Common Approaches**
+
+- Handle errors using `subscribe({ error })`.
+- Check the HTTP status code.
+- Show an appropriate error message.
+- Handle specific errors such as `401`, `403`, `404`, and `500`.
+- Use an **HTTP Interceptor** for common/global error handling.
+
+**Example**
+
+```ts
+this.http.get('/api/users').subscribe({
+  next: data => console.log(data),
+  error: (error: HttpErrorResponse) => {
+    if (error.status === 404) {
+      console.log('Users not found');
+    }
+  }
+});
+```
+
+79. ### What is Global Error Handling?
+
+Global Error Handling is used to handle errors **centrally across the Angular application**, instead of handling the same type of error separately in every component.
+
+For HTTP errors, an **HTTP Interceptor** is commonly used.
+
+**Example**
+
+```ts
+export const errorInterceptor: HttpInterceptorFn = (req, next) => {
+  return next(req).pipe(
+    catchError(error => {
+      console.error('API Error:', error);
+      return throwError(() => error);
+    })
+  );
+};
+```
+
+This allows common API error handling to be managed in **one place**.
+
+80. ### What is Retry?
+
+Retry is used to automatically **attempt a failed HTTP request again**.
+
+Angular uses RxJS operators like `retry()` for this.
+
+**Example**
+
+```ts
+this.http.get('/api/users').pipe(
+  retry(2)
+);
+```
+
+Here, the request is retried **up to 2 times** if it fails before the error is passed to the error handler.
+
+81. ### What is Fallback UI?
+
+Fallback UI is a user-friendly UI shown when the expected data or operation **fails or is temporarily unavailable**.
+
+For example, if an API request fails:
+
+```html
+<p *ngIf="error">
+  Unable to load users. Please try again.
+</p>
+```
+
+**Common Fallback UI**
+
+- Error message
+- Retry button
+- Empty state
+- Loading state
+- Default/fallback content
+
+82. ### Authentication vs Authorization
+**Authentication** verifies **who the user is**.
+**Authorization** verifies **what the authenticated user is allowed to do**.
+
+### Easy Difference
+```text
+Authentication → Who are you?
+Authorization  → What are you allowed to do?
+```
+
+**Example**
+```text
+Login → Authentication
+Admin access → Authorization
+```
+
+83. ### What is the Login Flow?
+
+The Login Flow is the process where the user provides credentials, the backend verifies them, and the application establishes an authenticated session.
+
+**Typical Flow**
+
+```text
+User enters credentials
+        ↓
+Angular sends POST /login
+        ↓
+Backend validates credentials
+        ↓
+Backend creates session / returns authentication result
+        ↓
+Angular considers user authenticated
+        ↓
+User can access protected routes
+```
+
+**Example**
+
+```ts
+this.http.post('/api/login', {
+  email,
+  password
+});
+```
+
+After successful login:
+
+```ts
+this.router.navigate(['/dashboard']);
+```
+
+84. ### What are User Roles?
+
+User Roles define what a user is **allowed to access or do** in an application.
+
+**Common Roles**
+
+- `admin` → Full access
+- `manager` → Management features
+- `user` → Regular features
+
+**Example**
+
+```ts
+userRole = 'admin';
+```
+
+Roles can be used with a **Role Guard** to control access to protected routes.
+
+```text
+Authentication → Who is the user?
+Authorization  → What can they access?
+Role           → Which permissions apply to them?
+```
+85. ### Cookie-based Session Persistence
+
+Cookie-based session persistence means the backend manages the user's session using a **cookie**, allowing the user to remain logged in across requests and page refreshes.
+
+**Typical Flow**
+
+```text
+User logs in
+    ↓
+Backend validates credentials
+    ↓
+Backend creates session
+    ↓
+Session information is stored in a cookie
+    ↓
+Browser sends the cookie with subsequent requests
+    ↓
+Backend identifies the logged-in user
+```
+
+**Angular Request**
+
+```ts
+this.http.get('/api/profile', {
+  withCredentials: true
+});
+```
+
+The browser includes the authentication cookie with the request.
+
+86. ### What is the Logout Flow?
+
+The Logout Flow is the process of ending the user's authenticated session and preventing further access to protected resources.
+
+**Typical Flow**
+
+```text
+User clicks Logout
+      ↓
+Angular sends logout request
+      ↓
+Backend invalidates the session
+      ↓
+Authentication cookie is cleared/invalidated
+      ↓
+User is redirected to Login
+```
+
+**Example**
+
+```ts
+logout() {
+  this.http.post('/api/logout', {}).subscribe(() => {
+    this.router.navigate(['/login']);
+  });
+}
+```
+
+87. ### How do you Secure an Angular Application?
+
+An Angular application can be secured by combining **frontend protections with proper backend security**.
+
+**Key Practices**
+
+- Use **HTTPS** for communication.
+- Protect routes using **Auth Guards** and **Role Guards**.
+- Use secure **cookie-based sessions** where appropriate.
+- Never store sensitive data such as passwords in the frontend.
+- Validate and authorize requests on the **backend**.
+- Avoid trusting user-provided data.
+- Protect against **XSS** by using Angular's built-in template sanitization and avoiding unsafe HTML APIs.
+- Configure appropriate **CORS** policies on the backend.
+- Keep Angular and dependencies updated.
+
+> **Important:** Route guards only protect frontend navigation. **Real authorization must always be enforced by the backend.**
+
+88. ### What is State Management?
+
+State Management is the process of **storing, updating, and sharing application data (state) across components** in a predictable way.
+
+**Examples of Application State**
+
+- Logged-in user
+- Shopping cart
+- Selected products
+- Loading/error state
+- Form data
+- Application settings
+
+**Common Angular Approaches**
+
+- **Services**
+- **Signals**
+- **Stores**
+- **NgRx**
+
+**Example**
+
+```ts
+user = signal<User | null>(null);
+
+login(user: User) {
+  this.user.set(user);
+}
+```
+
+The shared state can then be accessed by multiple components.
+
+89. ### State Management Using a Service
+
+A Service can be used to **store shared application state** and provide it to multiple components.
+
+**Example**
+
+```ts
+@Injectable({
+  providedIn: 'root'
+})
+export class UserStateService {
+  user = signal<User | null>(null);
+}
+```
+
+A component can inject the service and update/read the shared state:
+
+```ts
+userState = inject(UserStateService);
+
+this.userState.user.set(user);
+```
+
+Other components injecting the same service can access the same state.
+
+91. ### What is a Store?
+
+A Store is a centralized place used to **hold and manage application state** so that multiple components can access and update the same state.
+
+A Store typically manages:
+
+- State
+- Updating state
+- Reading state
+
+**Example**
+
+```ts
+@Injectable({
+  providedIn: 'root'
+})
+export class UserStore {
+  user = signal<User | null>(null);
+}
+```
+
+Components can inject the store and access the shared state:
+
+```ts
+userStore = inject(UserStore);
+```
+
+92. ### What are Signals?
+
+A Signal is a **reactive way to store a value in Angular**. When the value changes, Angular automatically updates the parts of the UI that use it.
+
+**Example**
+
+```ts
+count = signal(0);
+
+this.count.set(5);
+```
+
+```html
+<p>{{ count() }}</p>
+```
+
+**Easy way to remember:**
+
+> Signal = reactive value that updates the UI when it changes.
+
+
+93. ### What is NgRx?
+
+NgRx is a state management library for Angular used to **manage complex application state in a centralized and predictable way**.
+
+**Main Concepts**
+
+```text
+Store     → Holds application state
+Actions   → Describe what happened
+Reducer   → Updates the state
+Selectors → Read the state
+Effects   → Handle side effects such as API calls
+```
+
+**Easy way to remember:**
+
+> **NgRx = centralized and predictable state management for Angular.**
+
+
+94. ### Template-driven Forms vs Reactive Forms
+
+**Template-driven Forms** are mainly configured in the **HTML template** using directives like `[(ngModel)]`.
+
+**Reactive Forms** are mainly configured in **TypeScript** using `FormGroup`, `FormControl`, and related APIs.
+
+### Simple Difference
+
+```text
+Template-driven → Form logic mainly in HTML
+Reactive Forms  → Form logic mainly in TypeScript
+```
+
+**Template-driven Example**
+
+```html
+<input [(ngModel)]="name">
+```
+
+**Reactive Forms Example**
+
+```ts
+name = new FormControl('');
+```
+
+### When to Use?
+
+- **Template-driven** → Simple forms
+- **Reactive Forms** → Complex, dynamic forms and detailed validation
+
+95. ### What is `FormGroup`?
+
+`FormGroup` is used to **group multiple form controls together** and manage them as a single form.
+
+**Example**
+
+```ts
+form = new FormGroup({
+  name: new FormControl(''),
+  email: new FormControl('')
+});
+```
+
+Here, `name` and `email` are individual controls inside the `FormGroup`.
+
+```html
+<form [formGroup]="form">
+  <input formControlName="name">
+  <input formControlName="email">
+</form>
+```
+
+> **Easy way to remember:**  
+> `FormGroup` = a group/container of related `FormControl`s.
+
+
+96. ### What is `FormControl`?
+`FormControl` represents and manages the **value and validation state of a single form field**.
+
+**Example**
+
+```ts
+name = new FormControl('');
+```
+
+A value can be set using:
+
+```ts
+name.setValue('Kanhaiya');
+```
+
+The value can be read using:
+
+```ts
+name.value
+```
+
+97. ### What is `FormArray`?
+`FormArray` is used to manage a **dynamic list of form controls or form groups**.
+It is useful when the number of fields can **change at runtime**, such as adding or removing rows.
+
+**Example**
+```ts
+skills = new FormArray([
+  new FormControl('Angular'),
+  new FormControl('TypeScript')
+]);
+```
+
+**Add a control**
+```ts
+skills.push(new FormControl('Node.js'));
+```
+
+**Remove a control**
+
+```ts
+skills.removeAt(0);
+```
+
+> **Easy way to remember:**
+> `FormControl` → One field  
+> `FormGroup` → Group of fields  
+> `FormArray` → Dynamic list of fields/groups
+
+> **Easy way to remember:**
+> `FormControl` = one form field  
+> `FormGroup` = group of form fields
+
+
+98. ### What are Validators?
+Validators are used to **check whether form values meet specific rules**.
+
+**Common Validators**
+
+- `required`
+- `minLength`
+- `maxLength`
+- `email`
+- `min`
+- `max`
+
+**Example**
+
+```ts
+name = new FormControl('', Validators.required);
+```
+If the field is empty, the control becomes **invalid**.
+
+99. ### What are Built-in Validators?
+
+Built-in Validators are predefined validators provided by Angular for common form validation rules.
+
+**Common Built-in Validators**
+
+- `Validators.required`
+- `Validators.minLength()`
+- `Validators.maxLength()`
+- `Validators.email`
+- `Validators.min()`
+- `Validators.max()`
+
+**Example**
+
+```ts
+email = new FormControl('', Validators.email);
+```
+
+Angular automatically checks whether the entered value is a valid email.
+
+100. ### What are Custom Validators?
+
+Custom Validators are **user-defined validators** used when Angular's built-in validators are not enough for a specific validation rule.
+
+**Example**
+
+```ts
+function noSpaces(control: AbstractControl) {
+  return control.value.includes(' ')
+    ? { noSpaces: true }
+    : null;
+}
+```
+
+Use it with a form control:
+
+```ts
+username = new FormControl('', noSpaces);
+```
+
+- Returns an **error object** → Invalid
+- Returns `null` → Valid
+
+101. ### What are Async Validators?
+
+Async Validators are validators that perform **asynchronous validation**, usually by calling a backend/API to check whether a value is valid.
+
+For example, checking whether a username or email already exists.
+
+**Example**
+
+```ts
+username = new FormControl('', {
+  asyncValidators: checkUsername
+});
+```
+
+The validator returns a `Promise` or `Observable`.
+
+```text
+Value entered
+     ↓
+API call
+     ↓
+Valid → null
+Invalid → error object
+```
+
+102. ### Angular Performance Optimization Techniques
+
+Angular performance can be improved by **reducing unnecessary work, loading less code initially, and optimizing rendering**.
+
+**Common Techniques**
+
+- Use `OnPush` change detection where appropriate.
+- Use `@for` with a proper `track` expression.
+- Use `@defer` for deferred loading.
+- Lazy-load routes/features.
+- Avoid unnecessary function calls in templates.
+- Use Signals for efficient reactive updates.
+- Use in-memory caching for frequently requested data.
+- Optimize images.
+- Reduce bundle size.
+- Prevent memory leaks by cleaning up subscriptions/resources.
+
+**Easy way to remember:**
+
+> **Render less → Load less → Calculate less → Clean up resources**
+
+
+103. ### AOT vs JIT
+### AOT — Ahead-of-Time
+AOT compiles Angular code **during the build process**, before the application reaches the browser.
+
+```text
+Angular Code
+     ↓
+Build Process
+     ↓
+Angular Compiler
+     ↓
+Compiled JavaScript
+     ↓
+Browser
+```
+
+**Benefits:**
+- Faster startup
+- Less compilation work in the browser
+- Better production performance
+- Errors can be detected during build
+
+---
+
+### JIT — Just-in-Time
+
+JIT compiles Angular code **at runtime in the browser**.
+
+Angular's compiler runs in the browser and compiles the Angular application before it runs.
+
+```text
+Angular Code
+     ↓
+Browser loads Angular + App
+     ↓
+Angular Compiler runs
+     ↓
+Application runs
+```
+
+### Easy Difference
+
+```text
+AOT → Angular compiles during build
+JIT → Angular compiles at runtime in browser
+```
+
+> **AOT is preferred for production because the browser doesn't need to perform Angular compilation at runtime.**
+
+
+104. ### What is In-memory Caching?
+
+In-memory caching means storing frequently used data **temporarily in application memory** so it can be reused without making the same API request again.
+
+**Example**
+
+```ts
+private usersCache: User[] | null = null;
+
+getUsers() {
+  if (this.usersCache) {
+    return of(this.usersCache);
+  }
+
+  return this.http.get<User[]>('/api/users').pipe(
+    tap(users => this.usersCache = users)
+  );
+}
+```
+
+**Benefits**
+
+- Reduces unnecessary API calls.
+- Improves response time.
+- Reduces network/server usage.
+
+> **Important:** In-memory cache is lost when the application/page is reloaded.
+
+
+105. ### What are Memory Leaks?
+
+A memory leak happens when an application keeps references to data or resources that are **no longer needed**, causing memory usage to grow unnecessarily.
+
+**Common Causes in Angular**
+
+- Unsubscribed Observables
+- Event listeners that aren't removed
+- Timers that aren't cleared
+- Large objects unnecessarily kept in memory
+
+**Example**
+
+```ts
+const subscription = this.service.getData().subscribe();
+
+subscription.unsubscribe();
+```
+
+Modern Angular can also use `takeUntilDestroyed()` to automatically clean up subscriptions.
+
+> **Easy way to remember:**  
+> Memory leak = unused resources staying in memory.
+
+
+106. ### What is SSR (Server-Side Rendering)?
+
+SSR (Server-Side Rendering) means rendering Angular pages **on the server first** and sending the already-rendered HTML to the browser.
+
+**Flow**
+
+```text
+User requests page
+       ↓
+Server renders Angular page
+       ↓
+HTML sent to browser
+       ↓
+Angular loads and becomes interactive
+```
+
+**Benefits**
+
+- Faster initial page display
+- Better SEO
+- Useful for content-heavy/public pages
+
+> **Easy way to remember:**  
+> SSR = Render the page on the server before sending it to the browser.
+
+
+107. ### SSR vs CSR
+
+### SSR — Server-Side Rendering
+
+The **server renders the page first** and sends HTML to the browser.
+
+```text
+Server → Renders HTML → Browser
+```
+
+### CSR — Client-Side Rendering
+
+The **browser loads the Angular application and renders the page on the client side**.
+
+```text
+Server → Sends app files → Browser → Renders UI
+```
+
+### Easy Difference
+
+```text
+SSR → Rendering happens on the server
+CSR → Rendering happens in the browser
+```
+
+**SSR** → Better initial content display and SEO.
+
+**CSR** → Common for highly interactive web applications.
+
+108. ### What is PWA?
+
+PWA (Progressive Web App) is a web application that provides a **more app-like experience**, including features such as offline support, caching, and installation on a device.
+
+In Angular, PWAs can use a **service worker** to cache application resources and support offline usage.
+
+**Benefits**
+
+- Offline support
+- Caching
+- Can be installed on a device
+- Faster loading for returning users
+
+> **Easy way to remember:**  
+> PWA = Web app with app-like capabilities.
+
+109. ### What is Deferred Loading (`@defer`)?
+
+`@defer` is an Angular feature used to **load part of the UI only when it is needed**, instead of loading it immediately.
+
+**Example**
+
+```html
+@defer {
+  <app-heavy-component />
+}
+```
+
+The deferred component is loaded **later**, which can improve the initial page load.
+
+> **Easy way to remember:**  
+> `@defer` = Load this UI later when needed.
+
+110. ### Image Optimization
+
+Image Optimization means reducing the cost of images so they **load faster and use less bandwidth**.
+
+**Common Techniques**
+
+- Use appropriate image sizes.
+- Use modern formats such as **WebP/AVIF**.
+- Lazy-load images that aren't immediately visible.
+- Avoid serving unnecessarily large images.
+- Use Angular's **`NgOptimizedImage`**.
+
+**Example**
+
+```html
+<img
+  ngSrc="/images/product.webp"
+  width="400"
+  height="300"
+  alt="Product"
+>
+```
+
+> **Easy way to remember:**  
+> Image Optimization = smaller, properly sized, efficiently loaded images.
+
+
+111. ### What is Bundle Optimization?
+
+Bundle Optimization means reducing the amount of JavaScript and other resources that the browser needs to download and execute.
+
+**Common Techniques**
+
+- Use **lazy loading**.
+- Use `@defer` for heavy components.
+- Remove unused dependencies.
+- Use production builds.
+- Split large bundles into smaller chunks.
+- Avoid importing unnecessary libraries.
+
+> **Easy way to remember:**  
+> Bundle Optimization = Reduce the amount of code the browser needs to load.
+
+
+112. ### What are `import` and `export`?
+
+**`export`** makes a class, function, variable, or component available to other files.
+
+**`import`** allows another file to use that exported code.
+
+**Example**
+
+```ts
+// user.service.ts
+export class UserService {}
+```
+
+```ts
+// home.component.ts
+import { UserService } from './user.service';
+```
+
+### Easy way to remember
+
+```text
+export → Make something available
+import → Use something from another file
+```
+
+113. ### What is `"type": "module"` in `package.json`?
+
+`"type": "module"` tells **Node.js to treat `.js` files as ES Modules**, allowing `import` and `export` syntax.
+
+**Example**
+
+```json
+{
+  "type": "module"
+}
+```
+
+Then JavaScript files can use:
+
+```js
+export const name = 'John';
+```
+
+```js
+import { name } from './user.js';
+```
+
+> **Easy way to remember:**  
+> `"type": "module"` → Enables ES Module behavior for `.js` files in Node.js.
+
+
+114. ### What is `package.json`?
+
+`package.json` contains the project's **metadata, dependencies, scripts, and configuration**.
+
+> **Easy way to remember:**  
+> `package.json` → Manages the project's packages, scripts, and metadata.
+
+---
+
+115. ### What is `angular.json`?
+
+`angular.json` is the **Angular CLI configuration file**.
+
+It contains project-level settings such as:
+
+- Build configuration
+- Serve configuration
+- Assets
+- Styles
+- Scripts
+- Output settings
+
+> **Easy way to remember:**  
+> `angular.json` → Configures how Angular CLI builds and runs the project.
+
+
+116. ### What is `TestBed.configureTestingModule()`?
+
+`TestBed.configureTestingModule()` is used to **configure the Angular testing environment** for a component, service, directive, or pipe.
+
+You can provide:
+
+- Components
+- Services
+- Imports
+- Providers
+- Mocks
+
+**Example**
+
+```ts
+TestBed.configureTestingModule({
+  imports: [MyComponent],
+  providers: [UserService]
+});
+```
+
+> **Easy way to remember:**  
+> `TestBed.configureTestingModule()` → Sets up the Angular environment needed for a test.
+
+
+117. ### Can `TestBed` configuration be changed after Component creation?
+
+**No.** Once the component has been created, you cannot change the `TestBed` configuration for that test.
+
+Configure `TestBed` **before** creating the component:
+
+```ts
+TestBed.configureTestingModule({
+  imports: [MyComponent]
+});
+
+const fixture = TestBed.createComponent(MyComponent);
+```
+
+> **Easy way to remember:**  
+> **Configure TestBed first → Create component after.**
+
+117. ### What is Jasmine?
+
+Jasmine is a JavaScript testing framework used to **write and run unit tests**.
+
+In Angular, Jasmine is commonly used to test:
+
+- Components
+- Services
+- Pipes
+- Functions
+
+**Example**
+
+```ts
+it('should add two numbers', () => {
+  expect(2 + 3).toBe(5);
+});
+```
+
+```text
+it()     → Defines the test
+expect() → Defines the expected result
+toBe()   → Checks the result
+```
+
+> **Easy way to remember:**  
+> Jasmine → Framework used to write unit tests.
+
+118. ### What is Karma?
+
+Karma is a test runner used to **execute Angular unit tests** and report the results.
+
+### Easy Difference
+
+```text
+Jasmine → Writes the tests
+Karma   → Runs the tests
+```
+
+> **Easy way to remember:**  
+> Jasmine = Test framework  
+> Karma = Test runner
+
+119. ### What are Mock Services?
+Mock Services are **fake services used in tests** to simulate real services without making actual API calls or using real dependencies.
+
+**Example**
+
+```ts
+const mockUserService = {
+  getUser: () => of({ name: 'John' })
+};
+
+TestBed.configureTestingModule({
+  providers: [
+    { provide: UserService, useValue: mockUserService }
+  ]
+});
+```
+
+Here, the real `UserService` is replaced with a **mock service**.
+
+> **Easy way to remember:**  
+> Mock Service = Fake service used for testing.
+
+
+122. ### What is `spyOn()`?
+
+`spyOn()` is used in Jasmine to **monitor or replace a method during a test**.
+
+It can check whether a method was called and with what arguments.
+
+**Example**
+
+```ts
+spyOn(service, 'getUser');
+
+service.getUser();
+
+expect(service.getUser).toHaveBeenCalled();
+```
+
+> **Easy way to remember:**  
+> `spyOn()` → Watch a method during a test.
+
+
+123. ### How do you Generate, Run, Build, and Deploy an Angular Project?
+
+### 1. Generate a Project
+
+```bash
+ng new my-app
+cd my-app
+```
+
+### 2. Run Locally
+
+```bash
+ng serve
+```
+
+Runs the Angular application locally.
+
+### 3. Build the Project
+
+```bash
+ng build
+```
+
+Creates an optimized build, usually inside the `dist/` folder.
+
+### 4. Deploy the Project
+
+Deploy the generated files from the `dist/` folder to a web server or hosting platform such as:
+
+- AWS
+- Azure
+- Firebase
+- Netlify
+- Vercel
+
+### Easy Way to Remember
+
+```text
+ng new    → Create project
+ng serve  → Run locally
+ng build  → Create production build
+dist/     → Deploy built files
+```
+
 ## HR
 1. ### What is expected Salary
   I am much more interested in the opportunity to contribute to team (here at org name) than I am in the size of initial offer. we can discuss the offer details at later stage.
