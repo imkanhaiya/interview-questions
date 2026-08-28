@@ -11,6 +11,7 @@
 * [Angular Material](#angular-material)
 * [ASYMPOTIC Notations](#asympotic-notations)
 * [Javascript](#javascript)
+* [Typescript](#typescript)
 * [RXJS](#rxjs)
 * [Angular](#Angular)
 * [HR](#hr)
@@ -1448,6 +1449,128 @@ Do not implement features until they are actually required.
 - **L – Liskov Substitution Principle (LSP):** A subclass should be replaceable with its parent class without changing the program's behavior.
 - **I – Interface Segregation Principle (ISP):** Clients (Class) should not be forced to implement methods they do not use.
 - **D – Dependency Inversion Principle (DIP):** Depend on abstractions (interfaces), not concrete implementations.
+
+
+
+## Typescript
+
+### 1. What is TypeScript and why do we use it?
+
+**Definition:**  
+TypeScript is a superset of JavaScript that adds static typing, and other type-related features to JavaScript.
+
+**Why do we use it?**
+- Catches type-related errors during development
+- Makes code easier to maintain
+- Provides better autocomplete and IDE support
+- Makes large applications easier to manage
+
+**Example:**
+
+```ts
+let age: number = 25;
+
+age = "hello"; // Error
+```
+
+### 2. TypeScript vs JavaScript?
+
+**TypeScript:**
+- Statically typed
+- Catches type-related errors during development
+- Supports interfaces, generics, enums, etc.
+- Needs to be compiled into JavaScript
+
+**JavaScript:**
+- Dynamically typed
+- Errors are generally found at runtime
+- Runs directly in browsers and JavaScript environments
+- Does not require compilation to JavaScript
+
+## 3. What are the data types in TypeScript?
+TypeScript provides many data types such as -
+
+- **`string`** → Text values. `let name: string = "Kanhaiya";`
+- **`number`** → Integer and decimal values. `let age: number = 29;`
+- **`boolean`** → `true` or `false` values. `let isActive: boolean = true;`
+- **`null`** → Represents an intentional empty value. `let value: null = null;`
+- **`undefined`** → Represents a value that has not been assigned. `let value: undefined = undefined;`
+- **`any`** → Can hold any type of value and allows operations without type checking. `let data: any = "hello";`
+- **`unknown`** → Can hold any value, but requires type checking before use. `let data: unknown = "hello";`
+- **`never`** → Represents a value that never occurs. `function error(): never { throw new Error("Error"); }`
+- **`void`** → Used when a function does not return a value. `function log(): void { console.log("Hello"); }`
+- **`object`** → Represents non-primitive values. `let user: object = { name: "Kanhaiya" };`
+- **`symbol`** → Represents a unique value. `let id: symbol = Symbol("id");`
+- **`bigint`** → Represents very large integers. `let value: bigint = 12345678901234567890n;`
+  
+**Easy way to remember:**
+Primitive → `string`, `number`, `boolean`, `null`, `undefined`, `symbol`, `bigint`  
+Special → `any`, `unknown`, `never`, `void`  
+Non-primitive → `object`
+
+### 4. What is type inference?
+Ability of TypeScript to automatically figure out the type of variable from the assigned value.
+
+**Example:**
+```ts
+let name = "Kanhaiya"; // TypeScript infers string
+let age = 29;          // TypeScript infers number
+let isActive = true;   // TypeScript infers boolean
+```
+
+### 5. What is type assertion?
+Type assertion tells TypeScript to treat a value as a specific type. (when you know the type better than TypeScript.)
+
+**Example:**
+```ts
+let value: unknown = "Hello";
+
+let message = value as string;
+console.log(message.length);
+```
+
+### 6. `interface` vs `type`
+Both `interface` and `type` are used to define the structure and types of data in TypeScript.
+
+- **`interface`** → Mainly used for object structures and supports `extends` and declaration merging.
+  
+  `interface User { name: string; age: number; }`
+
+- **`type`** → Can define objects, unions ( | ), intersections ( & ), primitives.
+  
+  `type Status = "success" | "error";`
+
+**Key Difference:**  
+`interface` supports **declaration merging**, while `type` does not.
+
+### 7. What are optional properties and parameters?
+
+**Definition:**  
+Optional properties and parameters are marked with `?` and are not required to be provided.
+
+- **Optional property** → An object property that may or may not exist. `age?: number`
+- **Optional parameter** → A function parameter that may or may not be passed. `age?: number`
+
+**Example:**
+
+```ts
+interface User {
+  name: string;
+  age?: number;
+}
+
+function greet(name: string, age?: number) {
+  console.log(name, age);
+}
+
+greet("Kanhaiya");
+greet("Kanhaiya", 29);
+```
+
+### 8. What is `readonly` and `as const`?
+- **`readonly`** → Prevents a property from being modified after it is initialized. `readonly id: number`
+- **`as const`** → Makes a value deeply readonly and preserves its most specific literal types. `const status = "success" as const;`
+
 
 
 ## RXJS
