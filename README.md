@@ -1571,7 +1571,209 @@ greet("Kanhaiya", 29);
 - **`readonly`** → Prevents a property from being modified after it is initialized. `readonly id: number`
 - **`as const`** → Makes a value deeply readonly and preserves its most specific literal types. `const status = "success" as const;`
 
+### 9. What are Generics and Generic Constraints?
+- **Generics** → Allow us to write reusable code that works with different types while maintaining type safety. `<T>`
+- **Generic Constraints** → Restrict a generic type to a specific type or structure using `extends`. `<T extends ...>`
 
+**Example:**
+
+```ts
+function identity<T>(value: T): T {
+  return value;
+}
+
+identity<string>("Hello");
+identity<number>(100);
+
+function getLength<T extends { length: number }>(value: T): number {
+  return value.length;
+}
+
+getLength("Hello");   // ✅
+getLength([1, 2, 3]); // ✅
+getLength(100);       // ❌ Error
+```
+
+### 10. What is `keyof` in TypeScript?
+`keyof` creates a union of all property names (keys) of a type. (**Get all keys of a type**)
+
+**Example:**
+
+```ts
+interface User {
+  name: string;
+  age: number;
+  email: string;
+}
+
+type UserKeys = keyof User;
+// "name" | "age" | "email"
+```
+
+### 11. What are Utility Types?
+
+**Definition:**  
+Built-in TypeScript types that help create new types by modifying existing types.
+
+- **`Partial`** → Makes all properties optional. `Partial<User>`
+- **`Pick`** → Selects specific properties. `Pick<User, "name">`
+- **`Omit`** → Removes specific properties. `Omit<User, "age">`
+- **`Readonly`** → Makes all properties readonly. `Readonly<User>`
+
+**Example:**
+
+```ts
+interface User {
+  name: string;
+  age: number;
+  email: string;
+}
+
+type OptionalUser = Partial<User>;
+type UserPreview = Pick<User, "name" | "email">;
+type UserWithoutAge = Omit<User, "age">;
+type ReadonlyUser = Readonly<User>;
+```
+
+### 12. What are enums and when would you use them? 
+Enums are used to define a fixed set of named values.
+
+**Example:**
+
+```ts
+enum Status {
+  Pending,
+  Success,
+  Failed
+}
+
+let status: Status = Status.Success;
+```
+
+### 13. What are Access Modifiers?
+Access modifiers control where class properties and methods can be accessed.
+- **`public`** → Can be accessed from anywhere. `public name: string`
+- **`private`** → Can be accessed only inside the same class. `private password: string`
+- **`protected`** → Can be accessed inside the class and its child classes. `protected age: number`
+
+**Example:**
+
+```ts
+class User {
+  public name = "Kanhaiya";
+  private password = "1234";
+  protected age = 29;
+}
+
+class Admin extends User {
+  showUser() {
+    console.log(this.name); // ✅ public
+    console.log(this.age);  // ✅ protected
+    // console.log(this.password); // ❌ private
+  }
+}
+
+const admin = new Admin();
+
+console.log(admin.name); // ✅ public
+// console.log(admin.age); // ❌ protected
+// console.log(admin.password); // ❌ private
+```
+
+### 14. What are Abstract Classes, `extends`, and `implements`?
+- **`abstract`** → Defines a base class that cannot be instantiated directly and is meant to be extended by child classes. `abstract class Animal {}`
+- **`extends`** → Allows a class to inherit properties and methods from another class. `class Dog extends Animal {}`
+- **`implements`** → Requires a class to follow the structure defined by an interface. `class User implements Person {}`
+
+**Example:**
+
+```ts
+abstract class Animal {
+  abstract makeSound(): void;
+}
+
+class Dog extends Animal {
+  makeSound() {
+    console.log("Bark");
+  }
+}
+
+interface Person {
+  name: string;
+}
+
+class User implements Person {
+  name = "Kanhaiya";
+}
+```
+
+### 15. What are Type Guards, Type Narrowing, Discriminated Unions, and Structural Typing?
+- **Type Guard** → A way to check the type of a value. *(Check type)* `typeof value === "string"`
+- **Type Narrowing** → TypeScript narrows a broad type to a more specific type after a type check. *(Make type specific)*
+- **Discriminated Union** → A union of object types that uses a common property to determine which type it is. *(Common property identifies type)*
+- **Structural Typing** → TypeScript checks compatibility based on the structure and properties of types, not their names. *(Structure matters, not name)*
+
+**Example:**
+
+```ts
+// Type Guard + Type Narrowing
+function print(value: string | number) {
+  if (typeof value === "string") {
+    console.log(value.toUpperCase());
+  }
+}
+
+// Discriminated Union
+type Success = {
+  status: "success";
+  data: string;
+};
+
+type Error = {
+  status: "error";
+  message: string;
+};
+
+type Result = Success | Error;
+
+function handle(result: Result) {
+  if (result.status === "success") {
+    console.log(result.data);
+  }
+}
+
+// Structural Typing
+type Person = {
+  name: string;
+};
+
+const user = {
+  name: "Kanhaiya"
+};
+
+let person: Person = user; // ✅ Same structure
+```
+
+### 16. What is `tsconfig.json` and why is it important?
+`tsconfig.json` is the configuration file for a TypeScript project. It defines how TypeScript should compile the code.
+
+**Why is it important?**
+- Specifies the JavaScript version to generate
+- Defines strict type-checking rules
+- Specifies source and output directories
+- Controls which files are included or excluded
+
+**Example:**
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2020" //Specifies the JavaScript version
+    "strict": true, //Enables strict type-checking
+    "outDir": "./dist" //Specifies where compiled JavaScript is generated
+  }
+}
+```
 
 ## RXJS
 
