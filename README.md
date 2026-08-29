@@ -512,8 +512,7 @@ variables and functions can be used before declaring it. the javascript comiler 
 - **class declarations** - hoisted but not initialized
 
 8. ### What is temporal dead zone?
-specific time period during javascript code execution, where variables declared with let and const exist but can not be accessed until value is assigned.
-Any attempt to access them result in reference errors.
+A variable declared with let, const, or class is said to be in a "temporal dead zone" (TDZ) from the start of the block until code execution reaches the place where the variable is declared and initialized.
 
 9. ### What is order(priority) of hoisting?
 - Function declartions
