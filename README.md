@@ -4439,6 +4439,31 @@ console.log(factorial(5)); // 120
 // Space Complexity:** `O(1)`
 ```
 
+#### 2. Program to find the factorial of a number using recursion
+Product of all positive integers from **1** to **n**.
+
+**Logic**
+- If `n < 2`, return `1` as the base condition.
+- Otherwise, multiply `n` by the factorial of `n - 1`.
+- Continue until the base condition is reached.
+
+**JavaScript**
+
+```javascript
+function factorial(number) {
+    if (number < 2) {
+        return 1;
+    }
+
+    return number * factorial(number - 1);
+}
+
+console.log(factorial(5)); // 120
+
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+```
+
 
 
 
