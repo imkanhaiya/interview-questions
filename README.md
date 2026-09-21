@@ -4464,7 +4464,7 @@ console.log(factorial(5)); // 120
 // Space Complexity: O(n)
 ```
 
-
+#### 3. Sum of first n natural numbers.
 
 
 
