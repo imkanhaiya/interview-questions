@@ -4465,6 +4465,35 @@ console.log(factorial(5)); // 120
 ```
 
 #### 3. Sum of first n natural numbers.
+Positive integeres starting from 1 to forever - n*(n+1)/2
+
+**Logic**
+- Take number n as input.
+- Initialize sum = 0.
+- Run a loop from 1 to n.
+- In each iteration, add the current number i to sum.
+- After the loop finishes, return sum.
+
+**JavaScript**
+
+```javascript
+function sumOfNNaturalNumbers(n) {
+  // let sum = 0;
+  // for (let i=1; i<=n; i++) {
+  //   sum = sum+i
+  // }
+  
+  let sum = n*(n+1)/2
+  
+  return sum
+}
+
+console.log(sumOfNNaturalNumbers(6)) //21
+
+Time Complexity:  O(1)
+Space Complexity: O(1)
+```
+
 
 
 
