@@ -4494,7 +4494,45 @@ Time Complexity:  O(1)
 Space Complexity: O(1)
 ```
 
+#### 4. Find Maximum and Minimum in Array.
 
+**Logic**
+- Take the first element at index `0` as the initial maximum and minimum.
+- Compare it with all elements from index `1` to `arr.length - 1`.
+- If the current element is larger, update `largestNum`.
+- If the current element is smaller, update `smallestNum`.
+- After the loop finishes, return maximum and minimum.
 
+**JavaScript**
+
+```javascript
+function findMaxMin(arr) {
+  let largestNum = arr[0]
+  let smallestNum = arr[0]
+
+  for (let i = 1; i <= arr.length-1; i++) {
+    if (arr[i] > largestNum) {
+      largestNum = arr[i]
+    }
+
+    if (arr[i] < smallestNum) {
+      smallestNum = arr[i]
+    }
+  }
+
+  return {
+    maximum: largestNum,
+    minimum: smallestNum
+  }
+}
+
+let arr = [2, 1, 4, 5, 0, 18, 26, 3, 7]
+
+console.log(findMaxMin(arr))
+// { maximum: 26, minimum: 0 }
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+```
 
   
