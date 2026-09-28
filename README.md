@@ -4535,4 +4535,47 @@ Time Complexity: O(n)
 Space Complexity: O(1)
 ```
 
+#### 5. Remove Duplicates from Array and return new arry.
+
+**Logic**
+- Take one element from `arr` and compare it with each element of `arr2`.
+- If the element is found in `arr2`, mark `duplicate` as `true`.
+- If the element is not found, `duplicate` remains `false`.
+- If `duplicate === false`, push the element into `arr2`.
+- After the loop finishes, return `arr2`.
+
+**JavaScript**
+
+```javascript
+function removeDuplicate(arr) {
+  const arr2 = []
+
+  for (let i = 0; i <= arr.length-1; i++) {
+    let duplicate = false
+
+    for (let j = 0; j <= arr2.length-1; j++) {
+      if (arr[i] === arr2[j]) {
+        duplicate = true
+        break
+      }
+    }
+
+    if (duplicate === false) {
+      arr2.push(arr[i])
+    }
+  }
+
+  return arr2
+}
+
+let arr = [1, 2, 3, 3, 4]
+
+console.log(removeDuplicate(arr))
+// [1, 2, 3, 4]
+
+Time Complexity: O(n²)
+Space Complexity: O(n)
+```
+
+
   
