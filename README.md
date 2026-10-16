@@ -4616,5 +4616,62 @@ Time Complexity: O(n²)
 Space Complexity: O(n)
 ```
 
+#### 6. Reverse Array and Return a New Array
+
+**Logic**
+- Start the loop from the last element of `arr` and continue until `i >= 0`.
+- Push each element into `newArr`.
+- After the loop finishes, return `newArr`.
+
+**JavaScript**
+
+```javascript
+function reverseArr(arr) {
+  let newArr = [];
+
+  for (let i = arr.length - 1; i >= 0; i--) {
+    newArr.push(arr[i]);
+  }
+
+  return newArr;
+}
+
+let arr = [2, 4, 6, 8];
+
+console.log(reverseArr(arr));
+// [8, 6, 4, 2]
+
+Time complexity: o(n)
+Space complexity: (on)
+```
+
+#### 7. Reverse String and Return a New String
+
+**Logic**
+- Convert the string into an array using `split('')`.
+- Start the loop from the last element of `name` and continue until `i >= 0`.
+- Keep adding each character to `newString`.
+- After the loop finishes, return `newString`.
+
+**JavaScript**
+
+```javascript
+function reverseString(str) {
+  let name = str.split('');
+  let newString = '';
+
+  for (let i = name.length - 1; i >= 0; i--) {
+    newString += name[i];
+  }
+
+  return newString;
+}
+
+console.log(reverseString("kanhaiya"));
+// ayiahianak
+
+Time complexity: o(n)
+Space complexity: (on)
+```
 
   
