@@ -4389,6 +4389,42 @@ ng build  → Create production build
 dist/     → Deploy built files
 ```
 
+## NDJSON
+
+1. ### What is JSON-ND
+JSON-ND stands for JSON with Named Datatypes. It extends JSON by adding type information to property names.
+
+2. ### What are the Benefits of JSON-ND over Plain JSON
+- Adds explicit type information.
+- Reduces ambiguity in data.
+- Helps different programming languages interpret data consistently.
+- Supports custom types and validation rules.
+
+3. ### How to Define Types in JSON-ND
+Types are specified using a colon in the property name.
+Example: `"age:integer": 25`
+
+4. ### How to Define Arrays in JSON-ND
+Array types can be specified using `[]` and optional bounds.
+Example: `"scores:integer[0,3]": [80, 90, 75]`
+
+5. ### What is Interface in JSON-ND
+`Interface` defines a custom data type with its properties.
+Example: `"User:Interface": ["id:integer", "name:string"]`
+
+6. ### What are Required and Optional Fields in JSON-ND
+- **Required** - Field must be present and non-null.
+- **Optional** - Field is not mandatory.
+
+7. ### What is Strict Mode in JSON-ND
+Strict mode rejects data that does not conform to the declared types and rules.
+
+8. ### Does JSON-ND Automatically Validate Data
+No. JSON-ND provides type information, but validation depends on the parser or implementation.
+
+9. ### How Does JSON-ND Work with JavaScript
+A parser reads type information, removes type suffixes from property names, and can convert values into the expected types.
+
 ## HR
 1. ### What is expected Salary
   I am much more interested in the opportunity to contribute to team (here at org name) than I am in the size of initial offer. we can discuss the offer details at later stage.
