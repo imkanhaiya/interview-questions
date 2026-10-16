@@ -4390,7 +4390,7 @@ ng build  → Create production build
 dist/     → Deploy built files
 ```
 
-## NDJSON
+## NDJSON [DataWeave Documentation](https://docs.mulesoft.com/dataweave/latest/dataweave-formats-ndjson) | [JSON-ND GitHub Repository](https://github.com/glenkleidon/JSON-ND)
 
 1. ### What is JSON-ND
 JSON-ND stands for JSON with Named Datatypes. It extends JSON by adding type information to property names.
