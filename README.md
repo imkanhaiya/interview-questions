@@ -4395,7 +4395,7 @@ dist/     → Deploy built files
 [DataWeave Documentation](https://docs.mulesoft.com/dataweave/latest/dataweave-formats-ndjson) | [JSON-ND GitHub Repository](https://github.com/glenkleidon/JSON-ND)
 
 1. ### What is JSON-ND
-JSON-ND stands for JSON with Named Datatypes. It extends JSON by adding type information to property names.
+JSON with Named Datatypes. It extends JSON by adding type information to property names.
 
 2. ### What are the Benefits of JSON-ND over Plain JSON
 - Adds explicit type information.
