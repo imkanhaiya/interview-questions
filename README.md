@@ -4674,4 +4674,71 @@ Time complexity: o(n)
 Space complexity: (on)
 ```
 
+#### 8. Reverse Array In Place
+
+**Logic using two pointers**
+- Initialize `leftIndex` to `0` and `rightIndex` to the last index of `arr`.
+- Run a `while` loop until `leftIndex < rightIndex`.
+- Swap the elements at `leftIndex` and `rightIndex` using a temporary variable `temp`.
+- Increment `leftIndex` and decrement `rightIndex`.
+- After the loop finishes, return the reversed `arr`.
+
+**JavaScript**
+
+```javascript
+
+let arr = [1, 2, 3, 4, 5];
+
+function reverseArrayInPlace(arr) {
+  let leftIndex = 0;
+  let rightIndex = arr.length - 1;
+
+  while (leftIndex < rightIndex) {
+    let temp = arr[leftIndex];
+    arr[leftIndex] = arr[rightIndex];
+    arr[rightIndex] = temp;
+
+    leftIndex++;
+    rightIndex--;
+  }
+
+  return arr;
+}
+
+console.log(reverseArrayInPlace(arr));
+// [5, 4, 3, 2, 1]
+
+// Time complexity: O(n)
+// Space complexity: O(1)
+```
+
+**Logic using for loop/single variable**
+- Start the loop from index `0` and continue until `i < Math.floor(arr.length / 2)`.
+- Store the current element `arr[i]` in a temporary variable `temp`.
+- Swap `arr[i]` with the element at the opposite index `arr.length - 1 - i`.
+- Repeat the process until the loop reaches the middle of the array.
+- Return the reversed `arr`.
+
+**JavaScript**
+
+```javascript
+// Reverse array in place using a for loop
+
+function reverseArrayInPlace(arr) {
+  for (let i = 0; i < Math.floor(arr.length / 2); i++) {
+    let temp = arr[i];
+    arr[i] = arr[arr.length - 1 - i];
+    arr[arr.length - 1 - i] = temp;
+  }
+
+  return arr;
+}
+
+let arr = [1, 2, 3, 4, 5];
+
+console.log(reverseArrayInPlace(arr));
+// [5, 4, 3, 2, 1]
+
+// Time complexity: O(n)
+// Space complexity: O(1)
   
