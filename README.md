@@ -4811,3 +4811,50 @@ Space Complexity: O(n)
 
 ### Javascript
 
+#### 1. What is the output of `3+2+"7"`?
+**Answer:** `"57"` because in JavaScript, `+` adds numbers and joins strings and `-` operator converts strings to numbers before subtraction.
+
+#### 2. What is the output of the below code?
+
+```javascript
+const a = 1 < 2 < 3;
+const b = 1 > 2 > 3;
+
+console.log(a, b);
+// true false
+```
+
+#### 3. Guess the output?
+
+```javascript
+const p = { k: 1, l: 2 };
+const q = { k: 1, l: 2 };
+
+let isEqual = p == q;
+let isStrictEqual = p === q;
+
+console.log(isEqual, isStrictEqual);
+// false false
+Both are false because objects are compared by reference (memory address), not by their contents.
+```
+
+#### 4. Guess the output?
+
+```javascript
+a) 2 + 2                       // 4
+b) "2" + "2"                   // "22"
+c) 2 + 2 - 2                   // 2
+d) "2" + "2" - "2"             // 20
+e) 4 + "2" + 2 + 4 + "25" + 2 + 2  // "42242522"
+```
+
+#### 5. What is the output of the below code?
+
+```javascript
+let a = 'jscafe'
+a[0] = 'c'
+
+console.log(a)
+// "jscafe"
+// because strings are iterable but immutable in JavaScript, meaning individual characters cannot be changed.
+```
