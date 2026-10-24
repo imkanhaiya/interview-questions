@@ -4741,4 +4741,69 @@ console.log(reverseArrayInPlace(arr));
 
 // Time complexity: O(n)
 // Space complexity: O(1)
-  
+```
+
+#### 9. Count Frequency of Elements in Array.
+
+**Logic**
+- Create an empty object `count` to store the frequency of each element.
+- Loop through all elements of the array.
+- If the element already exists in `count`, increment its count by `1`.
+- Otherwise, initialize its count to `1`.
+- After the loop finishes, return the `count` object.
+
+**JavaScript**
+
+```javascript
+function countFrequency(arr) {
+  let count = {}
+
+  for (let i = 0; i <= arr.length-1; i++) {
+    if (count[arr[i]]) {
+      count[arr[i]]++
+    } else {
+      count[arr[i]] = 1
+    }
+  }
+
+  return count
+}
+
+console.log(countFrequency([1, 2, 1, 3, 2, 3, 4, 6]))
+// { '1': 2, '2': 2, '3': 2, '4': 1, '6': 1 }
+
+Time: O(n)
+Space: O(k)
+```
+
+#### 10. Check Palindrome String.
+
+**Logic**
+- Create an empty string `reversed` to store the reversed word.
+- Loop through from the last character to the first character.
+- Append each character to `reversed`.
+- Compare the original word with `reversed`.
+- If both are equal, return `true`; otherwise, return `false`.
+
+**JavaScript**
+
+```javascript
+function checkPalindrome(word) {
+  let reversed = ""
+
+  for (let i = word.length-1; i >= 0; i--) {
+    reversed += word[i]
+  }
+
+  return word === reversed
+}
+
+let word = "madam"
+console.log(checkPalindrome(word))
+// true
+
+Time Complexity: O(n)
+Space Complexity: O(n)
+```
+
+
