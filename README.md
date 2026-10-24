@@ -17,6 +17,7 @@
 * [NDJSON](#NDJSON)
 * [HR](#hr)
 * [Coding Notes](#coding-notes)
+* [Output Based](#output-based)
 
 <br/>
 
@@ -4449,7 +4450,7 @@ A parser reads type information, removes type suffixes from property names, and 
   4. ### Why there is 3 years gap after MCA?
   Early in my career, I explored Python and backend fundamentals, but I realized frontend engineering suited me better. During the COVID period, I used that time to reskill and realign my career direction. I then focused on JavaScript and Angular, built hands-on projects, and once I had clarity, I entered the job market and secured my first full-time frontend role in 2022. Since then, my career has been consistent.
 
-  ## Coding Notes
+## Coding Notes
   
 #### 1. Program to find the factorial of a number
 Product of all positive integers from **1** to **n**.
@@ -4806,4 +4807,5 @@ Time Complexity: O(n)
 Space Complexity: O(n)
 ```
 
+## Output Based
 
