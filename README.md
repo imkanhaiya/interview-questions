@@ -4858,3 +4858,117 @@ console.log(a)
 // "jscafe"
 // because strings are iterable but immutable in JavaScript, meaning individual characters cannot be changed.
 ```
+
+
+#### 6. What is the output of the below code?
+
+```javascript
+var x = 10;
+
+function foo() {
+  var x = 5;
+  console.log(x);
+}
+
+foo();
+console.log(x)
+
+// 5
+// 10
+// because variables declared inside a function have function scope, so the local x does not change the global x.
+```
+
+
+#### 7. What is the output of the below code?
+
+```javascript
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Timeout");
+});
+
+Promise.resolve().then(() => console.log("Promise"));
+
+console.log("End");
+
+// Start
+// End
+// Promise
+// Timeout
+// because synchronous code executes first, then microtasks (Promises), and finally macrotasks (setTimeout).
+```
+
+
+#### 8. This code prints 6 every time. How to print 1, 2, 3, 4, 5? (Most asked)
+
+```javascript
+function x() {
+  for (var i = 1; i <= 5; i++) {
+    setTimeout(() => console.log(i), i * 1000);
+  }
+}
+x();
+
+// Output: 6 6 6 6 6
+// because var has function scope, so all callbacks share the same i.
+
+// Solution:
+
+function x() {
+  for (let i = 1; i <= 5; i++) {
+    setTimeout(() => console.log(i), i * 1000);
+  }
+}
+x();
+
+// Output: 1 2 3 4 5
+// because let has block scope so let creates a separate binding for each loop iteration.
+```
+
+
+#### 9. What will be the output of the below code?
+
+```javascript
+function x() {
+  let a = 10;
+
+  function d() {
+    console.log(a);
+  }
+
+  a = 500;
+  return d;
+}
+
+var z = x();
+z();
+
+// Output:
+// 500
+
+// because closure remembers the variable, not its initial value.
+// The value of a is updated to 500 before d() executes.
+```
+
+
+#### 10. What’s the output of the below code?
+
+```javascript
+getData1();
+getData();
+
+function getData1() {
+  console.log("getData11");
+}
+
+var getData = () => {
+  console.log("Hello");
+};
+
+// Output:
+// getData11
+// TypeError: getData is not a function
+
+// because var getData is hoisted, but the arrow function is assigned to getData only after the call.
+```
