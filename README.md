@@ -4972,3 +4972,337 @@ var getData = () => {
 
 // because var getData is hoisted, but the arrow function is assigned to getData only after the call.
 ```
+
+
+#### 11. What's the output of the below code?
+
+```javascript
+function func() {
+  try {
+    console.log(1);
+    return;
+  } catch (e) {
+    console.log(2);
+  } finally {
+    console.log(3);
+  }
+  console.log(4);
+}
+
+func();
+
+// Output:
+// 1
+// 3
+
+// because finally executes even when return is encountered.
+// return stops the function after finally executes, so console.log(4) never runs.
+```
+
+
+#### 12. What's the output of the below code?
+
+```javascript
+const nums = [1, 2, 3, 4, 5, 6, 7];
+
+nums.forEach((n) => {
+  if (n % 2 === 0) {
+    break;
+  }
+  console.log(n);
+});
+
+// Output:
+// SyntaxError: Illegal break statement
+
+// because break cannot be used inside a forEach callback.
+// Use a for...of loop if you want to stop the loop using break.
+```
+
+
+#### 13. What's the output of the below code?
+
+```javascript
+let a = true;
+
+setTimeout(() => {
+  a = false;
+}, 2000);
+
+while (a) {
+  console.log(' -- inside whilee -- ');
+}
+
+// Output:
+// -- inside whilee -- (prints continuously)
+
+// because the while loop is synchronous and blocks the call stack.
+// setTimeout cannot execute while the loop is running.
+// Therefore, a never becomes false, and the loop runs indefinitely.
+```
+
+
+#### 14. What's the output of the below code?
+
+```javascript
+setTimeout(() => console.log(1), 0);
+
+console.log(2);
+
+new Promise(res => {
+  console.log(3);
+  res();
+}).then(() => console.log(4));
+
+console.log(5);
+
+// Output:
+// 2
+// 3
+// 5
+// 4
+// 1
+
+// because synchronous code executes first, Promise executors run immediately,
+// microtasks (.then) execute next, and macrotasks (setTimeout) execute last.
+```
+
+
+#### 15. What's the output of the below code?
+
+```javascript
+async function foo() {
+  console.log("A");
+  await Promise.resolve();
+  console.log("B");
+  await new Promise(resolve => setTimeout(resolve, 0));
+  console.log("C");
+}
+
+console.log("D");
+foo();
+console.log("E");
+
+// Output:
+// D
+// A
+// E
+// B
+// C
+
+// because an async function runs synchronously until the first await.
+// After await, the function resumes asynchronously.
+// Microtasks execute before setTimeout callbacks.
+```
+
+
+#### 16. Guess the output?
+
+```javascript
+let output = (function(x) {
+  delete x;
+  return x;
+})(3);
+
+console.log(output);
+
+// Output:
+// 3
+
+// because delete cannot delete local variables or function parameters.
+// (3) calls the function immediately and passes 3 as an argument.
+// This is called an IIFE (Immediately Invoked Function Expression).
+```
+
+
+#### 17. Guess the output of the below code?
+
+```javascript
+for (var i = 0; i < 3; i++) {
+  setTimeout(function () {
+    console.log(i);
+  }, 1000 + i);
+}
+
+// Output:
+// 3
+// 3
+// 3
+
+// because var has function scope, so all callbacks share the same i.
+// The loop finishes first, and i becomes 3 before the callbacks execute.
+```
+
+
+#### 18. Guess the output?
+
+```javascript
+let c = 0;
+
+let id = setInterval(() => {
+  console.log(c++);
+}, 10);
+
+setTimeout(() => {
+  clearInterval(id);
+}, 2000);
+
+// Output:
+// 0
+// 1
+// 2
+// 3
+// ... continues approximately every 10ms for 2 seconds.
+
+// because setInterval repeats the callback every 10ms,
+// and clearInterval(id) stops it after approximately 2 seconds.
+```
+
+
+#### 19. What would be the output of the following code?
+
+```javascript
+function getName1() {
+  console.log(this.name);
+}
+
+Object.prototype.getName2 = () => {
+  console.log(this.name);
+};
+
+let personObj = {
+  name: "Tony",
+  print: getName1
+};
+
+personObj.print();
+personObj.getName2();
+
+// Output:
+// Tony
+// undefined
+
+// because regular functions get this from the calling object.
+// Arrow functions inherit this from their surrounding scope,
+// not from the calling object.
+```
+
+
+#### 20. What would be the output of the following code?
+
+```javascript
+function test() {
+  console.log(a);
+  console.log(foo());
+
+  var a = 1;
+
+  function foo() {
+    return 2;
+  }
+}
+
+test();
+
+// Output:
+// undefined
+// 2
+
+// because var declarations are hoisted and initialized with undefined.
+// Function declarations are fully hoisted, so foo() can be called before its definition.
+```
+
+#### 21. What is the output of the below code?
+
+```javascript
+function job() {
+  return new Promise((resolve, reject) => {
+    reject();
+  });
+}
+
+let promise = job();
+
+promise
+  .then(() => console.log("1111111111"))
+  .then(() => console.log("22222222222"))
+  .catch(() => console.log("3333333333"))
+  .then(() => console.log("4444444444"));
+
+// Output:
+// 3333333333
+// 4444444444
+
+// because the Promise is rejected, the first two then() callbacks are skipped.
+// catch() handles the rejection, and the next then() executes because the error is handled.
+```
+
+
+#### 22. Guess the output?
+
+```javascript
+var a = 1;
+
+function data() {
+  if (!a) {
+    var a = 10;
+  }
+  console.log(a);
+}
+
+data();
+console.log(a);
+
+// Output:
+// 10
+// 1
+
+// because var a inside the function is hoisted and initialized with undefined.
+// !a is true, so a becomes 10 inside the function.
+// The global a remains 1.
+```
+
+
+#### 23. Tests your array basics
+
+```javascript
+function guessArray() {
+  let a = [1, 2];
+  let b = [1, 2];
+
+  console.log(a == b);
+  console.log(a === b);
+}
+
+guessArray();
+
+// Output:
+// false
+// false
+
+// because arrays are compared by reference, not by their contents.
+// a and b are two different array objects in memory.
+```
+
+
+#### 24. Test your basics on comparison
+
+```javascript
+let a = 3;
+let b = new Number(3);
+let c = 3;
+
+console.log(a == b);
+console.log(a === b);
+console.log(b === c);
+
+// Output:
+// true
+// false
+// false
+
+// because == converts the Number object to a primitive value before comparison.
+// === compares both value and type.
+// b is an object, while a and c are primitive numbers.
+```
+
