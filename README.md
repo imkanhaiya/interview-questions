@@ -5306,3 +5306,99 @@ console.log(b === c);
 // b is an object, while a and c are primitive numbers.
 ```
 
+
+#### 25. Guess the output?
+
+```javascript
+var x = 23;
+
+(function() {
+  var x = 43;
+
+  (function random() {
+    x++;
+    console.log(x);
+    var x = 21;
+  })();
+
+})();
+
+// Output:
+// NaN
+
+// because var x inside random() is hoisted and initialized with undefined.
+// x++ increments undefined, resulting in NaN.
+// The inner x shadows the outer x.
+```
+
+
+#### 26. Answer the below queries on typeof operator in JavaScript?
+
+```javascript
+typeof [1, 2, 3, 4]  // "object"
+typeof null          // "object"
+typeof NaN           // "number"
+typeof 1234n         // "bigint"
+typeof 3.14          // "number"
+typeof Symbol()      // "symbol"
+typeof "John"        // "string"
+typeof 33            // "number"
+typeof true          // "boolean"
+typeof undefined     // "undefined"
+
+// Note:
+// typeof arrays returns "object" because arrays are objects in JavaScript.
+// typeof null returns "object" due to a historical JavaScript bug.
+// typeof NaN returns "number" because NaN is a special numeric value.
+```
+
+
+#### 27. Can you find any security issue in the JavaScript code?
+
+```javascript
+const data = await fetch("api");
+const div = document.getElementById("todo");
+div.innerHTML = data;
+
+// Security issue:
+// Using innerHTML with untrusted data can lead to XSS (Cross-Site Scripting).
+// The browser may execute malicious injected HTML/JavaScript.
+
+// Solution:
+const response = await fetch("api");
+const data = await response.text();
+const div = document.getElementById("todo");
+div.textContent = data;
+
+// because textContent treats the response as plain text instead of HTML,
+// preventing injected scripts from executing.
+```
+
+
+#### 28. Can you guess the output of the below code?
+
+```javascript
+console.log(typeof typeof 1);
+
+// Output:
+// "string"
+
+// because typeof 1 returns "number" (a string).
+// typeof "number" returns "string".
+```
+
+
+#### 29. Guess the output of the below code?
+
+```javascript
+x++;
+console.log(x);
+var x = 21;
+
+// Output:
+// NaN
+
+// because var x is hoisted and initialized with undefined.
+// x++ increments undefined, resulting in NaN.
+// Later, x is assigned the value 21.
+```
