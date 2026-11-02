@@ -5402,3 +5402,86 @@ var x = 21;
 // x++ increments undefined, resulting in NaN.
 // Later, x is assigned the value 21.
 ```
+
+
+#### 30. Guess the output?
+
+```javascript
+const x = [1];
+const y = [2];
+
+console.log(x + y);
+
+// Output:
+// "12"
+
+// because + converts arrays to primitive values (strings in this case).
+// [1] becomes "1" and [2] becomes "2".
+// "1" + "2" results in "12".
+```
+
+
+#### 31. Guess the output?
+
+```javascript
+const data = {
+  name: "sai",
+  name: "krishna"
+};
+
+console.log(data.name);
+
+// Output:
+// "krishna"
+
+// because duplicate object keys are allowed in JavaScript.
+// The last assigned value overwrites the previous value.
+```
+
+
+#### 32. What is the output of the below code?
+
+```javascript
+let x = 10 + 2 * 3;
+console.log(x);
+
+// Output:
+// 16
+
+// because multiplication (*) has higher precedence than addition (+).
+// First: 2 * 3 = 6
+// Then: 10 + 6 = 16.
+```
+
+
+#### 33. Guess the output?
+
+```javascript
+const x = [1, 2, 3];
+const y = [1, 3, 4];
+
+console.log(x + y);
+
+// Output:
+// "1,2,31,3,4"
+
+// because the + operator converts arrays into strings.
+// [1,2,3] becomes "1,2,3" and [1,3,4] becomes "1,3,4".
+// Both strings are concatenated.
+```
+
+
+#### 34. Guess the output?
+
+```javascript
+console.log(+true);
+console.log(!"sai");
+
+// Output:
+// 1
+// false
+
+// because unary + converts true to 1.
+// ! converts a truthy value into false.
+```
+
