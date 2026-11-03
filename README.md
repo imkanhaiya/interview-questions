@@ -5655,3 +5655,123 @@ var data = function() {
 // The function expression is assigned only after the console.log() call.
 ```
 
+
+#### 45. Guess the output?
+
+```javascript
+const arr = [1, 2, 3];
+
+arr[5] = 6;
+
+console.log(arr.length);
+
+// Output:
+// 6
+
+// because array indexing starts from 0, but length counts the total positions.
+// Assigning a value at index 5 makes the length 6.
+// Empty positions are also counted in array length.
+```
+
+
+#### 46. Guess the output?
+
+```javascript
+const obj = {
+  a: 1
+};
+
+obj.a = 2;
+
+console.log(obj);
+
+// Output:
+// { a: 2 }
+
+// because const prevents reassignment of the variable,
+// but object properties can still be modified.
+```
+
+
+#### 47. Guess the output?
+
+```javascript
+let x = {
+  a: undefined,
+  b: null
+};
+
+console.log(JSON.stringify(x));
+
+// Output:
+// {"b":null}
+
+// because JSON.stringify() converts a JavaScript object into a JSON string.
+// It ignores object properties with undefined values but preserves null values.
+```
+
+**Remember:**
+- `JSON.stringify()` → JavaScript value to JSON string.
+- `JSON.parse()` → JSON string to JavaScript value.
+
+
+#### 48. Guess the output?
+
+```javascript
+console.log(true + 1);
+console.log(true + "1");
+
+// Output:
+// 2
+// "true1"
+
+// because true is converted to 1 during numeric addition.
+// When combined with a string, true is converted to "true" and concatenated.
+```
+
+
+#### 49. Guess the output?
+
+```javascript
+const str = "hello";
+
+str.data = "val";
+
+console.log(str.data);
+
+// Output:
+// undefined
+
+// because strings are primitive values and are immutable.
+// We cannot add custom properties to primitive strings.
+```
+
+
+#### 50. Guess the output of the following code?
+
+```javascript
+setTimeout(() => {
+  console.log("Log 1");
+}, 10);
+
+setTimeout(() => {
+  console.log("Log 2");
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("Log 3");
+});
+
+setTimeout(() => {
+  console.log("Log 4");
+}, 100);
+
+// Output:
+// Log 3
+// Log 2
+// Log 1
+// Log 4
+
+// because Promise callbacks (microtasks) execute before setTimeout callbacks (macrotasks).
+// setTimeout callbacks execute according to their scheduled delays.
+```
