@@ -5485,3 +5485,173 @@ console.log(!"sai");
 // ! converts a truthy value into false.
 ```
 
+
+#### 35. What is the output of the below code?
+
+```javascript
+console.log([] + []);
+console.log([1] + []);
+console.log([1] + "abc");
+
+// Output:
+// ""
+// "1"
+// "1abc"
+
+// because the + operator converts arrays into strings.
+// [] becomes ""
+// [1] becomes "1"
+// Then JavaScript concatenates the strings.
+```
+
+
+#### 36. Guess the output?
+
+```javascript
+function getAge(...args) {
+  console.log(typeof args);
+}
+
+getAge(21);
+
+// Output:
+// "object"
+
+// because rest parameters collect arguments into an array.
+// typeof array returns "object".
+```
+
+
+#### 37. Guess the output?
+
+```javascript
+const obj = {
+  a: "one",
+  b: "two",
+  a: "three"
+};
+
+console.log(obj);
+
+// Output:
+// { a: "three", b: "two" }
+
+// because duplicate object keys are allowed.
+// The last value assigned to the same key overwrites the previous value.
+```
+
+
+#### 38. Guess the output?
+
+```javascript
+var z = 1, y = z = typeof y;
+
+console.log(y);
+
+// Output:
+// "undefined"
+
+// because var y is hoisted and initialized with undefined.
+// typeof y returns "undefined".
+// The value is assigned to both z and y.
+```
+
+
+#### 39. Guess the output?
+
+```javascript
+console.log(false || null || "Hello");
+console.log(false && null && "Hello");
+
+// Output:
+// "Hello"
+// false
+
+// because || returns the first truthy value.
+// && returns the first falsy value.
+// If all values are truthy/falsy, the last value is returned.
+```
+
+
+#### 40. Guess the output?
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+
+const [x, ...y] = numbers;
+
+console.log(x, y);
+
+// Output:
+// 1 [2, 3, 4, 5]
+
+// because array destructuring assigns the first element to x
+// and the rest operator collects the remaining elements into y.
+```
+
+
+#### 41. Guess the output?
+
+```javascript
+const str = "abc" + + "def";
+console.log(str);
+
+// Output:
+// "abcNaN"
+
+// because unary + converts "def" into a number.
+// Since "def" is not a valid number, it becomes NaN.
+// "abc" + NaN results in "abcNaN".
+```
+
+
+#### 42. Guess the output?
+
+```javascript
+let newlist = [1].push(2);
+console.log(newlist.push(3));
+
+// Output:
+// TypeError: newlist.push is not a function
+
+// because push() returns the new length of the array, not the array itself.
+// newlist becomes 2, which is a number, and numbers don't have push().
+```
+
+
+#### 43. Guess the output?
+
+```javascript
+console.log(0 || 1);
+console.log(1 || 2);
+console.log(0 && 1);
+console.log(1 && 2);
+
+// Output:
+// 1
+// 1
+// 0
+// 2
+
+// because || returns the first truthy value.
+// && returns the first falsy value.
+// If no matching value is found, it returns the last value.
+```
+
+
+#### 44. Guess the output?
+
+```javascript
+console.log(data());
+
+var data = function() {
+  return "1";
+};
+
+// Output:
+// TypeError: data is not a function
+
+// because var data is hoisted and initialized with undefined.
+// The function expression is assigned only after the console.log() call.
+```
+
